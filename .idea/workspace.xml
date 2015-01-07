@@ -52,12 +52,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="49" column="44" selection-start="3296" selection-end="3296" vertical-scroll-proportion="0.5955056" vertical-offset="325" max-vertical-offset="1260">
+                <state line="49" column="44" selection-start="3296" selection-end="3296" vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1260">
                   <folding />
                 </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="readme.md" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/readme.md">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="14" selection-start="251" selection-end="251" vertical-scroll-proportion="0.15393387" vertical-offset="0" max-vertical-offset="877">
+                  <folding />
+                </state>
+              </provider>
+              <provider editor-type-id="MarkdownPreviewEditor">
+                <state />
               </provider>
             </entry>
           </file>
@@ -65,10 +77,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scss/main.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="7" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+                <state line="13" column="7" selection-start="164" selection-end="164" vertical-scroll-proportion="0.21594684" vertical-offset="0" max-vertical-offset="903">
                   <folding />
                 </state>
               </provider>
@@ -83,10 +95,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="body.scss" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="body.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scss/body.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="21" selection-start="229" selection-end="229" vertical-scroll-proportion="0.28239202" vertical-offset="0" max-vertical-offset="903">
+                <state line="17" column="21" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
                   <folding />
                 </state>
               </provider>
@@ -122,6 +134,7 @@
         <option value="$PROJECT_DIR$/app/views/index.blade.php" />
         <option value="$PROJECT_DIR$/scss/main.scss" />
         <option value="$PROJECT_DIR$/scss/body.scss" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -529,25 +542,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scss/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="7" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="44" selection-start="3296" selection-end="3296" vertical-scroll-proportion="0.5955056" vertical-offset="325" max-vertical-offset="1260">
+        <state line="49" column="44" selection-start="3296" selection-end="3296" vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1260">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scss/body.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="21" selection-start="229" selection-end="229" vertical-scroll-proportion="0.28239202" vertical-offset="0" max-vertical-offset="903">
+        <state line="17" column="21" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="7" selection-start="164" selection-end="164" vertical-scroll-proportion="0.21594684" vertical-offset="0" max-vertical-offset="903">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="14" selection-start="251" selection-end="251" vertical-scroll-proportion="0.15393387" vertical-offset="0" max-vertical-offset="877">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>
