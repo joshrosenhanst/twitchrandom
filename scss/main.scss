@@ -1,0 +1,18 @@
+$xsmall: 480px;
+$small: 768px;
+$medium: 992px;
+$large: 1200px;
+
+body{
+  min-width:$xsmall;
+  .body-container{
+    max-width:$small;
+  }
+}
+
+@import "header";
+@import "body";
+@import "xsmall";
+@import "small";
+@import "medium";
+@import "large";

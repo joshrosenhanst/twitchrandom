@@ -1,0 +1,50 @@
+/*
+Syntax error: Undefined variable: "$xsmall".
+        on line 1 of xsmall.scss
+
+1: @media (max-width:$xsmall) {
+2: 
+3: }
+
+Backtrace:
+xsmall.scss:1
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/script/tree/variable.rb:48:in `_perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/script/tree/node.rb:50:in `perform'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:410:in `block in run_interp_no_strip'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:408:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:408:in `run_interp_no_strip'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:418:in `run_interp'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:370:in `visit_media'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/base.rb:53:in `map'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/base.rb:37:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/tree/root_node.rb:20:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/engine.rb:265:in `render'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/plugin/compiler.rb:309:in `update_stylesheet'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/plugin/compiler.rb:182:in `block in update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/plugin/compiler.rb:179:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/plugin/compiler.rb:179:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/plugin.rb:81:in `update_stylesheets'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/exec.rb:462:in `watch_or_update'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/exec.rb:324:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/exec.rb:41:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/lib/sass/exec.rb:21:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.3.0.alpha.184/bin/scss:9:in `<top (required)>'
+/usr/local/bin/scss:23:in `load'
+/usr/local/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined variable: \"$xsmall\".\A         on line 1 of xsmall.scss\A \A 1: @media (max-width:$xsmall) {\A 2: \A 3: }"; }
