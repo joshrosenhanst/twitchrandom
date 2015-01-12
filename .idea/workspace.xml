@@ -64,7 +64,7 @@
           <file leaf-file-name="readme.md" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/readme.md">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="14" column="160" selection-start="747" selection-end="747" vertical-scroll-proportion="0.29076397" vertical-offset="0" max-vertical-offset="877">
+                <state line="14" column="2" selection-start="591" selection-end="591" vertical-scroll-proportion="0.2736602" vertical-offset="0" max-vertical-offset="877">
                   <folding />
                 </state>
               </provider>
@@ -76,7 +76,7 @@
           <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="4" selection-start="36" selection-end="36" vertical-scroll-proportion="-1.2" vertical-offset="0" max-vertical-offset="225">
+                <state line="9" column="0" selection-start="105" selection-end="105" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="225">
                   <folding />
                 </state>
               </provider>
@@ -600,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="36" selection-end="36" vertical-scroll-proportion="-1.2" vertical-offset="0" max-vertical-offset="225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/local/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="35" selection-start="478" selection-end="478" vertical-scroll-proportion="0.2724177" vertical-offset="0" max-vertical-offset="881">
@@ -628,9 +621,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="105" selection-end="105" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="160" selection-start="747" selection-end="747" vertical-scroll-proportion="0.29076397" vertical-offset="0" max-vertical-offset="877">
+        <state line="14" column="2" selection-start="591" selection-end="591" vertical-scroll-proportion="0.2736602" vertical-offset="0" max-vertical-offset="877">
           <folding />
         </state>
       </provider>
