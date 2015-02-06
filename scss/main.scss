@@ -8,6 +8,9 @@ body{
   .body-container{
     max-width:$small;
   }
+  .med-container{
+    max-width:$medium;
+  }
 }
 
 @import "header";

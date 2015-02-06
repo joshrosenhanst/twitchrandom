@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Stream Randomizer</title>
+<title>Stream Randomizer | Watch</title>
 @stop
 
 @section('css')
@@ -12,24 +12,25 @@
 <script>
     @include("layouts.js.loading")
     $(document).ready(function(){
-        $.ajax({
-            url: "/ajax/randomStream"
-        }).done(function(data){
-            $("#stream-loading").hide();
-            $(".jumbotron").append(data);
-        }).fail(function(data){
-            console.log("fail: "+data);
-        });
-        $.ajax({
-            url: "/ajax/gallery"
-        }).done(function(data){
-            $("#gallery-loading").hide();
-            $(".gallery").append(data);
-        }).fail(function(data){
-            console.log("fail: "+data);
-        });
+       $.ajax({
+           url: "/ajax/stream/{{ $name }}"
+       }).done(function(data){
+           $("#stream-loading").hide();
+           $(".jumbotron").append(data);
+       }).fail(function(data){
+           console.log(data);
+           $(".jumbotron>.loading>.text").addClass("error").text("Error: "+data.responseJSON.error.message);
+       });
+       $.ajax({
+           url: "/ajax/gallery"
+       }).done(function(data){
+           $("#gallery-loading").hide();
+           $(".gallery").append(data);
+       }).fail(function(data){
+           console.log(data);
+       });
 
-        setInterval(function(){ $(".loading:visible>.text").setRandomText(); }, 1600);
+        setInterval(function(){ $(".loading:visible>.text").not(".error").setRandomText(); }, 1600);
     });
 </script>
 @stop

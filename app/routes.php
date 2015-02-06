@@ -12,7 +12,16 @@
 */
 
 Route::get('/', array('uses'=>'HomeController@home'));
+Route::get('/stream/{name}', array('uses'=>'HomeController@stream'));
 
+//ajax calls
+Route::group(array('prefix' => 'ajax'), function()
+{
+    Route::get('/randomStream', array('uses'=>'AjaxController@randomStream'));
+    Route::get('/stream/{name}', array('uses'=>'AjaxController@streamByName'));
+    Route::get('/gallery', array('uses'=>'AjaxController@getGallery'));
+
+});
 //individual game pages
 Route::group(array('prefix' => 'game'), function()
 {

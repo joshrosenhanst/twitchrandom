@@ -15,9 +15,14 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function home()
-	{
+	public function home(){
 		return View::make('index');
 	}
+
+    public function stream($name){
+        return View::make('stream', array(
+            "name"=>$name
+        ));
+    }
 
 }
