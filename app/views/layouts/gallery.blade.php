@@ -9,4 +9,4 @@
     </div>
 </div>
 @endforeach
-<pre>{{ var_dump($galleries) }}</pre>
+{{-- <pre>{{ var_dump($galleries) }}</pre> --}}

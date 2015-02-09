@@ -2,13 +2,14 @@
 
 class GameController extends BaseController {
 
-    public function home()
-    {
+    public function home(){
         return View::make('games.home');
     }
-    public function getGame($name)
-    {
-        return View::make('games.game');
+
+    public function getGame($game){
+        return View::make('games.game', array(
+            "game"=>$game
+        ));
     }
 
 }

@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -18,14 +19,17 @@ Route::get('/stream/{name}', array('uses'=>'HomeController@stream'));
 Route::group(array('prefix' => 'ajax'), function()
 {
     Route::get('/randomStream', array('uses'=>'AjaxController@randomStream'));
+    Route::get('beta/randomStream', array('uses'=>'AjaxController@betaRandomStream'));
     Route::get('/stream/{name}', array('uses'=>'AjaxController@streamByName'));
+    Route::get('/game/{game}/{limit}', array('uses'=>'AjaxController@streamsByGame'));
     Route::get('/gallery', array('uses'=>'AjaxController@getGallery'));
+    Route::get('/gallery/{game}', array('uses'=>'AjaxController@getGallery'));
 
 });
 //individual game pages
 Route::group(array('prefix' => 'game'), function()
 {
     Route::get('/', array('uses'=>'GameController@home'));
-    Route::get('/{name}', array('uses'=>'GameController@getGame'));
+    Route::get('/{game}', array('uses'=>'GameController@getGame'));
 
 });
