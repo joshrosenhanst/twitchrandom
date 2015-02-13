@@ -13,18 +13,6 @@ class AjaxController extends BaseController {
             ));
         }
     }
-    public function betaRandomStream(){
-        $stream = $this->getBetaRandomStream();
-        if(isset($stream->error)){
-            return View::make('layouts.error', array(
-                "errorMsg"=>$stream->message,
-            ));
-        }else{
-            return View::make('layouts.streamobject', array(
-                "stream"=> $stream
-            ));
-        }
-    }
 
     public function streamByName($name){
         $stream = $this->getStreamByName($name);
@@ -64,9 +52,21 @@ class AjaxController extends BaseController {
         }
     }
 
-    public function getGallery($game = null){
+    public function topStreamsByGame($game){
         return View::make('layouts.gallery', array(
-            "galleries"=>$this->getGalleryStreams($game)
+            "galleries"=>$this->getGameTopStreams($game)
+        ));
+    }
+
+    public function getGallery(){
+        return View::make('layouts.gallery', array(
+            "galleries"=>$this->getGalleryStreams()
+        ));
+    }
+
+    public function getFeaturedGallery($num=9){
+        return View::make('layouts.featured', array(
+            "galleries"=>$this->getFeaturedStreams($num)
         ));
     }
 

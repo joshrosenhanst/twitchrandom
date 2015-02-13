@@ -13,16 +13,19 @@
 */
 
 Route::get('/', array('uses'=>'HomeController@home'));
+Route::get('/randomgame', array('uses'=>'HomeController@randomgame'));
 Route::get('/stream/{name}', array('uses'=>'HomeController@stream'));
 
 //ajax calls
 Route::group(array('prefix' => 'ajax'), function()
 {
     Route::get('/randomStream', array('uses'=>'AjaxController@randomStream'));
-    Route::get('beta/randomStream', array('uses'=>'AjaxController@betaRandomStream'));
+    //Route::get('beta/randomStream', array('uses'=>'AjaxController@betaRandomStream'));
     Route::get('/stream/{name}', array('uses'=>'AjaxController@streamByName'));
     Route::get('/game/{game}/{limit}', array('uses'=>'AjaxController@streamsByGame'));
+    Route::get('/top/{game}', array('uses'=>'AjaxController@topStreamsByGame'));
     Route::get('/gallery', array('uses'=>'AjaxController@getGallery'));
+    Route::get('/featured/{num}', array('uses'=>'AjaxController@getFeaturedGallery'));
     Route::get('/gallery/{game}', array('uses'=>'AjaxController@getGallery'));
 
 });

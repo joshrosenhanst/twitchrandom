@@ -1,5 +1,5 @@
 @foreach ($galleries as $gallery)
-<div class="col-sm-4 col-xs-12">
+<div class="col-sm-4 col-xs-12 gallery-item">
     <div class="item">
         <a href="/stream/{{ $gallery->channel->name }}">{{ HTML::image($gallery->preview->medium, "", array("class"=>"img-thumbnail")) }}</a>
         <a class="stream-link" href="/stream/{{ $gallery->channel->name }}">

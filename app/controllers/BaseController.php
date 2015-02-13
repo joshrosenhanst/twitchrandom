@@ -17,6 +17,11 @@ class BaseController extends Controller {
 		}
 	}
 
+    public function getRandomGame(){
+        $games = array("Dota 2", "Starbound", "League of Legends", "Team Fortress 2", "Minecraft");
+        return $games[array_rand($games,1)];
+    }
+
     public function getRandomStream(){
         /*
          * getRandomStream()
@@ -27,29 +32,36 @@ class BaseController extends Controller {
         return $stream->streams[0];
     }
 
-    public function getBetaRandomStream(){
-        /*
-         * getBetaRandomStream()
-         * grab 1 random live stream -- uses twitch's beta random API.
-         */
-        $twitch = new TwitchSDK;
-        $stream = $twitch->getRandomStreams();
-        return $stream->streams[0];
-    }
-
-    public function getGalleryStreams($game = null){
+    public function getGalleryStreams(){
         /*
          * getGalleryStreams()
          * grab 3 arrays of live streams using 3 random offsets, optionally filtered by game. Merge and then shuffle the array.
          * Only used for the main page, because game pages probably wont be able to get enough live streams to match the random criteria.
+         * Maybe use the beta random for this?
         */
         $twitch = new TwitchSDK;
-        $a = $twitch->getStreams($game,3,rand(800,2000),null,true);
-        $b = $twitch->getStreams($game,3,rand(1,100),null,true);
-        $c = $twitch->getStreams($game,3,rand(101,799),null,true);
+       /* $a = $twitch->getStreams(null,3,rand(800,2000),null,true);
+        $b = $twitch->getStreams(null,3,rand(1,100),null,true);
+        $c = $twitch->getStreams(null,3,rand(101,799),null,true);
         $streams = array_merge($a->streams,$b->streams,$c->streams);
         shuffle($streams);
-        return $streams;
+        $total = $twitch->getStreams(null,1,0,null,true)->_total;
+        echo "<pre>";
+        var_dump($total);
+        echo "</pre>";*/
+        /*$total = $twitch->getStreams(null,1,0,null,true)->_total;
+        $offset = $total?(rand(0,$total/9)):0;
+        var_dump($offset);
+        $streams = $twitch->getStreams(null,9,$offset,null,true);*/
+        $streams = $twitch->getRandomStreams();
+        return array_slice($streams->streams,0,9);
+        //return $streams->streams;
+    }
+
+    public function getFeaturedStreams($num = 9){
+        $twitch = new TwitchSDK;
+        $streams = $twitch->streamsFeatured($num);
+        return $streams->featured;
     }
 
     public function getGameStreams($game=null,$limit){
@@ -60,6 +72,12 @@ class BaseController extends Controller {
         $obj = $twitch->getStreams($game,100,0,null,true);
         shuffle($obj->streams);
         return array_slice($obj->streams, 0, $limit);
+    }
+
+    public function getGameTopStreams($game){
+        $twitch = new TwitchSDK;
+        $obj = $twitch->getStreams($game,9,0,null,true);
+        return $obj->streams;
     }
 
     public function getStreamByName($name){

@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Stream Randomizer | Watch</title>
+<title>Stream Randomizer | Watch {{ $game }}</title>
 @stop
 
 @section('css')
@@ -13,7 +13,7 @@
     @include("layouts.js.loading")
     $(document).ready(function(){
         $.ajax({
-            url: "/ajax/game/{{ $game }}/1"
+            url: "/ajax/game/{{{ $game }}}/1"
         }).done(function(data){
             $("#stream-loading").hide();
             $(".jumbotron").append(data);
@@ -22,12 +22,34 @@
             $(".jumbotron>.loading>.text").addClass("error").text("Error: "+data.responseJSON.error.message);
         });
         $.ajax({
-            url: "/ajax/game/{{ $game }}/9"
+            url: "/ajax/game/{{{ $game }}}/9"
         }).done(function(data){
-            $("#gallery-loading").hide();
-            $(".gallery").append(data);
+            $("#random-game-gallery-loading").hide();
+            $("#random-game-gallery").append(data);
         }).fail(function(data){
             console.log(data);
+        });
+        $.ajax({
+            url: "/ajax/top/{{{ $game }}}"
+        }).done(function(data){
+            $("#top-game-gallery-loading").hide();
+            $("#top-game-gallery").append(data);
+        }).fail(function(data){
+            console.log(data);
+        });
+
+        $("#random-gallery-reload").click(function(e){
+            e.preventDefault();
+            $("#random-game-gallery .gallery-item").remove();
+            $("#random-game-gallery-loading").show();
+            $.ajax({
+                url: "/ajax/game/{{{ $game }}}/9"
+            }).done(function(data){
+                $("#random-game-gallery-loading").hide();
+                $("#random-game-gallery").append(data);
+            }).fail(function(data){
+                console.log(data);
+            });
         });
 
         setInterval(function(){ $(".loading:visible>.text").not(".error").setRandomText(); }, 1600);
@@ -40,7 +62,6 @@
 @include("layouts.header")
 <div class="jumbocontainer">
     <div class="container med-container stream-container">
-        <div class="ad horizontal"></div>
         <div class="jumbotron">
             <div class="loading" id="stream-loading">
                 <img src="/img/loading.gif" alt="loading">
@@ -51,46 +72,25 @@
     </div>
 </div>
 <div class="container body-container">
-    <div role ="tabpanel">
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#random/{{ $game }}" aria-controls="random_game" role="tab" data-toggle="tab">{{ $game }} Random Streams</a></li>
-            <li role="presentation"><a href="#top/{{ $game }}" aria-controls="top_game" role="tab" data-toggle="tab">{{ $game }} Top Streams</a></li>
-            <li role="presentation"><a href="#random/all" aria-controls="random_all" role="tab" data-toggle="tab">Any Random Streams</a></li>
-            <li role="presentation"><a href="#featured/all" aria-controls="featured_all" role="tab" data-toggle="tab">Any Featured Streams</a></li>
-        </ul>
+    <div class="row gallery" id="random-game-gallery">
+        <div class="gallery-title">
+            <span class="title">{{{ $game }}} | Random Streams</span>
+            <span class="btn pull-right gallery-reload" id="random-gallery-reload">
+                <span class="glyphicon glyphicon-refresh"></span>Load More
+            </span>
+        </div>
+        <div class="loading" id="random-game-gallery-loading">
+            <img src="/img/loading.gif" alt="loading">
+            <span class="text">Loading Gallery...</span>
+        </div>
     </div>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade active" id="random/{{ $game }}">
-            <div class="row gallery">
-                <div class="loading" id="random-game-gallery-loading">
-                    <img src="/img/loading.gif" alt="loading">
-                    <span class="text">Loading Gallery...</span>
-                </div>
-            </div>
+    <div class="row gallery" id="top-game-gallery">
+        <div class="gallery-title">
+            <span class="title">{{{ $game }}} | Top Streams</span>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="top/{{ $game }}">
-            <div class="row gallery">
-                <div class="loading" id="top-game-gallery-loading">
-                    <img src="/img/loading.gif" alt="loading">
-                    <span class="text">Loading Gallery...</span>
-                </div>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane fade" id="random/all">
-            <div class="row gallery">
-                <div class="loading" id="gallery-loading">
-                    <img src="/img/loading.gif" alt="loading">
-                    <span class="text">Loading Gallery...</span>
-                </div>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane fade" id="featured/all">
-            <div class="row gallery">
-                <div class="loading" id="featured-gallery-loading">
-                    <img src="/img/loading.gif" alt="loading">
-                    <span class="text">Loading Gallery...</span>
-                </div>
-            </div>
+        <div class="loading" id="top-game-gallery-loading">
+            <img src="/img/loading.gif" alt="loading">
+            <span class="text">Loading Gallery...</span>
         </div>
     </div>
 </div>

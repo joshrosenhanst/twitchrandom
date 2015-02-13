@@ -18,6 +18,11 @@ class HomeController extends BaseController {
 	public function home(){
 		return View::make('index');
 	}
+	public function randomgame(){
+		$game = $this->getRandomGame();
+
+        return Redirect::to("/game/".$game);
+	}
 
     public function stream($name){
         return View::make('stream', array(

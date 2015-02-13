@@ -15,6 +15,8 @@
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="/game/Team Fortress 2">Team Fortress 2</a></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="/game/Dota 2">Dota 2</a></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="/game/Starbound">Starbound</a></li>
+                        <li class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/randomgame">Random Game</a></li>
                     </ul>
                 </li>
             </ul>

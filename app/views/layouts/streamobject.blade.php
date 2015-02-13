@@ -11,16 +11,18 @@
 </div> --}}
 
 {{-- HTML5 iframe --}}
-<iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="728" height="450" class="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
-<h2 class="main-title">{{{ $stream->channel->status or $stream->channel->display_name }}}</h2>
-<p class="main-details">
-    <a class="display-name" href="{{{ $stream->channel->url }}}">{{ $stream->channel->display_name }}</a> playing <a href="/games/{{{ $stream->channel->game }}}">{{{ $stream->game }}}</a> <span class="viewers">{{ $stream->viewers }} Viewers</span>
-</p>
-@if($stream->channel->profile_banner)
-<script>
-    $(document).ready(function(){
-        $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
-    })
-</script>
+<div class="stream-details">
+    <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="728" height="450" class="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
+        <h2 class="main-title">{{{ $stream->channel->status or $stream->channel->display_name }}}</h2>
+        <p class="main-details">
+            <a class="display-name" href="{{{ $stream->channel->url }}}">{{ $stream->channel->display_name }}</a> playing <a href="/game/{{{ $stream->channel->game }}}">{{{ $stream->game }}}</a> <span class="viewers">{{ $stream->viewers }} Viewers</span>
+        </p>
+    @if($stream->channel->profile_banner)
+    <script>
+        $(document).ready(function(){
+            $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
+        })
+    </script>
+</div>
 @endif
 {{-- <pre>{{ var_dump($stream) }}</pre> --}}
