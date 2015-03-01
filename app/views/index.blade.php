@@ -66,25 +66,32 @@
                 <span class="text">Loading Stream...</span>
             </div>
         </div>
-        <div class="ad horizontal"></div>
     </div>
 </div>
-<div class="container body-container">
-    <div class="row gallery featured" id="gallery-featured">
-        <div class="gallery-title">
-            <span class="title">Featured Streams</span>
-        </div>
-    </div>
-    <div class="row gallery" id="gallery-all">
-        <div class="gallery-title">
-            <span class="title">Random Streams</span>
+<div class="gallery-container">
+    <div class="ad horizontal"></div>
+    <div class="row">
+        <div class="col-sm-11 with-ad">
+            <div class="row gallery featured" id="gallery-featured">
+                <div class="gallery-title">
+                    <span class="title">Featured Streams</span>
+                </div>
+            </div>
+            <div class="row gallery" id="gallery-all">
+                <div class="gallery-title">
+                    <span class="title">Random Streams</span>
             <span class="btn pull-right gallery-reload" id="gallery-reload">
                 <span class="glyphicon glyphicon-refresh"></span>Load More
             </span>
+                </div>
+                <div class="loading" id="gallery-loading">
+                    <img src="/img/loading.gif" alt="loading">
+                    <span class="text">Loading Gallery...</span>
+                </div>
+            </div>
         </div>
-        <div class="loading" id="gallery-loading">
-            <img src="/img/loading.gif" alt="loading">
-            <span class="text">Loading Gallery...</span>
+        <div class="col-sm-1">
+            <div class="ad vertical"></div>
         </div>
     </div>
 </div>

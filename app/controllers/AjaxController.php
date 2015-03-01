@@ -14,6 +14,21 @@ class AjaxController extends BaseController {
         }
     }
 
+    public function getStreamInfo($name){
+        $stream = $this->getStreamByName($name);
+        if(isset($stream->error)){
+            return View::make('layouts.error', array(
+                "name"=>$name,
+                "errorMsg"=>$stream->message,
+            ));
+        }else{
+            return View::make('layouts.streampopup', array(
+                "name"=>$name,
+                "stream"=>$stream->stream,
+            ));
+        }
+    }
+
     public function streamByName($name){
         $stream = $this->getStreamByName($name);
         if(isset($stream->error)){
