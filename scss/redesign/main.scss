@@ -1,0 +1,29 @@
+$xsmall: 480px;
+$small: 768px;
+$medium: 992px;
+$large: 1200px;
+$twitch-black:#101014;
+$twitch-purple:#6441A5;
+$twitch-purple-hover:#7550BA;
+$background:blue;
+$stream-large-height:480px;
+$stream-large-width:800px;
+$stream-small-height:380px;
+$stream-small-width:620px;
+
+body{
+  min-width:$xsmall;
+  .body-container{
+    max-width:$small;
+  }
+  .med-container{
+    max-width:$medium;
+  }
+}
+
+@import "header";
+@import "body";
+@import "xsmall";
+@import "small";
+@import "medium";
+@import "large";

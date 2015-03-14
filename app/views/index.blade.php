@@ -5,7 +5,7 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/redesign/main.min.css">
 @stop
 
 @section('js')
@@ -36,6 +36,20 @@
             console.log(data);
         });
 
+
+        $(".jumbocontainer").on("click", "#randomize-stream", function(e){
+            e.preventDefault();
+            $("#main-stream-container").remove();
+            $("#stream-loading").show();
+            $.ajax({
+                url: "/ajax/randomStream"
+            }).done(function(data){
+                $("#stream-loading").hide();
+                $(".jumbotron").append(data);
+            }).fail(function(data){
+                console.log(data);
+            });
+        });
 
         $("#gallery-reload").click(function(e){
             e.preventDefault();
@@ -71,7 +85,7 @@
 <div class="gallery-container">
     <div class="ad horizontal"></div>
     <div class="row">
-        <div class="col-sm-11 with-ad">
+        <div class="col-sm-9 with-ad">
             <div class="row gallery featured" id="gallery-featured">
                 <div class="gallery-title">
                     <span class="title">Featured Streams</span>
@@ -90,7 +104,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-3">
             <div class="ad vertical"></div>
         </div>
     </div>

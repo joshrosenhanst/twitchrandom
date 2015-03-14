@@ -1,0 +1,65 @@
+.container{
+  .jumbotron{
+    //padding:5px 30px;
+    background:transparent;
+  }
+}
+.btn-twitch{
+  background:$twitch-purple;
+  color:#fff;
+  transition:400ms all;
+  border:0;
+  &:hover,&:focus{
+    background:$twitch-purple-hover;
+    color:#fff;
+  }
+  .glyphicon{
+    margin-right:10px;
+  }
+}
+@import "stream";
+@import "gallery";
+.loading,.stream_error{
+  width:100%;
+  margin:0 auto;
+  padding:145px 0;
+  background:#ccc;
+  img{
+    display:block;
+    margin:0 auto;
+  }
+  .text{
+    color:$twitch-purple;
+    display:block;
+    font-weight:bold;
+    text-align:center;
+    &.error{
+      color: #ca3b39;
+    }
+  }
+}
+.stream_error{
+  .text{
+    color: #ca3b39;
+    font-size:1.3em
+  }
+  .btn{
+    display:block;
+    margin:0 auto;
+    width:65%;
+  }
+}
+.ad.horizontal{
+  width:728px;
+  height:90px;
+  border:1px solid #ccc;
+  margin:5px auto;
+}
+.ad.vertical{
+  height:500px;
+  width:90px;
+  border:1px solid #ccc;
+}
+.with-ad{
+  padding-left:15px;
+}

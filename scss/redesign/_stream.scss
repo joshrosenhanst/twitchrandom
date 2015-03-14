@@ -1,0 +1,109 @@
+/*STREAM CONTAINER AND STREAM OBJECT*/
+.jumbocontainer{
+  background-image:none;
+  background-repeat:no-repeat;
+  background-position:0 0;
+  background-size:100% 100%;
+  background-color:$twitch-black;
+  border-bottom: 1px solid #6441A5;
+  padding-bottom:10px;
+  padding-top:10px;
+  margin-bottom:15px;
+}
+
+.stream-container{
+  padding:0;
+}
+.jumbotron{
+  margin:0;
+  position:relative;
+  padding:30px 0;
+  /*border:1px solid #aaa;
+  background-image:none;
+  background-repeat:no-repeat;
+  background-position:0 0;
+  background-size:100% 100%;*/
+  .stream-container{
+    background-color:#000000;
+    background-repeat:no-repeat;
+  }
+  .stream-cont{
+    padding:0;
+    .main-stream{
+      width:100%;
+      margin:0 auto;
+      display:block;
+      &.transparent{
+        opacity:0.8;
+      }
+    }
+  }
+  .stream-details{
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
+  }
+  .stream-info{
+    height:$stream-small-height;
+    background:rgba(25, 25, 31, 0.7) none repeat scroll 0% 0%;
+    padding:15px;
+    position:relative;
+    .btn-twitch{
+      position:absolute;
+      bottom:15px;
+      width:70%;
+      left:15%;
+    }
+    a{
+      color:$twitch-purple;
+    }
+    .main-title{
+      //margin:10px 0 0;
+      margin:0;
+      color:#fafafa;
+      font-size:1.7em;
+    }
+    .main-description{
+
+    }
+    .streamer{
+      border-left:4px solid $twitch-purple;
+      border-right:4px solid $twitch-purple;
+      background:#eee;
+      background:rgba(238,238,238,0.8);
+      padding:4px;
+      margin:5px 0;
+      border-radius:2px;
+      .display-name{
+        font-weight:bold;
+        display:block;
+      }
+      .display-logo{
+        float:left;
+        margin-right:6px;
+        height:36px;
+        img{
+          display:block;
+          height:100%;
+        }
+      }
+      .display-playing{
+        font-size:0.8em;
+      }
+    }
+    .stream-stats{
+      //float:right;
+      font-size:14px;
+      //color:#666;
+      color:#fafafa;
+      text-align:center;
+      .viewers,.views{
+        margin-right:10px;
+      }
+      .glyphicon{
+        margin-right:2px;
+      }
+    }
+    .game{
+
+    }
+  }
+}

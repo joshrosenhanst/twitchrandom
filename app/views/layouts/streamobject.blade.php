@@ -11,21 +11,34 @@
 </div> --}}
 
 {{-- HTML5 iframe --}}
-<div class="stream-details">
-    <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="800" height="480" class="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
+<div class="row stream-details" id="main-stream-container">
+    <div class="col-md-8 stream-cont">
+        <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="620" height="380" class="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
+    </div>
+    <div class="col-md-4 stream-info">
         <h2 class="main-title">{{{ $stream->channel->status or $stream->channel->display_name }}}</h2>
-        <p class="main-details">
-            <a class="display-name" href="{{{ $stream->channel->url }}}">{{ $stream->channel->display_name }}</a> playing <a href="/game/{{{ $stream->channel->game }}}">{{{ $stream->game }}}</a> <span class="details">
-                <span class="viewers"><span class="glyphicon glyphicon-user"></span>{{ $stream->viewers }}</span>
-                <span class="views"><span class="glyphicon glyphicon-eye-open"></span>{{ $stream->channel->views }}</span>
-                <span class="followers"><span class="glyphicon glyphicon-heart"></span>{{ $stream->channel->followers }} </span></span>
-        </p>
-    @if($stream->channel->profile_banner)
-    <script>
-        $(document).ready(function(){
-            $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
-        })
-    </script>
+        <div class="streamer">
+            @if($stream->channel->logo)
+            <a class="display-logo" href="{{{ $stream->channel->url }}}"><img src="{{{ $stream->channel->logo }}}"></a>
+            @endif
+            <a class="display-name" href="{{{ $stream->channel->url }}}">{{ $stream->channel->display_name }}</a>
+            <div class="display-playing">
+                playing <a href="/game/{{{ $stream->channel->game }}}">{{{ $stream->game }}}</a>
+            </div>
+        </div>
+        <div class="stream-stats">
+            <span class="viewers"><span class="glyphicon glyphicon-user"></span>{{ $stream->viewers }}</span>
+            <span class="views"><span class="glyphicon glyphicon-eye-open"></span>{{ $stream->channel->views }}</span>
+            <span class="followers"><span class="glyphicon glyphicon-heart"></span>{{ $stream->channel->followers }} </span>
+        </div>
+        <button class="btn btn-twitch btn-lg" id="randomize-stream">Randomize Stream</button>
+        @if($stream->channel->profile_banner)
+        <script>
+            $(document).ready(function(){
+                $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
+            })
+        </script>
+        @endif
+    </div>
 </div>
-@endif
 {{-- <pre>{{ var_dump($stream) }}</pre> --}}
