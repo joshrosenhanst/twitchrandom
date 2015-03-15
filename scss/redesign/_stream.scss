@@ -32,7 +32,9 @@
     .main-stream{
       width:100%;
       margin:0 auto;
+      //display:none;
       display:block;
+      visibility:hidden;
       &.transparent{
         opacity:0.8;
       }

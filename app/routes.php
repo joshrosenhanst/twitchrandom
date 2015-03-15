@@ -13,6 +13,7 @@
 */
 
 Route::get('/', array('uses'=>'HomeController@home'));
+Route::get('/feature', array('uses'=>'HomeController@home'));
 Route::get('/randomgame', array('uses'=>'HomeController@randomgame'));
 Route::get('/stream/{name}', array('uses'=>'HomeController@stream'));
 
@@ -33,6 +34,9 @@ Route::group(array('prefix' => 'ajax'), function()
 Route::group(array('prefix' => 'game'), function()
 {
     Route::get('/', array('uses'=>'GameController@home'));
+    //Route::get('/{game}', array('uses'=>'GameController@getGame'));
+    /*Route::get('/{game}', function($game){
+        return 'The URL is: '.rawurldecode($game);
+    })->where("game", ".*");*/
     Route::get('/{game}', array('uses'=>'GameController@getGame'));
-
 });

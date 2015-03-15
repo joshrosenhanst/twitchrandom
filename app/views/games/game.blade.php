@@ -1,11 +1,11 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Stream Randomizer | Watch {{ $game }}</title>
+<title>Twitch Randomizer | {{{ $game }}}</title>
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/redesign/main.min.css">
 @stop
 
 @section('js')

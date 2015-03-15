@@ -38,6 +38,12 @@
                 $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
             })
         </script>
+        @else
+        <script>
+            $(document).ready(function(){
+                $(".jumbocontainer").css("background-image", "none");
+            })
+        </script>
         @endif
     </div>
 </div>

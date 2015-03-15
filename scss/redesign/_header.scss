@@ -13,4 +13,10 @@
 
     }
   }
+  .nav-pills>li.active>a{
+    background-color:$twitch-purple;
+    &:hover{
+      background-color:$twitch-purple-hover;
+    }
+  }
 }

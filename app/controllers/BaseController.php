@@ -17,9 +17,21 @@ class BaseController extends Controller {
 		}
 	}
 
+    public function getGameList(){
+        $games = $this->getTopGames(100);
+        $list = array();
+        foreach($games->top as $game){
+            array_push($list, $game->game->name);
+        }
+        return $list;
+    }
+
     public function getRandomGame(){
-        $games = array("Dota 2", "Starbound", "League of Legends", "Team Fortress 2", "Minecraft");
-        return $games[array_rand($games,1)];
+        //$games_list = array("Dota 2", "Starbound", "League of Legends", "Team Fortress 2", "Minecraft");
+        $games_list = Cache::remember('games_list', 5, function(){
+            return $this->getGameList();
+        });
+        return $games_list[array_rand($games_list,1)];
     }
 
     public function getRandomStream(){
@@ -92,6 +104,11 @@ class BaseController extends Controller {
     public function getChannelByName($name){
         $twitch = new TwitchSDK;
         return $twitch->channelGet($name);
+    }
+
+    public function getTopGames($limit){
+        $twitch = new TwitchSDK;
+        return $twitch->gamesTop($limit);
     }
 
 }

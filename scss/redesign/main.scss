@@ -19,6 +19,13 @@ body{
   .med-container{
     max-width:$medium;
   }
+  a{
+    color:$twitch-purple;
+    transition:400ms all;
+    &:hover,&:focus{
+      color:$twitch-purple-hover;
+    }
+  }
 }
 
 @import "header";

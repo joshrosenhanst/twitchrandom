@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Stream Randomizer</title>
+<title>Twitch Randomizer</title>
 @stop
 
 @section('css')
@@ -16,7 +16,7 @@
             url: "/ajax/randomStream"
         }).done(function(data){
             $("#stream-loading").hide();
-            $(".jumbotron").append(data);
+            $(".jumbotron").append(data).trigger("loadvideo");
         }).fail(function(data){
             console.log(data);
         });
@@ -36,6 +36,12 @@
             console.log(data);
         });
 
+        $(".jumbotron").on("loadvideo", function(){
+            //$(".main-stream").delay(6000).fadeIn(500);
+            $(".main-stream").load(function(){
+               $(this).css("visibility", "visible");
+            });
+        });
 
         $(".jumbocontainer").on("click", "#randomize-stream", function(e){
             e.preventDefault();
@@ -45,7 +51,7 @@
                 url: "/ajax/randomStream"
             }).done(function(data){
                 $("#stream-loading").hide();
-                $(".jumbotron").append(data);
+                $(".jumbotron").append(data).trigger("loadvideo");
             }).fail(function(data){
                 console.log(data);
             });
@@ -94,9 +100,9 @@
             <div class="row gallery" id="gallery-all">
                 <div class="gallery-title">
                     <span class="title">Random Streams</span>
-            <span class="btn pull-right gallery-reload" id="gallery-reload">
-                <span class="glyphicon glyphicon-refresh"></span>Load More
-            </span>
+                    <span class="btn pull-right gallery-reload" id="gallery-reload">
+                        <span class="glyphicon glyphicon-refresh"></span>Load More
+                    </span>
                 </div>
                 <div class="loading" id="gallery-loading">
                     <img src="/img/loading.gif" alt="loading">

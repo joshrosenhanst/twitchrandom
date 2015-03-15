@@ -16,17 +16,29 @@ class HomeController extends BaseController {
 	*/
 
 	public function home(){
-		return View::make('index');
+        $games_list = Cache::remember('games_list', 5, function(){
+            return $this->getGameList();
+        });
+		return View::make('index', array(
+            "games_list"=>$games_list
+        ));
 	}
 	public function randomgame(){
 		$game = $this->getRandomGame();
 
-        return Redirect::to("/game/".$game);
+        /*echo "<pre>";
+        var_dump($this->getTopGames(9));
+        echo "</pre>";*/
+        return Redirect::to("/game/".urlencode($game));
 	}
 
     public function stream($name){
+        $games_list = Cache::remember('games_list', 5, function(){
+            return $this->getGameList();
+        });
         return View::make('stream', array(
-            "name"=>$name
+            "name"=>$name,
+            "games_list"=>$games_list
         ));
     }
 
