@@ -15,6 +15,7 @@ class AjaxController extends BaseController {
     }
 
     public function getStreamInfo($name){
+        $name = rawurldecode($name);
         $stream = $this->getStreamByName($name);
         if(isset($stream->error)){
             return View::make('layouts.error', array(
@@ -30,6 +31,7 @@ class AjaxController extends BaseController {
     }
 
     public function streamByName($name){
+        $name = rawurldecode($name);
         $stream = $this->getStreamByName($name);
         if(isset($stream->error)){
             return View::make('layouts.error', array(
@@ -45,6 +47,7 @@ class AjaxController extends BaseController {
     }
     public function streamsByGame($game,$limit){
         //$stream = $this->getRandomStream($game);
+        $game = rawurldecode($game);
         $stream = $this->getGameStreams($game,$limit);
         if(isset($stream->error)){
             return View::make('layouts.error', array(
@@ -68,6 +71,7 @@ class AjaxController extends BaseController {
     }
 
     public function topStreamsByGame($game){
+        $game = rawurldecode($game);
         return View::make('layouts.gallery', array(
             "galleries"=>$this->getGameTopStreams($game)
         ));

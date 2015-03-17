@@ -23,7 +23,7 @@
             @endif
             <a class="display-name" href="{{{ $stream->channel->url }}}">{{ $stream->channel->display_name }}</a>
             <div class="display-playing">
-                playing <a href="/game/{{{ $stream->channel->game }}}">{{{ $stream->game }}}</a>
+                playing <a href="/game/{{{ rawurlencode($stream->channel->game) }}}">{{{ $stream->game }}}</a>
             </div>
         </div>
         <div class="stream-stats">

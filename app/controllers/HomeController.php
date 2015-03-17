@@ -33,6 +33,7 @@ class HomeController extends BaseController {
 	}
 
     public function stream($name){
+        $name = rawurldecode($name);
         $games_list = Cache::remember('games_list', 5, function(){
             return $this->getGameList();
         });

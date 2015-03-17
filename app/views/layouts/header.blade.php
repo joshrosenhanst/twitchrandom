@@ -16,7 +16,7 @@
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="/game/Dota 2">Dota 2</a></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="/game/Starbound">Starbound</a></li>--}}
                         @for($i=0;$i<90;$i++)
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/game/{{{ urlencode($games_list[$i]) }}}">{{{ $games_list[$i] }}}</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/game/{{{ rawurlencode($games_list[$i]) }}}">{{{ $games_list[$i] }}}</a></li>
                         @endfor
                         <li class="divider"></li>
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="/randomgame">Random Game</a></li>

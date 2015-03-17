@@ -10,7 +10,7 @@ class GameController extends BaseController {
         $games_list = Cache::remember('games_list', 5, function(){
             return $this->getGameList();
         });
-        $game = urldecode($game);
+        $game = rawurldecode($game);
         return View::make('games.game', array(
             "game"=>$game,
             "games_list"=>$games_list

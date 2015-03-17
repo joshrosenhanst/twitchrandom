@@ -13,16 +13,16 @@
     @include("layouts.js.loading")
     $(document).ready(function(){
         $.ajax({
-            url: "/ajax/game/{{{ $game }}}/1"
+            url: "/ajax/game/{{{ rawurlencode($game) }}}/1"
         }).done(function(data){
             $("#stream-loading").hide();
-            $(".jumbotron").append(data);
+            $(".jumbotron").append(data).trigger("loadvideo");
         }).fail(function(data){
             console.log(data);
             $(".jumbotron>.loading>.text").addClass("error").text("Error: "+data.responseJSON.error.message);
         });
         $.ajax({
-            url: "/ajax/game/{{{ $game }}}/9"
+            url: "/ajax/game/{{{ rawurlencode($game) }}}/9"
         }).done(function(data){
             $("#random-game-gallery-loading").hide();
             $("#random-game-gallery").append(data);
@@ -30,7 +30,7 @@
             console.log(data);
         });
         $.ajax({
-            url: "/ajax/top/{{{ $game }}}"
+            url: "/ajax/top/{{{ rawurlencode($game) }}}"
         }).done(function(data){
             $("#top-game-gallery-loading").hide();
             $("#top-game-gallery").append(data);
@@ -38,12 +38,18 @@
             console.log(data);
         });
 
+        $(".jumbotron").on("loadvideo", function(){
+            $(".main-stream").load(function(){
+                $(this).css("visibility", "visible");
+            });
+        });
+
         $("#random-gallery-reload").click(function(e){
             e.preventDefault();
             $("#random-game-gallery .gallery-item").remove();
             $("#random-game-gallery-loading").show();
             $.ajax({
-                url: "/ajax/game/{{{ $game }}}/9"
+                url: "/ajax/game/{{{ rawurlencode($game) }}}/9"
             }).done(function(data){
                 $("#random-game-gallery-loading").hide();
                 $("#random-game-gallery").append(data);
