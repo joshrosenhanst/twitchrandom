@@ -19,6 +19,10 @@ body{
   .med-container{
     max-width:$medium;
   }
+  .lg-container{
+    max-width:$large;
+    margin:0 auto;
+  }
   a{
     color:$twitch-purple;
     transition:400ms all;
@@ -30,6 +34,7 @@ body{
 
 @import "header";
 @import "body";
+@import "footer";
 @import "xsmall";
 @import "small";
 @import "medium";

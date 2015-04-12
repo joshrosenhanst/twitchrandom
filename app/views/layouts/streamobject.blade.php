@@ -16,22 +16,33 @@
         <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="620" height="380" class="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
     </div>
     <div class="col-md-4 stream-info">
-        <h2 class="main-title">{{{ $stream->channel->status or $stream->channel->display_name }}}</h2>
-        <div class="streamer">
-            @if($stream->channel->logo)
-            <a class="display-logo" href="{{{ $stream->channel->url }}}"><img src="{{{ $stream->channel->logo }}}"></a>
-            @endif
-            <a class="display-name" href="{{{ $stream->channel->url }}}">{{ $stream->channel->display_name }}</a>
-            <div class="display-playing">
-                playing <a href="/game/{{{ rawurlencode($stream->channel->game) }}}">{{{ $stream->game }}}</a>
+        <div class="stream-details-container">
+            <h2 class="main-title">{{{ $stream->channel->status or $stream->channel->display_name }}}</h2>
+            <div class="streamer">
+                @if($stream->channel->logo)
+                <a class="display-logo" href="/stream/{{{ $stream->channel->name }}}"><img src="{{{ $stream->channel->logo }}}"></a>
+                @endif
+                <div class="display-links">
+                    <a class="display-name" href="/stream/{{{ $stream->channel->name }}}">{{{ $stream->channel->display_name }}}</a>
+                </div>
+                <div class="display-playing">
+                    playing <a href="/game/{{{ rawurlencode($stream->channel->game) }}}">{{{ $stream->game }}}</a>
+                </div>
+            </div>
+            <div class="stream-stats">
+                <span class="viewers" title="Current Viewers"><span class="glyphicon glyphicon-user"></span>{{ $stream->viewers }}</span>
+                <span class="views" title="Total Views"><span class="glyphicon glyphicon-eye-open"></span>{{ $stream->channel->views }}</span>
+                <span class="followers" title="Followers"><span class="glyphicon glyphicon-heart"></span>{{ $stream->channel->followers }} </span>
+            </div>
+            <div class="stream-link">
+                <a title="{{{ $stream->channel->display_name }}} Twitch Channel" href="{{{ $stream->channel->url }}}" target="_blank"><span class="glyphicon glyphicon-link"></span> Twitch Channel</a>
             </div>
         </div>
-        <div class="stream-stats">
-            <span class="viewers"><span class="glyphicon glyphicon-user"></span>{{ $stream->viewers }}</span>
-            <span class="views"><span class="glyphicon glyphicon-eye-open"></span>{{ $stream->channel->views }}</span>
-            <span class="followers"><span class="glyphicon glyphicon-heart"></span>{{ $stream->channel->followers }} </span>
-        </div>
-        <button class="btn btn-twitch btn-lg" id="randomize-stream">Randomize Stream</button>
+        @if(isset($game))
+        <a href="/randomstream" title="Go To a Random {{{$game}}} Stream" class="btn btn-twitch" id="randomize-stream">Random {{{$game}}} Stream</a>
+        @else
+        <a href="/randomstream" title="Go To a Random Stream" class="btn btn-twitch btn-lg" id="randomize-stream">Random Stream</a>
+        @endif
         @if($stream->channel->profile_banner)
         <script>
             $(document).ready(function(){

@@ -21,7 +21,11 @@ class BaseController extends Controller {
         $games = $this->getTopGames(100);
         $list = array();
         foreach($games->top as $game){
-            array_push($list, $game->game->name);
+            //array_push($list, $game->game->name);
+            $list[] = array(
+                "name"=>$game->game->name,
+                "img"=>$game->game->logo->small
+            );
         }
         return $list;
     }
@@ -31,7 +35,11 @@ class BaseController extends Controller {
         $games_list = Cache::remember('games_list', 5, function(){
             return $this->getGameList();
         });
-        return $games_list[array_rand($games_list,1)];
+        return $games_list[array_rand($games_list,1)]["name"];
+    }
+
+    public function getRandomStreamLink(){
+        return $this->getRandomStream()->channel->name;
     }
 
     public function getRandomStream(){
@@ -66,7 +74,7 @@ class BaseController extends Controller {
         var_dump($offset);
         $streams = $twitch->getStreams(null,9,$offset,null,true);*/
         $streams = $twitch->getRandomStreams();
-        return array_slice($streams->streams,0,9);
+        return array_slice($streams->streams,0,11);
         //return $streams->streams;
     }
 
@@ -80,6 +88,7 @@ class BaseController extends Controller {
         /*
          * To be used for game page. Grab 100 of the first page of streams for a specific game. Then randomly sort that array and use the 1st (or first 9 for gallery page)
          */
+        $game = rawurldecode($game);
         $twitch = new TwitchSDK;
         $obj = $twitch->getStreams($game,100,0,null,true);
         shuffle($obj->streams);
@@ -87,21 +96,25 @@ class BaseController extends Controller {
     }
 
     public function getGameTopStreams($game){
+        $game = rawurldecode($game);
         $twitch = new TwitchSDK;
         $obj = $twitch->getStreams($game,9,0,null,true);
         return $obj->streams;
     }
 
     public function getStreamByName($name){
+        $name = rawurldecode($name);
         $twitch = new TwitchSDK;
         return $twitch->streamGet($name);
     }
     public function getUserByName($name){
+        $name = rawurldecode($name);
         $twitch = new TwitchSDK;
         return $twitch->userGet($name);
     }
 
     public function getChannelByName($name){
+        $name = rawurldecode($name);
         $twitch = new TwitchSDK;
         return $twitch->channelGet($name);
     }

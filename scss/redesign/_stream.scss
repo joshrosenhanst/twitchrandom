@@ -40,6 +40,9 @@
       }
     }
   }
+  .stream-details-container{
+    height:90%;
+  }
   .stream-details{
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
   }
@@ -49,10 +52,15 @@
     padding:15px;
     position:relative;
     .btn-twitch{
-      position:absolute;
-      bottom:15px;
-      width:70%;
-      left:15%;
+      //position:absolute;
+      //bottom:15px;
+      //width:70%;
+      //left:15%;
+      color:white;
+      white-space:normal;
+      margin:0 auto;
+      display:block;
+      width:80%;
     }
     a{
       color:$twitch-purple;
@@ -74,21 +82,23 @@
       padding:4px;
       margin:5px 0;
       border-radius:2px;
-      .display-name{
-        font-weight:bold;
-        display:block;
+      overflow:hidden;
+      .display-links{
+        .display-name{
+          font-weight:bold;
+          font-size:1.1em;
+        }
       }
       .display-logo{
         float:left;
         margin-right:6px;
-        height:36px;
+        height:50px;
         img{
           display:block;
           height:100%;
         }
       }
       .display-playing{
-        font-size:0.8em;
       }
     }
     .stream-stats{
@@ -103,6 +113,16 @@
       .glyphicon{
         margin-right:2px;
       }
+    }
+    .stream-link{
+      margin:10px auto;
+      display:block;
+      width:70%;
+      background:rgba(238,238,238,0.8);
+      border-left:2px solid $twitch-purple;
+      border-right:2px solid $twitch-purple;
+      text-align:center;
+      font-size:0.9em;
     }
     .game{
 

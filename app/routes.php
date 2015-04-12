@@ -14,6 +14,7 @@
 
 Route::get('/', array('uses'=>'HomeController@home'));
 Route::get('/feature', array('uses'=>'HomeController@home'));
+Route::get('/randomstream', array('uses'=>'HomeController@randomstream'));
 Route::get('/randomgame', array('uses'=>'HomeController@randomgame'));
 Route::get('/stream/{name}', array('uses'=>'HomeController@stream'));
 

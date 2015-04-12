@@ -1,3 +1,3 @@
 <footer class="footer container body-container">
-    <p>© Company 2014</p>
+    <p>© <a href="http://spoonco.de">SpoonCo</a>. All Rights Reserved. All Twitch materials belong to Twitch.</p>
 </footer>

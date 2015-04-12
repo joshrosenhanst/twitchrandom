@@ -29,7 +29,11 @@ class HomeController extends BaseController {
         /*echo "<pre>";
         var_dump($this->getTopGames(9));
         echo "</pre>";*/
-        return Redirect::to("/game/".urlencode($game));
+        return Redirect::to("/game/".rawurlencode($game));
+	}
+	public function randomstream(){
+		$stream = $this->getRandomStreamLink();
+        return Redirect::to("/stream/".rawurlencode($stream));
 	}
 
     public function stream($name){

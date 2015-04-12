@@ -64,7 +64,8 @@ class AjaxController extends BaseController {
             }else{
                 //galleries
                 return View::make('layouts.gallery', array(
-                    "galleries"=>$stream
+                    "galleries"=>$stream,
+                    "button"=>true
                 ));
             }
         }
@@ -73,19 +74,22 @@ class AjaxController extends BaseController {
     public function topStreamsByGame($game){
         $game = rawurldecode($game);
         return View::make('layouts.gallery', array(
-            "galleries"=>$this->getGameTopStreams($game)
+            "galleries"=>$this->getGameTopStreams($game),
+            "button"=>false
         ));
     }
 
     public function getGallery(){
         return View::make('layouts.gallery', array(
-            "galleries"=>$this->getGalleryStreams()
+            "galleries"=>$this->getGalleryStreams(),
+            "button"=>true
         ));
     }
 
     public function getFeaturedGallery($num=9){
         return View::make('layouts.featured', array(
-            "galleries"=>$this->getFeaturedStreams($num)
+            "galleries"=>$this->getFeaturedStreams($num),
+            "button"=>false
         ));
     }
 

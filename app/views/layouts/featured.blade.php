@@ -1,3 +1,4 @@
+<div class="row">
 @foreach ($galleries as $gallery)
 <div class="gallery-item">
     <div class="item">
@@ -12,4 +13,5 @@
     </div>
 </div>
 @endforeach
+</div>
 {{-- <pre>{{ var_dump($galleries) }}</pre> --}}
