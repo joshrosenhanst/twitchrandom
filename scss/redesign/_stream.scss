@@ -41,7 +41,7 @@
     }
   }
   .stream-details-container{
-    height:90%;
+    height:85%;
   }
   .stream-details{
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
@@ -79,10 +79,16 @@
       border-right:4px solid $twitch-purple;
       background:#eee;
       background:rgba(238,238,238,0.8);
-      padding:4px;
+      padding:5px;
       margin:5px 0;
       border-radius:2px;
       overflow:hidden;
+      .col-sm-2{
+        padding:0;
+      }
+      .col-sm-10{
+        padding-left: 5px;
+      }
       .display-links{
         .display-name{
           font-weight:bold;
@@ -90,15 +96,23 @@
         }
       }
       .display-logo{
-        float:left;
-        margin-right:6px;
-        height:50px;
+        //height:50px;
+        width:100%;
+        display:block;
         img{
           display:block;
-          height:100%;
+          width:100%;
         }
       }
       .display-playing{
+        p{
+          margin:0;
+          font-size:1em;
+          font-weight:400;
+        }
+        .stream-link{
+          font-size:0.8em;
+        }
       }
     }
     .stream-stats{
@@ -113,16 +127,6 @@
       .glyphicon{
         margin-right:2px;
       }
-    }
-    .stream-link{
-      margin:10px auto;
-      display:block;
-      width:70%;
-      background:rgba(238,238,238,0.8);
-      border-left:2px solid $twitch-purple;
-      border-right:2px solid $twitch-purple;
-      text-align:center;
-      font-size:0.9em;
     }
     .game{
 

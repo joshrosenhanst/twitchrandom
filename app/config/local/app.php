@@ -15,5 +15,6 @@ return array(
 
 	'debug' => true,
     'url' => 'http://randomizer.dev',
+    'showStream'=>false
 
 );

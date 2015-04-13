@@ -9,7 +9,6 @@
 @stop
 
 @section('js')
-<script src="/js/nicescroll.min.js"></script>
 <script>
     @include("layouts.js.loading")function loadGallery(galleryURL, galleryID){
         $.ajax({
@@ -30,11 +29,39 @@
 
     $(document).ready(function(){
         $("html").niceScroll({cursorcolor:"#6441A5"});
+        var manStateChange = true;
+        var firstStream = "";
+        History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+            var State = History.getState(); // Note: We are using History.getState() instead of event.state
+            if(manStateChange == true){
+                //loadStream(State.title);
+                console.log("back press "+State.title+" "+firstStream);
+                if(State.title){
+                    var ajaxurl = "/ajax/stream/"+State.title;
+                }else{
+                    var ajaxurl = "/ajax/stream/"+firstStream;
+                }
+                $("#main-stream-container").remove();
+                $("#stream-loading").show();
+                $.ajax({
+                    url: ajaxurl
+                }).done(function(data){
+                    $("#stream-loading").hide();
+                    $(".jumbotron").append(data).trigger("loadvideo");
+                    //var historyurl = $("#main-stream-container .display-name").attr("href");
+                }).fail(function(data){
+                    console.log(data);
+                });
+            }
+            manStateChange = true;
+        });
+
         $.ajax({
             url: "/ajax/stream/{{{ rawurlencode($name) }}}"
         }).done(function(data){
             $("#stream-loading").hide();
             $(".jumbotron").append(data).trigger("loadvideo");
+            firstStream = $("#main-stream-container .display-name").data("streamlink");
         }).fail(function(data){
             console.log(data);
             $(".jumbotron>.loading>.text").addClass("error").text("Error: "+data.responseJSON.error.message);
@@ -63,7 +90,7 @@
             }
         });
 
-        /*$(".jumbocontainer").on("click", "#randomize-stream", function(e){
+        $(".jumbocontainer").on("click", "#randomize-stream", function(e){
             e.preventDefault();
             $("#main-stream-container").remove();
             $("#stream-loading").show();
@@ -72,10 +99,13 @@
             }).done(function(data){
                 $("#stream-loading").hide();
                 $(".jumbotron").append(data).trigger("loadvideo");
+                var historyurl = $("#main-stream-container .display-name").data("streamlink");
+                manStateChange = false;
+                History.pushState({state:"/stream/"+historyurl},historyurl,"/stream/"+historyurl);
             }).fail(function(data){
                 console.log(data);
             });
-        });*/
+        });
 
         setInterval(function(){ $(".loading:visible>.text").setRandomText(); }, 1600);
     });

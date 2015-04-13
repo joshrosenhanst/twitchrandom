@@ -9,7 +9,6 @@
 @stop
 
 @section('js')
-<script src="/js/nicescroll.min.js"></script>
 <script>
     @include("layouts.js.loading")
 

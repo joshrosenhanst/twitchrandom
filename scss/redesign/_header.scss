@@ -1,16 +1,16 @@
 .header{
-  margin:10px 0 0 0;
+  margin:10px 0 10px 0;
   .logo-title{
     color:#777;
-    padding-bottom: 15px;
+    display:block;
     margin-top: 0px;
     margin-bottom: 0px;
     text-decoration:none;
-    display:inline-block;
     font-weight:500;
     font-size:24px;
-    :hover{
-
+    line-height:40px;
+    &:hover{
+      color:$twitch-purple;
     }
   }
   .nav-pills>li.active>a{
