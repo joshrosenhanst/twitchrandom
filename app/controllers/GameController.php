@@ -3,7 +3,12 @@
 class GameController extends BaseController {
 
     public function home(){
-        return View::make('games.home');
+        $games_list = Cache::remember('games_list', 5, function(){
+            return $this->getGameList();
+        });
+        return View::make('games.home', array(
+            "games_list"=>$games_list
+        ));
     }
 
     public function getGame($game){

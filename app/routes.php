@@ -24,6 +24,8 @@ Route::group(array('prefix' => 'ajax'), function()
     Route::get('/randomStream', array('uses'=>'AjaxController@randomStream'));
     //Route::get('beta/randomStream', array('uses'=>'AjaxController@betaRandomStream'));
     Route::get('/stream/{name}', array('uses'=>'AjaxController@streamByName'));
+    Route::get('/search/{search}', array('uses'=>'AjaxController@searchGames'));
+    Route::get('/games/{limit}/{offset}', array('uses'=>'AjaxController@getAllGames'));
     Route::get('/game/{game}/{limit}', array('uses'=>'AjaxController@streamsByGame'));
     Route::get('/top/{game}', array('uses'=>'AjaxController@topStreamsByGame'));
     Route::get('/gallery', array('uses'=>'AjaxController@getGallery'));
@@ -32,7 +34,7 @@ Route::group(array('prefix' => 'ajax'), function()
 
 });
 //individual game pages
-Route::group(array('prefix' => 'game'), function()
+Route::group(array('prefix' => 'games'), function()
 {
     Route::get('/', array('uses'=>'GameController@home'));
     //Route::get('/{game}', array('uses'=>'GameController@getGame'));

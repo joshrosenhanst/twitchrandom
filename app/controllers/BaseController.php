@@ -119,9 +119,14 @@ class BaseController extends Controller {
         return $twitch->channelGet($name);
     }
 
-    public function getTopGames($limit){
+    public function getTopGames($limit, $offset=0){
         $twitch = new TwitchSDK;
-        return $twitch->gamesTop($limit);
+        return $twitch->gamesTop($limit,$offset);
+    }
+
+    public function getGamesBySearch($search,$live = false){
+        $twitch = new TwitchSDK;
+        return $twitch->gamesSearch($search,$live);
     }
 
 }

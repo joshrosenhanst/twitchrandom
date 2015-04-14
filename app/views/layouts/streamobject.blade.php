@@ -42,7 +42,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                         <a class="display-name" href="/stream/{{{ $stream->channel->name }}}" data-streamlink="{{{ $stream->channel->name }}}">{{{ $stream->channel->display_name }}}</a>
                     </div>
                     <div class="display-playing">
-                        <p>playing <a href="/game/{{{ rawurlencode($stream->channel->game) }}}">{{{ $stream->game }}}</a></p>
+                        <p>playing <a href="/games/{{{ rawurlencode($stream->channel->game) }}}">{{{ $stream->game }}}</a></p>
                         <p><a class="stream-link" title="{{{ $stream->channel->display_name }}} Twitch Channel" href="{{{ $stream->channel->url }}}" target="_blank"><span class="glyphicon glyphicon-link"></span> Twitch Channel</a></p>
                     </div>
                 </div>

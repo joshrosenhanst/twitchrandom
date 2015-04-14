@@ -2,7 +2,7 @@
   margin:10px 0 10px 0;
   .logo-title{
     color:#777;
-    display:block;
+    display:inline-block;
     margin-top: 0px;
     margin-bottom: 0px;
     text-decoration:none;
@@ -11,6 +11,13 @@
     line-height:40px;
     &:hover{
       color:$twitch-purple;
+    }
+  }
+  .nav-pills{
+    li.all_games{
+      text_align:center;
+      font-size:1.1em;
+      font-weight:bold;
     }
   }
   .nav-pills>li.active>a{

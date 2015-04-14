@@ -93,4 +93,19 @@ class AjaxController extends BaseController {
         ));
     }
 
+    public function getAllGames($limit, $offset=0){
+        return View::make('layouts.allgames', array(
+            "games"=>$this->getTopGames($limit,$offset)
+        ));
+    }
+
+    public function searchGames($search){
+        $games = $this->getGamesBySearch($search, true);
+        $array = array();
+        foreach($games->games as $game){
+            $array[$game->name] = "/games/".rawurlencode($game->name);
+        }
+        return Response::json($array);
+    }
+
 }
