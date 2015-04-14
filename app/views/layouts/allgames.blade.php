@@ -1,6 +1,6 @@
 {{-- All Games --}}
 @foreach($games->top as $game)
-<div class="col-sm-2 game">
+<div class="col-sm-2 col-xs-4 game">
     <a href="/games/{{{ rawurlencode($game->game->name) }}}" title="{{{ $game->game->name }}}">
         <img src="{{{ $game->game->box->large }}}">
         <span class="title">{{{ $game->game->name }}}</span>
