@@ -16,7 +16,6 @@ Route::get('/', array('uses'=>'HomeController@home'));
 Route::get('/feature', array('uses'=>'HomeController@home'));
 Route::get('/randomstream', array('uses'=>'HomeController@randomstream'));
 Route::get('/randomgame', array('uses'=>'HomeController@randomgame'));
-Route::get('/stream/{name}', array('uses'=>'HomeController@stream'));
 
 //ajax calls
 Route::group(array('prefix' => 'ajax'), function()
@@ -33,13 +32,17 @@ Route::group(array('prefix' => 'ajax'), function()
     Route::get('/gallery/{game}', array('uses'=>'AjaxController@getGallery'));
 
 });
+
+//individual channel pages
+Route::group(array('prefix' => 'stream'), function(){
+    Route::get('/', array(function(){
+        return Redirect::to("/");
+    }));
+    Route::get('/{name}', array('uses'=>'HomeController@stream'));
+});
+
 //individual game pages
-Route::group(array('prefix' => 'games'), function()
-{
+Route::group(array('prefix' => 'games'), function(){
     Route::get('/', array('uses'=>'GameController@home'));
-    //Route::get('/{game}', array('uses'=>'GameController@getGame'));
-    /*Route::get('/{game}', function($game){
-        return 'The URL is: '.rawurldecode($game);
-    })->where("game", ".*");*/
     Route::get('/{game}', array('uses'=>'GameController@getGame'));
 });
