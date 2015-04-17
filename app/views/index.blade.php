@@ -36,7 +36,6 @@
             var State = History.getState(); // Note: We are using History.getState() instead of event.state
             if(manStateChange == true){
                 //loadStream(State.title);
-                console.log("back press "+State.title+" "+firstStream);
                 if(State.title){
                     var ajaxurl = "/ajax/stream/"+State.title;
                 }else{
@@ -71,9 +70,10 @@
         loadGallery("/ajax/featured/3", "#gallery-featured");
 
         $(".jumbotron").on("loadvideo", function(){
-            $(".main-stream").load(function(){
-               $(this).css("visibility", "visible");
-            });
+            //console.log("trigger");
+            //$(".main-stream").load(function(){
+               $(".main-stream").css("visibility", "visible");
+            //});
         });
 
         $(".gallery-control-left").click(function(){

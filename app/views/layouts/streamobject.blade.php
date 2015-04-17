@@ -1,16 +1,3 @@
-{{-- FLASH OBJECT --}}
-{{-- <div class="stream-container">
-    <object class="main-stream" type="application/x-shockwave-flash" height="360" width="640" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $name }}" bgcolor="#fafafa">
-        <param name="allowFullScreen" value="true" />
-        <param name="allowScriptAccess" value="always" />
-        <param name="allowNetworking" value="all" />
-        <param name="width" value="640" />
-        <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-        <param name="flashvars" value="hostname=www.twitch.tv&channel={{ $name }}&auto_play=false&start_volume=25" />
-    </object>
-</div> --}}
-
-{{-- HTML5 iframe --}}
 <?php
 if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
     $streamname = mb_substr($stream->channel->status,0,70) . "...";
@@ -20,8 +7,19 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
 ?>
 <div class="row stream-details" id="main-stream-container">
     <div class="col-md-8 stream-cont">
-        @if(Config::get('app.showStream'))
+        @if(Config::get('app.showStream'))  {{-- Don't embed stream for dev pages --}}
+        {{-- Uncomment to use IFrame
         <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="620" height="380" class="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
+        --}}
+
+        {{--Flash Object--}}
+        <object class="main-stream" type="application/x-shockwave-flash" height="380" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $stream->channel->name }}" bgcolor="#fafafa">
+            <param name="allowFullScreen" value="true" />
+            <param name="allowScriptAccess" value="always" />
+            <param name="allowNetworking" value="all" />
+            <param name="width" value="620" />
+            <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
+        </object>
         @endif
     </div>
     <div class="col-md-4 stream-info">

@@ -5,7 +5,7 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/redesign/main.min.css">
+<link rel="stylesheet" href="/css/redesign/main.min.css?1">
 @stop
 
 @section('js')
