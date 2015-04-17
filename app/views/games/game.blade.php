@@ -44,9 +44,10 @@
         loadGallery("/ajax/top/{{{ rawurlencode($game) }}}", "#top-game-gallery");
 
         $(".jumbotron").on("loadvideo", function(){
-            $(".main-stream").load(function(){
-                $(this).css("visibility", "visible");
-            });
+            $(".main-stream").css("visibility", "visible");
+            //console.log("trigger");
+            //$(".main-stream").load(function(){
+            //});
         });
 
         $(".gallery-control-left").click(function(){

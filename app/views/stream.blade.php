@@ -70,9 +70,10 @@
         loadGallery("/ajax/featured/3", "#gallery-featured");
 
         $(".jumbotron").on("loadvideo", function(){
-            $(".main-stream").load(function(){
-                $(this).css("visibility", "visible");
-            });
+            $(".main-stream").css("visibility", "visible");
+            //console.log("trigger");
+            //$(".main-stream").load(function(){
+            //});
         });
 
         $(".gallery-control-left").click(function(){
