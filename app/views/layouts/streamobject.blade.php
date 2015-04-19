@@ -5,15 +5,17 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
     $streamname = isset($stream->channel->status)?$stream->channel->status:$stream->channel->display_name;
 }
 ?>
+
 <div class="row stream-details" id="main-stream-container">
     <div class="col-md-8 stream-cont">
+        <div id="main-stream" class="main-stream"></div>
         @if(Config::get('app.showStream'))  {{-- Don't embed stream for dev pages --}}
         {{-- Uncomment to use IFrame
-        <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="620" height="380" class="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
+        <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="620" height="380" class="main-stream" id="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
         --}}
 
         {{--Flash Object--}}
-        <object class="main-stream" type="application/x-shockwave-flash" height="380" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $stream->channel->name }}" bgcolor="#fafafa">
+        <object id="main-stream" class="main-stream" type="application/x-shockwave-flash" height="380" width="620" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $stream->channel->name }}" bgcolor="#fafafa">
             <param name="allowFullScreen" value="true" />
             <param name="allowScriptAccess" value="always" />
             <param name="allowNetworking" value="all" />
@@ -21,6 +23,10 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
             <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
         </object>
         @endif
+        <div class="loading" id="inside-stream-loading">
+            <img src="/img/loading.gif" alt="loading">
+            <span class="text">Loading Stream...</span>
+        </div>
     </div>
     <div class="col-md-4 stream-info">
         <div class="stream-details-container">
@@ -45,7 +51,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                     </div>
                 </div>
             </div>
-            <div class="stream-stats col-sm-9">
+            <div class="stream-stats col-sm-12">
                 <span class="viewers" title="Current Viewers"><span class="glyphicon glyphicon-user"></span>{{ $stream->viewers }}</span>
                 <span class="views" title="Total Views"><span class="glyphicon glyphicon-eye-open"></span>{{ $stream->channel->views }}</span>
                 <span class="followers" title="Followers"><span class="glyphicon glyphicon-heart"></span>{{ $stream->channel->followers }} </span>
@@ -59,14 +65,33 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
         @if($stream->channel->profile_banner)
         <script>
             $(document).ready(function(){
+                swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "main-stream", "620", "380", "11", null,
+                    { "eventsCallback":"onPlayerEvent",
+                        "embed":1,
+                        "channel":"{{ $stream->channel->name }}",
+                        "auto_play":"true"},
+                    { "allowScriptAccess":"always",
+                        "allowFullScreen":"true"
+                    });
+                $("#main-stream").addClass("outside");
                 $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
-            })
+            });
         </script>
         @else
         <script>
             $(document).ready(function(){
+
+                swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "main-stream", "620", "380", "11", null,
+                    { "eventsCallback":"onPlayerEvent",
+                        "embed":1,
+                        "channel":"{{ $stream->channel->name }}",
+                        "auto_play":"true"},
+                    { "allowScriptAccess":"always",
+                        "allowFullScreen":"true"
+                    });
+                $("#main-stream").addClass("outside");
                 $(".jumbocontainer").css("background-image", "none");
-            })
+            });
         </script>
         @endif
     </div>

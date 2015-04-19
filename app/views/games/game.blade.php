@@ -34,20 +34,26 @@
         $.ajax({
             url: "/ajax/game/{{{ rawurlencode($game) }}}/1"
         }).done(function(data){
-            $("#stream-loading").hide();
-            $(".jumbotron").append(data).trigger("loadvideo");
+            $(".jumbotron").append(data);
         }).fail(function(data){
             console.log(data);
             $(".jumbotron>.loading>.text").addClass("error").text("Error: "+data.responseJSON.error.message);
         });
+
+        window.onPlayerEvent = function (data) {
+            data.forEach(function(event) {
+                if (event.event == "videoPlaying") {
+                    $(".jumbocontainer").trigger("loadvideo");
+                }
+            });
+        };
+
         loadGallery("/ajax/game/{{{ rawurlencode($game) }}}/9", "#random-game-gallery");
         loadGallery("/ajax/top/{{{ rawurlencode($game) }}}", "#top-game-gallery");
 
-        $(".jumbotron").on("loadvideo", function(){
-            $(".main-stream").css("visibility", "visible");
-            //console.log("trigger");
-            //$(".main-stream").load(function(){
-            //});
+        $(".jumbocontainer").on("loadvideo", function(){
+            $("#main-stream").removeClass("outside");
+            $("#inside-stream-loading").hide();
         });
 
         $(".gallery-control-left").click(function(){
@@ -68,12 +74,10 @@
         $(".jumbocontainer").on("click", "#randomize-stream", function(e){
             e.preventDefault();
             $("#main-stream-container").remove();
-            $("#stream-loading").show();
             $.ajax({
                 url: "/ajax/game/{{{ rawurlencode($game) }}}/1"
             }).done(function(data){
-                $("#stream-loading").hide();
-                $(".jumbotron").append(data).trigger("loadvideo");
+                $(".jumbotron").append(data);
             }).fail(function(data){
                 console.log(data);
             });
@@ -90,10 +94,7 @@
 <div class="jumbocontainer">
     <div class="container med-container stream-container">
         <div class="jumbotron">
-            <div class="loading" id="stream-loading">
-                <img src="/img/loading.gif" alt="loading">
-                <span class="text">Loading Stream...</span>
-            </div>
+
         </div>
     </div>
 </div>

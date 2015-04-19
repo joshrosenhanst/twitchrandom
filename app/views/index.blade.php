@@ -42,12 +42,10 @@
                     var ajaxurl = "/ajax/stream/"+firstStream;
                 }
                 $("#main-stream-container").remove();
-                $("#stream-loading").show();
                 $.ajax({
                     url: ajaxurl
                 }).done(function(data){
-                    $("#stream-loading").hide();
-                    $(".jumbotron").append(data).trigger("loadvideo");
+                    $(".jumbotron").append(data);
                     //var historyurl = $("#main-stream-container .display-name").attr("href");
                 }).fail(function(data){
                     console.log(data);
@@ -60,20 +58,26 @@
         $.ajax({
             url: "/ajax/randomStream"
         }).done(function(data){
-            $("#stream-loading").hide();
-            $(".jumbotron").append(data).trigger("loadvideo");
+            $(".jumbotron").append(data);
             firstStream = $("#main-stream-container .display-name").data("streamlink");
         }).fail(function(data){
             console.log(data);
         });
+
+        window.onPlayerEvent = function (data) {
+            data.forEach(function(event) {
+                if (event.event == "videoPlaying") {
+                    $(".jumbocontainer").trigger("loadvideo");
+                }
+            });
+        };
+
         loadGallery("/ajax/gallery", "#gallery-all");
         loadGallery("/ajax/featured/3", "#gallery-featured");
 
-        $(".jumbotron").on("loadvideo", function(){
-            $(".main-stream").css("visibility", "visible");
-            //console.log("trigger");
-            //$(".main-stream").load(function(){
-            //});
+        $(".jumbocontainer").on("loadvideo", function(){
+            $("#main-stream").removeClass("outside");
+            $("#inside-stream-loading").hide();
         });
 
         $(".gallery-control-left").click(function(){
@@ -98,8 +102,7 @@
             $.ajax({
                 url: "/ajax/randomStream"
             }).done(function(data){
-                $("#stream-loading").hide();
-                $(".jumbotron").append(data).trigger("loadvideo");
+                $(".jumbotron").append(data);
                 var historyurl = $("#main-stream-container .display-name").data("streamlink");
                 manStateChange = false;
                 History.pushState({state:"/stream/"+historyurl},historyurl,"/stream/"+historyurl);
@@ -116,12 +119,10 @@
 @section('content')
 @include ("layouts.header")
 <div class="jumbocontainer">
+
     <div class="container med-container stream-container">
         <div class="jumbotron">
-            <div class="loading" id="stream-loading">
-                <img src="/img/loading.gif" alt="loading">
-                <span class="text">Loading Stream...</span>
-            </div>
+
         </div>
     </div>
 </div>

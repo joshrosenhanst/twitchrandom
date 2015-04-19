@@ -24,7 +24,8 @@
   width:100%;
   margin:0 auto;
   padding:165px 0;
-  background:#fff;
+  //background:#fff;
+  background:rgba(255,255,255,0.9);
   //height:380px;
   border-radius:2px;
   img{
@@ -41,6 +42,10 @@
       color: #ca3b39;
     }
   }
+}
+#stream-loading{
+  max-width:1200px;
+  margin:30px auto;
 }
 .stream_error{
   .text{
