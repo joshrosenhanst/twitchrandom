@@ -8,25 +8,25 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
 
 <div class="row stream-details" id="main-stream-container">
     <div class="col-md-8 stream-cont">
-        <div id="main-stream" class="main-stream"></div>
         @if(Config::get('app.showStream'))  {{-- Don't embed stream for dev pages --}}
+        <div id="main-stream" class="main-stream"></div>
         {{-- Uncomment to use IFrame
         <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="620" height="380" class="main-stream" id="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
         --}}
 
         {{--Flash Object--}}
-        <object id="main-stream" class="main-stream" type="application/x-shockwave-flash" height="380" width="620" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $stream->channel->name }}" bgcolor="#fafafa">
+        {{--<object id="main-stream" class="main-stream" type="application/x-shockwave-flash" height="380" width="620" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $stream->channel->name }}" bgcolor="#fafafa">
             <param name="allowFullScreen" value="true" />
             <param name="allowScriptAccess" value="always" />
             <param name="allowNetworking" value="all" />
             <param name="width" value="620" />
             <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-        </object>
-        @endif
+        </object>--}}
         <div class="loading" id="inside-stream-loading">
             <img src="/img/loading.gif" alt="loading">
             <span class="text">Loading Stream...</span>
         </div>
+        @endif
     </div>
     <div class="col-md-4 stream-info">
         <div class="stream-details-container">
