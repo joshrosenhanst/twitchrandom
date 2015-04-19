@@ -46,3 +46,11 @@ Route::group(array('prefix' => 'games'), function(){
     Route::get('/', array('uses'=>'GameController@home'));
     Route::get('/{game}', array('uses'=>'GameController@getGame'));
 });
+
+//dev pages
+Route::group(array('prefix' => 'dev'), function(){
+    Route::get('/', array(function(){
+        return Redirect::to("/");
+    }));
+    Route::get('/mobiletest', array('uses'=>'DevController@mobiletest'));
+});
