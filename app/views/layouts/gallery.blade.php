@@ -1,7 +1,7 @@
 <div class="gallery-holder">
     <div class="gallery-cont row">
         @foreach ($galleries as $gallery)
-        <div class="gallery-item col-sm-3">
+        <div class="gallery-item col-sm-4 col-md-3">
             <div class="item">
                 <div class="item-image">
                     <a href="/stream/{{ rawurlencode($gallery->channel->name) }}" class="stream-image">{{ HTML::image($gallery->preview->medium, $gallery->channel->name, array("class"=>"img-thumbnail")) }}</a>
@@ -15,7 +15,7 @@
         </div>
         @endforeach
         @if($button)
-        <button class="gallery-reload btn btn-lg btn-twitch">
+        <button class="gallery-reload btn btn-lg btn-twitch col-sm-4 col-md-3">
             Randomize Gallery
         </button>
         @endif

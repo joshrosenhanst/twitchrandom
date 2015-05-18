@@ -1,6 +1,6 @@
 <div class="row">
 @foreach ($galleries as $gallery)
-<div class="gallery-item">
+<div class="gallery-item col-sm-4">
     <div class="item">
         <div class="item-image">
             <a href="/stream/{{ $gallery->stream->channel->name }}">{{ HTML::image($gallery->stream->preview->medium, $gallery->stream->channel->status or $gallery->stream->channel->display_name, array("class"=>"img-thumbnail")) }}</a>

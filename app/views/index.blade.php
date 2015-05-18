@@ -71,14 +71,16 @@
             if(!$(this).hasClass("disabled")){
                 var gallery = $(this).siblings(".gallery-holder").find(".gallery-cont");
                 var left = gallery.scrollLeft();
-                gallery.getNiceScroll(0).doScrollLeft(left - 650,400);
+                var width = gallery.width() + 15;
+                gallery.getNiceScroll(0).doScrollLeft(left - width,400);
             }
         });
         $(".gallery-control-right").click(function(){
             if(!$(this).hasClass("disabled")){
                 var gallery = $(this).siblings(".gallery-holder").find(".gallery-cont");
                 var left = gallery.scrollLeft();
-                gallery.getNiceScroll(0).doScrollLeft(left + 650,400);
+                var width = gallery.width() + 15;
+                gallery.getNiceScroll(0).doScrollLeft(left + width,400);
             }
         });
 

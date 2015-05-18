@@ -91,16 +91,16 @@
       margin:5px 0;
       border-radius:2px;
       overflow:hidden;
-      .col-sm-2{
+      .col-sm-4{
         padding:0;
       }
-      .col-sm-10{
+      .col-sm-8{
         padding-left: 5px;
       }
       .display-links{
         .display-name{
           font-weight:bold;
-          font-size:1.1em;
+          font-size:1.5em;
         }
       }
       .display-logo{
@@ -117,22 +117,30 @@
           margin:0;
           font-size:1em;
           font-weight:400;
-        }
-        .stream-link{
-          font-size:0.8em;
+          @media (min-width:$xsmall) and (max-width:$small) {
+            font-size:1.5em;
+          }
         }
       }
     }
     .stream-stats{
       //float:right;
-      font-size:14px;
+      font-size:1.4em;
       //color:#666;
       color:#fafafa;
       text-align:center;
-      .viewers,.views{
+      .viewers,.views,.followers{
         margin-right:10px;
       }
-      .viewers,.views,.followers{
+      .stream-link{
+        text-decoration:underline;
+        color:white;
+        padding:0;
+        @media (min-width:$xsmall) and (max-width:$small) {
+          font-size:inherit;
+        }
+      }
+      .viewers,.views,.followers,.stream-link{
         text-shadow:0px 1px 0px rgba(0, 0, 0, 0.9);
       }
       .glyphicon{
