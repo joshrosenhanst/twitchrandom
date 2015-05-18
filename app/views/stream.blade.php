@@ -54,14 +54,6 @@
             manStateChange = true;
         });
 
-        window.onPlayerEvent = function (data) {
-            data.forEach(function(event) {
-                if (event.event == "videoPlaying") {
-                    $(".jumbocontainer").trigger("loadvideo");
-                }
-            });
-        };
-
         $.ajax({
             url: "/ajax/stream/{{{ rawurlencode($name) }}}"
         }).done(function(data){
@@ -73,11 +65,6 @@
         });
         loadGallery("/ajax/gallery", "#gallery-all");
         loadGallery("/ajax/featured/3", "#gallery-featured");
-
-        $(".jumbocontainer").on("loadvideo", function(){
-            $("#main-stream").removeClass("outside");
-            $("#inside-stream-loading").hide();
-        });
 
         $(".gallery-control-left").click(function(){
             if(!$(this).hasClass("disabled")){
@@ -125,7 +112,20 @@
     </div>
 </div>
 <div class="gallery-container lg-container">
-    <div class="ad horizontal"></div>
+    @if(Config::get('app.showStream'))  {{-- Don't show ads for dev pages --}}
+    <div class="ad horizontal">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- TwitchRandom Responsive Ad -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1737596577801120"
+             data-ad-slot="6130444348"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    @endif
     <div class="row">
         <div class="col-sm-10 with-ad">
             <div class="gallery featured" id="gallery-featured">

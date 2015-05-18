@@ -9,12 +9,12 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
 <div class="row stream-details" id="main-stream-container">
     <div class="col-md-8 stream-cont">
         @if(Config::get('app.showStream'))  {{-- Don't embed stream for dev pages --}}
-        <div id="main-stream" class="main-stream"></div>
-        {{-- Uncomment to use IFrame
         <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="620" height="380" class="main-stream" id="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
+        {{-- Uncomment to use the swf-object+js; You will also need to uncomment the JS blocks at the bottom of this page;
+        <div id="main-stream" class="main-stream"></div>
         --}}
 
-        {{--Flash Object--}}
+        {{--Uncomment to use Flash Object--}}
         {{--<object id="main-stream" class="main-stream" type="application/x-shockwave-flash" height="380" width="620" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $stream->channel->name }}" bgcolor="#fafafa">
             <param name="allowFullScreen" value="true" />
             <param name="allowScriptAccess" value="always" />
@@ -65,21 +65,15 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
         @if($stream->channel->profile_banner)
         <script>
             $(document).ready(function(){
-                swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "main-stream", "620", "380", "11", null,
-                    { "eventsCallback":"onPlayerEvent",
-                        "embed":1,
-                        "channel":"{{ $stream->channel->name }}",
-                        "auto_play":"true"},
-                    { "allowScriptAccess":"always",
-                        "allowFullScreen":"true"
-                    });
-                $("#main-stream").addClass("outside");
-                $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
-            });
-        </script>
-        @else
-        <script>
-            $(document).ready(function(){
+                /* This js block is for the swf object
+
+                 window.onPlayerEvent = function (data) {
+                 data.forEach(function(event) {
+                 if (event.event == "videoPlaying") {
+                 $(".jumbocontainer").trigger("loadvideo");
+                 }
+                 });
+                 };
 
                 swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "main-stream", "620", "380", "11", null,
                     { "eventsCallback":"onPlayerEvent",
@@ -89,7 +83,48 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                     { "allowScriptAccess":"always",
                         "allowFullScreen":"true"
                     });
-                $("#main-stream").addClass("outside");
+
+                 $("#main-stream").addClass("outside");
+
+                 $(".jumbocontainer").on("loadvideo", function(){
+                 $("#main-stream").removeClass("outside");
+                 $("#inside-stream-loading").hide();
+                 });
+
+                    */
+                $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
+            });
+        </script>
+        @else
+        <script>
+            $(document).ready(function(){
+                /*This js block is for the swf object
+
+                 window.onPlayerEvent = function (data) {
+                 data.forEach(function(event) {
+                 if (event.event == "videoPlaying") {
+                 $(".jumbocontainer").trigger("loadvideo");
+                 }
+                 });
+                 };
+
+                swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "main-stream", "620", "380", "11", null,
+                    { "eventsCallback":"onPlayerEvent",
+                        "embed":1,
+                        "channel":"{{ $stream->channel->name }}",
+                        "auto_play":"true"},
+                    { "allowScriptAccess":"always",
+                        "allowFullScreen":"true"
+                    });
+
+                 $("#main-stream").addClass("outside");
+
+                 $(".jumbocontainer").on("loadvideo", function(){
+                 $("#main-stream").removeClass("outside");
+                 $("#inside-stream-loading").hide();
+                 });
+
+                    */
                 $(".jumbocontainer").css("background-image", "none");
             });
         </script>
