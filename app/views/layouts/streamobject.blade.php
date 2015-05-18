@@ -12,6 +12,10 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
         <iframe src="http://www.twitch.tv/{{{ $stream->channel->name }}}/embed" frameborder="0" scrolling="no" width="620" height="380" class="main-stream" id="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
         {{-- Uncomment to use the swf-object+js; You will also need to uncomment the JS blocks at the bottom of this page;
         <div id="main-stream" class="main-stream"></div>
+        <div class="loading" id="inside-stream-loading">
+            <img src="/img/loading.gif" alt="loading">
+            <span class="text">Loading Stream...</span>
+        </div>
         --}}
 
         {{--Uncomment to use Flash Object--}}
@@ -22,10 +26,6 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
             <param name="width" value="620" />
             <param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
         </object>--}}
-        <div class="loading" id="inside-stream-loading">
-            <img src="/img/loading.gif" alt="loading">
-            <span class="text">Loading Stream...</span>
-        </div>
         @endif
     </div>
     <div class="col-md-4 stream-info">
@@ -65,7 +65,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
         @if($stream->channel->profile_banner)
         <script>
             $(document).ready(function(){
-                /* This js block is for the swf object
+                {{-- This js block is for the swf object
 
                  window.onPlayerEvent = function (data) {
                  data.forEach(function(event) {
@@ -90,15 +90,14 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                  $("#main-stream").removeClass("outside");
                  $("#inside-stream-loading").hide();
                  });
-
-                    */
+                 --}}
                 $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
             });
         </script>
         @else
         <script>
             $(document).ready(function(){
-                /*This js block is for the swf object
+                {{-- This js block is for the swf object
 
                  window.onPlayerEvent = function (data) {
                  data.forEach(function(event) {
@@ -123,8 +122,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                  $("#main-stream").removeClass("outside");
                  $("#inside-stream-loading").hide();
                  });
-
-                    */
+                    --}}
                 $(".jumbocontainer").css("background-image", "none");
             });
         </script>
