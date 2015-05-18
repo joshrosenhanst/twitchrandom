@@ -11,7 +11,7 @@
                         <span class="caret"></span>
                     </a>
 
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" id="top_games_dropdown">
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel" id="top_games_dropdown">
                         @for($i=0;$i<10;$i++)
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1" href="/games/{{{ rawurlencode($games_list[$i]['name']) }}}">

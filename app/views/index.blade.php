@@ -115,6 +115,7 @@
     </div>
 </div>
 <div class="gallery-container lg-container">
+    <div class="ad horizontal"></div>
     @if(Config::get('app.showStream'))  {{-- Don't show ads for dev pages --}}
     <div class="ad horizontal">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
