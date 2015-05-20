@@ -37,8 +37,8 @@
             var State = History.getState(); // Note: We are using History.getState() instead of event.state
             if(manStateChange == true){
                 //loadStream(State.title);
-                if(State.title){
-                    var ajaxurl = "/ajax/stream/"+State.title;
+                if(State.data.stream){
+                    var ajaxurl = "/ajax/stream/"+State.data.stream;
                 }else{
                     var ajaxurl = "/ajax/stream/"+firstStream;
                 }
@@ -107,7 +107,7 @@
                 $("#random-game-gallery .gallery-holder").remove();
                 loadGallery("/ajax/game/"+rawurlencode(mainGame)+"/9", "#random-game-gallery");
                 manStateChange = false;
-                History.pushState({state:"/stream/"+historyurl},"Twitch Random | "+historyurl,"/stream/"+historyurl);
+                History.pushState({state:"/stream/"+historyurl,stream:historyurl},"Twitch Random | "+historyurl,"/stream/"+historyurl);
             }).fail(function(data){
                 console.log(data);
             });
