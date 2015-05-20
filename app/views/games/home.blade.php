@@ -101,8 +101,9 @@
 
 @include("layouts.header")
 <div class="container">
+    @include("layouts.ads.horizontal2")
     <div class="row">
-        <div class="col-sm-10">
+        <div class="col-sm-12">
             <div class="all_games">
                 <div class="fixed_header">
                     <div class="search-container">
@@ -120,9 +121,6 @@
                     <button class="btn btn-lg btn-twitch" id="load_more">Load More Games</button>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="ad vertical"></div>
         </div>
     </div>
 </div>

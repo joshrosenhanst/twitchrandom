@@ -120,20 +120,7 @@
 @section('content')
 @include("layouts.header")
 <div class="jumbocontainer">
-    @if(Config::get('app.showStream'))  {{-- Don't show ads for dev pages --}}
-    <div class="ad horizontal">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- TwitchRandom Responsive Ad - Horizontal -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-1737596577801120"
-             data-ad-slot="6490371140"
-             data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-    @endif
+    @include("layouts.ads.horizontal")
     <div class="container med-container stream-container">
         <div class="jumbotron">
 
@@ -141,20 +128,7 @@
     </div>
 </div>
 <div class="gallery-container lg-container">
-    @if(Config::get('app.showStream'))  {{-- Don't show ads for dev pages --}}
-    <div class="ad horizontal">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Twitch Random Responsive Ad - Horizontal 2 -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-1737596577801120"
-             data-ad-slot="7956771146"
-             data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-    @endif
+    @include("layouts.ads.horizontal2")
     <div class="row">
         <div class="gallery featured col-sm-9" id="gallery-featured">
             <div class="gallery-title">
@@ -166,18 +140,7 @@
             </div>
         </div>
         <div class="col-sm-3 ad block">
-            @if(Config::get('app.showStream'))  {{-- Don't show ads for dev pages --}}
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- TwitchRandom Responsive Ad - Vertical -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1737596577801120"
-                 data-ad-slot="6130444348"
-                 data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            @endif
+            @include("layouts.ads.block")
         </div>
     </div>
     <div class="row">
