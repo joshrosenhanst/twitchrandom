@@ -101,7 +101,7 @@
 
 @include("layouts.header")
 <div class="container">
-    @include("layouts.ads.horizontal2")
+    @include("layouts.ads.horizontal")
     <div class="row">
         <div class="col-sm-12">
             <div class="all_games">
@@ -124,6 +124,6 @@
         </div>
     </div>
 </div>
-
+@include("layouts.ads.horizontal2")
 @include("layouts.footer")
 @stop

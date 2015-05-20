@@ -90,7 +90,6 @@
     </div>
 </div>
 <div class="gallery-container lg-container">
-    @include("layouts.ads.horizontal2")
     <div class="row">
         <div class="gallery featured col-sm-9" id="gallery-featured">
             <div class="gallery-title">
@@ -132,6 +131,6 @@
         </div>
     </div>
 </div>
-
+@include("layouts.ads.horizontal2")
 @include("layouts.footer")
 @stop
