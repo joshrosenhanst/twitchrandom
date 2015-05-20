@@ -1,7 +1,7 @@
 .header{
   margin:10px 0 10px 0;
   .logo-title{
-    color:#777;
+    color:$twitch-purple;
     display:inline-block;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -10,7 +10,7 @@
     font-size:24px;
     line-height:40px;
     &:hover{
-      color:$twitch-purple;
+      color:$twitch-purple-hover;
     }
   }
   .nav-pills{

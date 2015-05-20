@@ -1,6 +1,6 @@
 /*GALLERY*/
 .gallery-container{
-  background:white;
+  background:#f6f6f6;
   padding:0 30px;
 }
 
@@ -32,14 +32,19 @@
 }
 .gallery{
   background:white;
-  border:1px solid #e2e2e2;
+  border-width:1px;
+  border-style:solid;
+  border-color:#E5E6E9 #DFE0E4 #D0D1D5;
+  border-radius:3px;
   padding:20px;
+  margin:5px 0;
   position:relative;
   .loading{
     //height:140px;
     padding:75px 0;
   }
   &.featured{
+    background-color:#FFF9D7;
     .gallery-item{
       //max-width:300px;
       float:left;
