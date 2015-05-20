@@ -27,3 +27,43 @@
     }
   }
 }
+
+.navbar-twitch{
+  margin:10px 0 10px 0;
+  .navbar-toggle{
+    .icon-bar{
+      background-color:#f6f6f6;
+    }
+  }
+  .navbar-brand{
+    color:$twitch-purple;
+    display:inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-decoration:none;
+    font-weight:500;
+    font-size:24px;
+    &:hover{
+      color:$twitch-purple-hover;
+    }
+  }
+  li{
+    a{
+      @media (min-width: $small){
+        border-radius:4px;
+      }
+      font-size:16px;
+    }
+    &.active{
+      @media (min-width: $small){
+        a{
+          background-color:$twitch-purple;
+          color:white;
+          &:hover{
+            background-color:$twitch-purple-hover;
+          }
+        }
+      }
+    }
+  }
+}

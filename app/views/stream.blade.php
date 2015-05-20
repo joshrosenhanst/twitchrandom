@@ -131,7 +131,7 @@
 </div>
 <div class="gallery-container lg-container">
     <div class="row">
-        <div class="gallery featured col-sm-9" id="gallery-featured">
+        <div class="gallery featured col-lg-9 col-md-12" id="gallery-featured">
             <div class="gallery-title">
                 <span class="title">Featured Streams</span>
             </div>
@@ -140,7 +140,7 @@
                 <span class="text">Loading Gallery...</span>
             </div>
         </div>
-        <div class="col-sm-3 ad block">
+        <div class="col-lg-3 col-md-12 ad block">
             @include("layouts.ads.block")
         </div>
     </div>

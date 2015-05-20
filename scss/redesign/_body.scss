@@ -2,6 +2,9 @@
   .jumbotron{
     //padding:5px 30px;
     background:transparent;
+    @media (max-width:$medium) {
+      padding:30px 0;
+    }
   }
 }
 .btn-twitch{
@@ -74,6 +77,10 @@
 }
 .ad.block{
   margin:10px 0;
+  @media (max-width:$large) {
+    margin:10px auto;
+    width:80%;
+  }
 }
 .with-ad{
   padding-left:15px;

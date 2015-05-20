@@ -47,7 +47,9 @@
     background:rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
   }
   .stream-details-container{
-    height:80%;
+    @media (min-width:$medium) {
+      height:80%;
+    }
   }
   .stream-details{
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
@@ -56,7 +58,9 @@
     }
   }
   .stream-info{
-    height:$stream-small-height;
+    @media (min-width:$medium) {
+      height:$stream-small-height;
+    }
     background:rgba(25, 25, 31, 0.7) none repeat scroll 0% 0%;
     padding:15px;
     position:relative;
@@ -94,10 +98,10 @@
       margin:5px 0;
       border-radius:2px;
       overflow:hidden;
-      .col-sm-4{
+      .col-xs-4{
         padding:0;
       }
-      .col-sm-8{
+      .col-xs-8{
         padding-left: 5px;
       }
       .display-links{
@@ -120,7 +124,7 @@
           margin:0;
           font-size:1em;
           font-weight:400;
-          @media (min-width:$xsmall) and (max-width:$small) {
+          @media (max-width:$small) {
             font-size:1.5em;
           }
         }
@@ -139,7 +143,7 @@
         text-decoration:underline;
         color:white;
         padding:0;
-        @media (min-width:$xsmall) and (max-width:$small) {
+        @media (max-width:$small) {
           font-size:inherit;
         }
       }

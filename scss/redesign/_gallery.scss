@@ -49,6 +49,13 @@
       //max-width:300px;
       float:left;
       display:block;
+      .item{
+        @media (max-width:$medium) {
+          width:80%;
+          margin:0 auto;
+          text-align:center;
+        }
+      }
       .img-thumbnail{
         width:100%;
         display:block;

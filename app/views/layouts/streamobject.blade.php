@@ -34,14 +34,14 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                 {{{ $streamname }}}
             </h2>
             <div class="streamer row">
-                <div class="col-sm-4 col-md-2">
+                <div class="col-xs-4 col-md-2">
                     @if($stream->channel->logo)
                     <a class="display-logo" href="/stream/{{{ $stream->channel->name }}}"><img src="{{{ $stream->channel->logo }}}"></a>
                     @else
                     <a class="display-logo" href="/stream/{{{ $stream->channel->name }}}"><img src="http://static-cdn.jtvnw.net/ttv-static/404_boxart-50x50.jpg"></a>
                     @endif
                 </div>
-                <div class="col-sm-8 col-md-10">
+                <div class="col-xs-8 col-md-10">
                     <div class="display-links">
                         <a class="display-name" href="/stream/{{{ $stream->channel->name }}}" data-streamlink="{{{ $stream->channel->name }}}">{{{ $stream->channel->display_name }}}</a>
                     </div>
@@ -51,7 +51,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                     </div>
                 </div>
             </div>
-            <div class="stream-stats col-sm-12">
+            <div class="stream-stats">
                 <span class="viewers" title="Current Viewers"><span class="glyphicon glyphicon-user"></span>{{ $stream->viewers }}</span>
                 <span class="views" title="Total Views"><span class="glyphicon glyphicon-eye-open"></span>{{ $stream->channel->views }}</span>
                 <span class="followers" title="Followers"><span class="glyphicon glyphicon-heart"></span>{{ $stream->channel->followers }}</span>
