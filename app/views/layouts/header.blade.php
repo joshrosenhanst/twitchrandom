@@ -26,7 +26,7 @@
                         @for($i=0;$i<10;$i++)
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1" href="/games/{{{ rawurlencode($games_list[$i]['name']) }}}">
-                                <img src="{{{ $games_list[$i]['img'] }}}">
+                                {{ HTML::image($games_list[$i]['img'], ("Top Game: ".htmlentities($games_list[$i]['name']))) }}
                                 <span>{{{ $games_list[$i]['name'] }}}</span>
                             </a>
                         </li>
@@ -74,7 +74,7 @@
                         <li role="presentation" class="all_games"><a role="menuitem" tabindex="-1" href="/games">View All Games</a></li>
                     </ul>
                 </li>
-                <li role="presentation"><a href="/randomgame">Random Game</a></li>
+                <li role="presentation"><a href="/randomgame" rel="nofollow">Random Game</a></li>
             </ul>
         </div>
     </div>

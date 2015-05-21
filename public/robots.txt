@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Disallow: /ajax/*
+Disallow: /dev/*
+Disallow: /game/*
+Disallow: /randomstream
+Disallow: /randomgame
+Sitemap: http://twitchrandom.com/sitemap.xml

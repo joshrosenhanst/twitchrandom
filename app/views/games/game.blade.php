@@ -1,7 +1,11 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Twitch Random | {{{ $game }}}</title>
+<title>{{{ $game }}} | Twitch Random</title>
+@stop
+
+@section('meta')
+<meta name="description" content="TwitchRandom.com - Random {{{ $game }}} streams. Find something unexpected at http://twitchrandom.com!">
 @stop
 
 @section('css')
@@ -17,7 +21,7 @@
             url: galleryURL
         }).done(function(data){
             $(galleryID+" .loading").hide();
-            $(galleryID).append(data);
+            $(galleryID).append(data).show();
             $(galleryID+" .gallery-cont").niceScroll({cursorcolor:"#6441A5",cursoropacitymin:1,cursorwidth: "10px"})
             $(galleryID+" .gallery-reload").click(function(){
                 $(galleryID+" .loading").show();

@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="TwitchRandom.com - Twitch Random grabs a random twitch stream. Find something unexpected!">
+    @yield("meta")
+    <meta name="robots" content="index,follow,noarchive" />
     <meta name="author" content="SpoonCo">
 
     @yield("title")

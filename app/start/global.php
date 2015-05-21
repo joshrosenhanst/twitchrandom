@@ -51,6 +51,19 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+//404 Error Code
+App::missing(function($exception)
+{
+    //return Response::view('404', array(), 404);
+    //return Redirect::route('missing');
+    return Redirect::to('/missing', 303)->with(
+        array('error' => array(
+            'url' => Request::url(),
+        ))
+    );
+
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

@@ -4,8 +4,12 @@
 <title>Twitch Randomizer | All Games</title>
 @stop
 
+@section('meta')
+<meta name="description" content="TwitchRandom.com - All Live Games. Find something unexpected at http://twitchrandom.com!">
+@stop
+
 @section('css')
-<link rel="stylesheet" href="/css/redesign/main.min.css?1">
+<link rel="stylesheet" href="/css/redesign/main.min.css">
 @stop
 
 @section('js')

@@ -36,9 +36,13 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
             <div class="streamer row">
                 <div class="col-xs-4 col-md-2">
                     @if($stream->channel->logo)
-                    <a class="display-logo" href="/stream/{{{ $stream->channel->name }}}"><img src="{{{ $stream->channel->logo }}}"></a>
+                    <a class="display-logo" href="/stream/{{{ $stream->channel->name }}}">
+                        <img src="{{{ $stream->channel->logo }}}" alt="Profile Image - {{{ $stream->channel->name }}}">
+                    </a>
                     @else
-                    <a class="display-logo" href="/stream/{{{ $stream->channel->name }}}"><img src="http://static-cdn.jtvnw.net/ttv-static/404_boxart-50x50.jpg"></a>
+                    <a class="display-logo" href="/stream/{{{ $stream->channel->name }}}">
+                        <img src="http://static-cdn.jtvnw.net/ttv-static/404_boxart-50x50.jpg" alt="Default Twitch Profile Image">
+                    </a>
                     @endif
                 </div>
                 <div class="col-xs-8 col-md-10">

@@ -23,6 +23,14 @@ class HomeController extends BaseController {
             "games_list"=>$games_list
         ));
 	}
+	public function missing(){
+        $games_list = Cache::remember('games_list', 5, function(){
+            return $this->getGameList();
+        });
+		return View::make('404', array(
+            "games_list"=>$games_list
+        ));
+	}
 	public function randomgame(){
 		$game = $this->getRandomGame();
 

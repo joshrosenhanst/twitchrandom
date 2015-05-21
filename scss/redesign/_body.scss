@@ -5,6 +5,10 @@
     @media (max-width:$medium) {
       padding:30px 15px;
     }
+    &.missing-text{
+      text-align:center;
+      color:white;
+    }
   }
 }
 .btn-twitch{

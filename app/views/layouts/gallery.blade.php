@@ -4,8 +4,8 @@
         <div class="gallery-item col-sm-4 col-md-3">
             <div class="item">
                 <div class="item-image">
-                    <a href="/stream/{{ rawurlencode($gallery->channel->name) }}" class="stream-image">{{ HTML::image($gallery->preview->medium, $gallery->channel->name, array("class"=>"img-thumbnail")) }}</a>
-                    <a href="/games/{{ $gallery->game }}" class="box-art">{{ HTML::image("http://static-cdn.jtvnw.net/ttv-boxart/".$gallery->game."-40x55.jpg", $gallery->game) }}</a>
+                    <a href="/stream/{{ rawurlencode($gallery->channel->name) }}" class="stream-image">{{ HTML::image($gallery->preview->medium, ("Random Stream: ".htmlentities($gallery->channel->status)), array("class"=>"img-thumbnail")) }}</a>
+                    <a href="/games/{{ $gallery->game }}" class="box-art">{{ HTML::image("http://static-cdn.jtvnw.net/ttv-boxart/".$gallery->game."-40x55.jpg", (htmlentities($gallery->game)." - Box Art")) }}</a>
                 </div>
                 <a class="stream-link" href="/stream/{{ rawurlencode($gallery->channel->name) }}">
                     <h5 class="title">{{ $gallery->channel->status or $gallery->channel->display_name }}</h5>

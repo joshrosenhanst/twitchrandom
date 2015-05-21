@@ -1,7 +1,11 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Twitch Random</title>
+<title>Twitch Random - Random Twitch.tv Streams</title>
+@stop
+
+@section('meta')
+<meta name="description" content="Twitch Random grabs a Twitch stream at random for you to watch. You can also filter streams by game. Find something unexpected at http://twitchrandom.com!">
 @stop
 
 @section('css')
@@ -17,7 +21,7 @@
             url: galleryURL
         }).done(function(data){
             $(galleryID+" .loading").hide();
-            $(galleryID).append(data);
+            $(galleryID).append(data).show();
             $(galleryID+" .gallery-cont").niceScroll({cursorcolor:"#6441A5",cursoropacitymin:1,cursorwidth: "10px"})
             $(galleryID+" .gallery-reload").click(function(){
                 $(galleryID+" .loading").show();
@@ -48,9 +52,13 @@
                 }).done(function(data){
                     $(".jumbotron").append(data);
                     var mainGame = $(".display-playing a").text();
-                    $("#random-game-gallery .title").text(mainGame+" | Random Streams");
-                    $("#random-game-gallery .gallery-holder").remove();
-                    loadGallery("/ajax/game/"+rawurlencode(mainGame)+"/9", "#random-game-gallery");
+                    if(mainGame){
+                        $("#random-game-gallery .title").text(mainGame+" | Random Streams");
+                        $("#random-game-gallery .gallery-holder").remove();
+                        loadGallery("/ajax/game/"+rawurlencode(mainGame)+"/9", "#random-game-gallery");
+                    }else{
+                        $("#random-game-gallery").hide();
+                    }
                     //var historyurl = $("#main-stream-container .display-name").attr("href");
                 }).fail(function(data){
                     console.log(data);
@@ -65,9 +73,13 @@
         }).done(function(data){
             $(".jumbotron").append(data);
             var mainGame = $(".display-playing a").text();
-            $("#random-game-gallery .title").text(mainGame+" | Random Streams");
-            $("#random-game-gallery .gallery-holder").remove();
-            loadGallery("/ajax/game/"+rawurlencode(mainGame)+"/9", "#random-game-gallery");
+            if(mainGame){
+                $("#random-game-gallery .title").text(mainGame+" | Random Streams");
+                $("#random-game-gallery .gallery-holder").remove();
+                loadGallery("/ajax/game/"+rawurlencode(mainGame)+"/9", "#random-game-gallery");
+            }else{
+                $("#random-game-gallery").hide();
+            }
             firstStream = $("#main-stream-container .display-name").data("streamlink");
         }).fail(function(data){
             console.log(data);
@@ -103,9 +115,13 @@
                 $(".jumbotron").append(data);
                 var historyurl = $("#main-stream-container .display-name").data("streamlink");
                 var mainGame = $(".display-playing a").text();
-                $("#random-game-gallery .title").text(mainGame+" | Random Streams");
-                $("#random-game-gallery .gallery-holder").remove();
-                loadGallery("/ajax/game/"+rawurlencode(mainGame)+"/9", "#random-game-gallery");
+                if(mainGame){
+                    $("#random-game-gallery .title").text(mainGame+" | Random Streams");
+                    $("#random-game-gallery .gallery-holder").remove();
+                    loadGallery("/ajax/game/"+rawurlencode(mainGame)+"/9", "#random-game-gallery");
+                }else{
+                    $("#random-game-gallery").hide();
+                }
                 manStateChange = false;
                 History.pushState({state:"/stream/"+historyurl,stream:historyurl},"Twitch Random | "+historyurl,"/stream/"+historyurl);
             }).fail(function(data){

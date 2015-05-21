@@ -16,6 +16,7 @@ Route::get('/', array('uses'=>'HomeController@home'));
 Route::get('/feature', array('uses'=>'HomeController@home'));
 Route::get('/randomstream', array('uses'=>'HomeController@randomstream'));
 Route::get('/randomgame', array('uses'=>'HomeController@randomgame'));
+Route::get('/missing', array('uses'=>'HomeController@missing'));
 
 //ajax calls
 Route::group(array('prefix' => 'ajax'), function()

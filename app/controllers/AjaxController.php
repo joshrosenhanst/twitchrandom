@@ -57,10 +57,17 @@ class AjaxController extends BaseController {
         }else{
             if($limit === "1"){
                 //stream
-                return View::make('layouts.streamobject', array(
-                    "game"=>$game,
-                    "stream"=>$stream[0],
-                ));
+                if($stream){
+                    return View::make('layouts.streamobject', array(
+                        "game"=>$game,
+                        "stream"=>$stream[0],
+                    ));
+                }else{
+                    return View::make('layouts.error', array(
+                        "game"=>$game,
+                        "errorMsg"=>"Game '".$game."' not found",
+                    ));
+                }
             }else{
                 //galleries
                 return View::make('layouts.gallery', array(

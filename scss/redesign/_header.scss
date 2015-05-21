@@ -50,7 +50,7 @@
   li{
     a{
       @media (min-width: $small){
-        border-radius:4px;
+        border-radius:6px;
       }
       font-size:16px;
     }
@@ -59,6 +59,8 @@
         a{
           background-color:$twitch-purple;
           color:white;
+          transition:400ms all;
+          border:0;
           &:hover{
             background-color:$twitch-purple-hover;
           }
