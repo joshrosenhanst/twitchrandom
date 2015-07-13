@@ -18,7 +18,7 @@
     @include("layouts.js.loading")
 
     $(document).ready(function(){
-        $("html").niceScroll({cursorcolor:"#6441A5"});
+        //$("html").niceScroll({cursorcolor:"#6441A5"});
         var offset = 0;
         $.ajax({
             url: "/ajax/games/50/0"
@@ -96,7 +96,7 @@
             });
         });
 
-        setInterval(function(){ $(".loading:visible>.text").setRandomText(); }, 1600);
+        //setInterval(function(){ $(".loading:visible>.text").setRandomText(); }, 1600);
     });
 </script>
 @stop

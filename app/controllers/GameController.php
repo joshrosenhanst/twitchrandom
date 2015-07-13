@@ -7,7 +7,8 @@ class GameController extends BaseController {
             return $this->getGameList();
         });
         return View::make('games.home', array(
-            "games_list"=>$games_list
+            "games_list"=>$games_list,
+            "random_text"=>$this->getRandomText()
         ));
     }
 
@@ -18,7 +19,8 @@ class GameController extends BaseController {
         $game = rawurldecode($game);
         return View::make('games.game', array(
             "game"=>$game,
-            "games_list"=>$games_list
+            "games_list"=>$games_list,
+            "random_text"=>$this->getRandomText()
         ));
     }
 

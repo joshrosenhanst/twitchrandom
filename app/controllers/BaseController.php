@@ -17,6 +17,13 @@ class BaseController extends Controller {
 		}
 	}
 
+    public function getRandomText(){
+        $array = Lang::get('main.slogans');
+        //var_dump($array);
+        return $array[array_rand($array)];
+    }
+
+
     public function getGameList(){
         $games = $this->getTopGames(100);
         $list = array();

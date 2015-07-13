@@ -67,7 +67,7 @@
             manStateChange = true;
         });
 
-        $("html").niceScroll({cursorcolor:"#6441A5"});
+        //$("html").niceScroll({cursorcolor:"#6441A5"});
         $.ajax({
             url: "/ajax/randomStream"
         }).done(function(data){
@@ -129,7 +129,7 @@
             });
         });
 
-        setInterval(function(){ $(".loading:visible>.text").setRandomText(); }, 1600);
+        //setInterval(function(){ $(".loading:visible>.text").setRandomText(); }, 1600);
     });
 </script>
 @stop

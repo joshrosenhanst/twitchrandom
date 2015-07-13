@@ -34,7 +34,7 @@
     }
 
     $(document).ready(function(){
-        $("html").niceScroll({cursorcolor:"#6441A5"});
+        //$("html").niceScroll({cursorcolor:"#6441A5"});
         var manStateChange = true;
         var firstStream = "";
         var mainGame = "";
@@ -130,7 +130,7 @@
             });
         });
 
-        setInterval(function(){ $(".loading:visible>.text").setRandomText(); }, 1600);
+        //setInterval(function(){ $(".loading:visible>.text").setRandomText(); }, 1600);
     });
 </script>
 @stop

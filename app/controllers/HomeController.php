@@ -20,7 +20,8 @@ class HomeController extends BaseController {
             return $this->getGameList();
         });
 		return View::make('index', array(
-            "games_list"=>$games_list
+            "games_list"=>$games_list,
+            "random_text"=>$this->getRandomText()
         ));
 	}
 	public function missing(){
@@ -28,7 +29,8 @@ class HomeController extends BaseController {
             return $this->getGameList();
         });
 		return View::make('404', array(
-            "games_list"=>$games_list
+            "games_list"=>$games_list,
+            "random_text"=>$this->getRandomText()
         ));
 	}
 	public function randomgame(){
@@ -51,7 +53,8 @@ class HomeController extends BaseController {
         });
         return View::make('stream', array(
             "name"=>$name,
-            "games_list"=>$games_list
+            "games_list"=>$games_list,
+            "random_text"=>$this->getRandomText()
         ));
     }
 
