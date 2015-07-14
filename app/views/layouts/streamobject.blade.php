@@ -97,6 +97,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                  });
                  --}}
                 $(".jumbocontainer").css("background-image", "url('{{{ $stream->channel->profile_banner }}}')");
+                $(".slogan").text("{{{ $random_text }}}");
             });
         </script>
         @else
@@ -129,6 +130,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                  });
                     --}}
                 $(".jumbocontainer").css("background-image", "none");
+                $(".slogan").text("{{{ $random_text }}}");
             });
         </script>
         @endif

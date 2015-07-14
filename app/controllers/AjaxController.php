@@ -9,7 +9,8 @@ class AjaxController extends BaseController {
             ));
         }else{
             return View::make('layouts.streamobject', array(
-                "stream"=> $stream
+                "stream"=> $stream,
+                "random_text"=>$this->getRandomText()
             ));
         }
     }

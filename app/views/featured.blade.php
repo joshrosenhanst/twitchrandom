@@ -13,7 +13,7 @@
 @stop
 
 @section('js')
-
+    <script src="https://checkout.stripe.com/checkout.js"></script>
 @stop
 
 
@@ -28,6 +28,9 @@
             <form action="charge.php" method="post">
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="<?php echo $stripe['publishable_key']; ?>"
+                        data-name="Twitch Random"
+                        data-allow-remember-me="false"
+                        data-label="Get Featured"
                         data-amount="5000" data-description="Get Featured"></script>
             </form>
         </p>
