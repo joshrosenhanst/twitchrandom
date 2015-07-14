@@ -78,6 +78,12 @@ body {
   .container .jumbotron.missing-text {
     text-align: center;
     color: white; }
+.container.narrow {
+  max-width: 768px; }
+  .container.narrow .jumbotron {
+    background: #eee;
+    text-align: center;
+    min-height: auto; }
 
 .btn-twitch {
   background: #6441A5;

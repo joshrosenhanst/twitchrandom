@@ -19,9 +19,28 @@ class HomeController extends BaseController {
         $games_list = Cache::remember('games_list', 5, function(){
             return $this->getGameList();
         });
+
 		return View::make('index', array(
             "games_list"=>$games_list,
             "random_text"=>$this->getRandomText()
+        ));
+	}
+	public function featured(){
+        $games_list = Cache::remember('games_list', 5, function(){
+            return $this->getGameList();
+        });
+
+        $stripe = array(
+            "secret_key"      => "sk_test_mMYfonYdZ9Qe3yzWNS2T8CFJ",
+            "publishable_key" => "pk_test_cnP8o42sQCIOig5yIn0eJVL3"
+        );
+
+        \Stripe\Stripe::setApiKey($stripe['secret_key']);
+
+		return View::make('featured', array(
+            "games_list"=>$games_list,
+            "random_text"=>$this->getRandomText(),
+            "stripe"=>$stripe
         ));
 	}
 	public function missing(){

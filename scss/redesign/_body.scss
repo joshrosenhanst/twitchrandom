@@ -10,6 +10,14 @@
       color:white;
     }
   }
+  &.narrow{
+    max-width:$small;
+    .jumbotron{
+      background:#eee;
+      text-align:center;
+      min-height:auto;
+    }
+  }
 }
 .btn-twitch{
   background:$twitch-purple;

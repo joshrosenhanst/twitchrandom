@@ -7,7 +7,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"ritero/twitch-sdk": "dev-master",
-        "artistan/urlencode": "1.0.*"
+        "artistan/urlencode": "1.0.*",
+	  	"stripe/stripe-php": "2.*"
 	},
 	"autoload": {
 		"classmap": [

@@ -15,7 +15,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li role="presentation" class="active"><a href="/">Home</a></li>
+                <li role="presentation"><a href="/">Home</a></li>
                 <li role="presentation" class="dropdown">
                     <a id="dLabel" data-target="#" href="/game" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                         Games
@@ -36,6 +36,7 @@
                     </ul>
                 </li>
                 <li role="presentation"><a href="/randomgame">Random Game</a></li>
+                <li role="presentation" class="active"><a href="/featured">Get Featured</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
