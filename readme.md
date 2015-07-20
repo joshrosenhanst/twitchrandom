@@ -1,18 +1,27 @@
-## Stream Randomizer
+## Laravel PHP Framework
 
-The stream randomizer will pick a random live stream on page load from twitch to display on the home page. It will also grab other random streams for the gallery.
+[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
+[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
+[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
+[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
+[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-## Libraries
-* Laravel 4.2
-* Sass/Scss
-* Bootstrap
-* jQuery 2.1.3
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
+Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Installation instructions
-1. Setup nginx/apache VirtualHost + hosts file. Set ServerName variable to randomizer.dev (or whatever you want, but you have to update /app/config/local/app.php with that name)  
-  * If you want a quick nginx template, check out https://bitbucket.org/joshrh88/randomizer/wiki/Nginx%20Local%20Server%20Setup  
-  * I don't use apache, so you can figure out your own VirtualHost setup http://stackoverflow.com/questions/19802286/laravel-4-virtual-host-and-mod-rewrite-setup  
-2. Install laravel via http://laravel.com/docs/4.2/quick -- They install a bunch of required vendor libraries that aren't in this repo that you need.
-3. Grab the repo
-4. Setup a mysql db. Update /app/config/local/database.php with your db details
+## Official Documentation
+
+Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+
+### License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
