@@ -15,6 +15,7 @@ class CreateSlogansTable extends Migration
         Schema::create('slogans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->boolean('approved');
             $table->timestamps();
         });
     }

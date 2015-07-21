@@ -12,8 +12,6 @@
 */
 
 Route::get('/', array('uses'=>'HomeController@home'));
-get('/slogans', array('uses'=>'SloganController@index'));
-post('/slogans', array('uses'=>'SloganController@addSlogan'));
 //Route::get('/feature', array('uses'=>'HomeController@home'));
 Route::get('/randomstream', array('uses'=>'HomeController@randomstream'));
 Route::get('/randomgame', array('uses'=>'HomeController@randomgame'));
@@ -42,6 +40,12 @@ Route::group(array('prefix' => 'stream'), function(){
         return Redirect::to("/");
     }));
     Route::get('/{name}', array('uses'=>'HomeController@stream'));
+});
+
+//slogan pages
+Route::group(array('prefix' => 'slogans'), function(){
+    Route::get('/', array('uses'=>'SloganController@index'));
+    Route::post('/', array('uses'=>'SloganController@create'));
 });
 
 //individual game pages
