@@ -28,7 +28,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
         </object>--}}
         @endif
     </div>
-    <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 stream-info">
+    <div class="col-md-4 stream-info">
         <div class="stream-details-container">
             <h2 class="main-title" title="{{ $stream->channel->status or $stream->channel->display_name }}">
                 {{ $streamname }}

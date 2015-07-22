@@ -48,8 +48,11 @@
     background:rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
   }
   .stream-details-container{
+    width:60%;
+    margin:0 auto;
     @media (min-width:$medium) {
       height:80%;
+      width:auto;
     }
   }
   .stream-details{
@@ -74,7 +77,7 @@
       white-space:normal;
       margin:0 auto;
       display:block;
-      width:80%;
+      width:60%;
       box-shadow:2px 2px 2px rgba(0,0,0,0.4);
     }
     a{

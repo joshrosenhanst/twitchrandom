@@ -1,5 +1,6 @@
 body {
-  background: #F6F6F6; }
+  background: #F6F6F6;
+  font-weight: 300; }
   body .body-container {
     max-width: 768px; }
   body .med-container {
@@ -21,7 +22,7 @@ body {
     margin-top: 0px;
     margin-bottom: 0px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 24px;
     line-height: 40px; }
     .header .logo-title:hover {
@@ -46,7 +47,7 @@ body {
     margin-bottom: 0px;
     padding: 5px 15px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 24px; }
     .navbar-twitch .navbar-brand .slogan {
       display: block;
@@ -57,7 +58,8 @@ body {
       .navbar-twitch .navbar-brand:hover .slogan {
         color: #999; }
   .navbar-twitch li a {
-    font-size: 16px; }
+    font-size: 16px;
+    font-weight: 300; }
     @media (min-width: 768px) {
       .navbar-twitch li a {
         border-radius: 6px; } }
@@ -84,7 +86,11 @@ body {
   .container.narrow .jumbotron {
     background: #eee;
     text-align: center;
-    min-height: auto; }
+    min-height: initial; }
+
+.slogan-highlight {
+  font-weight: 300;
+  text-align: center; }
 
 .btn-twitch {
   background: #6441A5;
@@ -137,9 +143,13 @@ body {
   .jumbotron .stream-cont {
     padding: 0;
     background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%; }
-  @media (min-width: 992px) {
-    .jumbotron .stream-details-container {
-      height: 80%; } }
+  .jumbotron .stream-details-container {
+    width: 60%;
+    margin: 0 auto; }
+    @media (min-width: 992px) {
+      .jumbotron .stream-details-container {
+        height: 80%;
+        width: auto; } }
   .jumbotron .stream-details {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75); }
     @media (min-width: 480px) and (max-width: 768px) {
@@ -157,7 +167,7 @@ body {
       white-space: normal;
       margin: 0 auto;
       display: block;
-      width: 80%;
+      width: 60%;
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4); }
     .jumbotron .stream-info a {
       color: #6441A5; }

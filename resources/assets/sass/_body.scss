@@ -15,9 +15,13 @@
     .jumbotron{
       background:#eee;
       text-align:center;
-      min-height:auto;
+      min-height:initial;
     }
   }
+}
+.slogan-highlight{
+  font-weight:300;
+  text-align:center;
 }
 .btn-twitch{
   background:$twitch-purple;
