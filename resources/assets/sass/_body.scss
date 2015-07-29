@@ -39,6 +39,10 @@
 @import "stream";
 @import "gallery";
 @import "games";
+.offline{
+  text-align:center;
+  color:$twitch-purple;
+}
 .loading,.stream_error{
   width:100%;
   margin:0 auto;

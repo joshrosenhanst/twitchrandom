@@ -42,12 +42,12 @@
             <button type="submit" class="btn btn-success">Submit Slogan</button>
         </form>
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#unapproved" aria-controls="unapproved" role="tab" data-toggle="tab">Unapproved Slogans</a></li>
+            <li role="presentation" class="active"><a href="#community" aria-controls="community" role="tab" data-toggle="tab">Community Submitted Slogans</a></li>
             <li role="presentation"><a href="#approved" aria-controls="approved" role="tab" data-toggle="tab">Approved Slogans</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" role="tabpanel" id="unapproved">
-                <h4>Unapproved Slogans</h4>
+            <div class="tab-pane active" role="tabpanel" id="community">
+                <h4>Community Submitted Slogans</h4>
                 <p>We haven't checked these slogans yet. They're probably good, who knows?</p>
                 <ul class="list-group">
                 @foreach($unapproved as $un)

@@ -16,6 +16,10 @@
     @include("layouts.js.loading")
 
     function loadGallery(galleryURL, galleryID){
+        @if(env('OFFLINE', true))
+            $(galleryID+" .loading").hide();
+            $(galleryID).append("<p class'offline'>You are offline</p>").show();
+        @else
         $.ajax({
             url: galleryURL
         }).done(function(data){
@@ -30,6 +34,7 @@
         }).fail(function(data){
             console.log(data);
         });
+        @endif
     }
 
     $(document).ready(function(){

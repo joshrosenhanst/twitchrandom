@@ -435,6 +435,10 @@ body {
   width: 50%;
   margin: 0 auto; }
 
+.offline {
+  text-align: center;
+  color: #6441A5; }
+
 .loading, .stream_error {
   width: 100%;
   margin: 0 auto;
