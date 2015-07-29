@@ -24,12 +24,14 @@
 
                     <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel" id="top_games_dropdown">
                         @for($i=0;$i<10;$i++)
+                            @if(isset($games_list[$i]))
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1" href="/games/{{ rawurlencode($games_list[$i]['name']) }}">
                                 <img src="{{ $games_list[$i]['img'] }}" alt="{{ htmlentities($games_list[$i]['name']) }}">
                                 <span>{{ $games_list[$i]['name'] }}</span>
                             </a>
                         </li>
+                            @endif
                         @endfor
                         <li class="divider"></li>
                         <li role="presentation" class="all_games"><a role="menuitem" tabindex="-1" href="/games">View All Games</a></li>

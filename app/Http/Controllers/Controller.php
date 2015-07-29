@@ -21,15 +21,28 @@ abstract class Controller extends BaseController
     }
 
     public function getGameList(){
-        $games = $this->twitch->gamesTop(100);
-        $list = array();
-        foreach($games->top as $game){
-            //array_push($list, $game->game->name);
-            $list[] = array(
-              "name"=>$game->game->name,
-              "img"=>$game->game->logo->small
-            );
+        if(env('OFFLINE')){
+            return [
+                array(
+                    "name"=>"Team Fortress",
+                    "img"=>NULL
+                ),
+                array(
+                    "name"=>"Dota",
+                    "img"=>NULL
+                )
+            ];
+        }else{
+            $games = $this->twitch->gamesTop(100);
+            $list = array();
+            foreach($games->top as $game){
+                //array_push($list, $game->game->name);
+                $list[] = array(
+                    "name"=>$game->game->name,
+                    "img"=>$game->game->logo->small
+                );
+            }
+            return $list;
         }
-        return $list;
     }
 }
