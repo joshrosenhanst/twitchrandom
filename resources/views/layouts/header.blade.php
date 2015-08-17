@@ -27,7 +27,7 @@
                             @if(isset($games_list[$i]))
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1" href="/games/{{ rawurlencode($games_list[$i]['name']) }}">
-                                <img src="{{ $games_list[$i]['img'] }}" alt="{{ htmlentities($games_list[$i]['name']) }}">
+                                <img src="{{ $games_list[$i]['img'] }}" alt="">
                                 <span>{{ $games_list[$i]['name'] }}</span>
                             </a>
                         </li>
