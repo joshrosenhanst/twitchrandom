@@ -149,7 +149,7 @@
     </div>
 </div>
 <div class="gallery-container lg-container">
-    <h4 class="slogan-highlight">Got a good / funny / unfunny / terrible idea for a slogan? We're taking suggestions: <a href="/slogans">Add it to the list.</a></h4>
+    {{-- <h4 class="slogan-highlight">Got a good / funny / unfunny / terrible idea for a slogan? We're taking suggestions: <a href="/slogans">Add it to the list.</a></h4> --}}
     <div class="row">
         <div class="gallery featured col-md-12 col-lg-9" id="gallery-featured">
             <div class="gallery-title">

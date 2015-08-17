@@ -63,6 +63,14 @@
       }
       font-size:16px;
       font-weight:300;
+      img{
+        width:60px;
+        background:$twitch-purple;
+        display:inline-block;
+        color:white;
+        font-size:0.8em;
+        word-wrap:break-word;
+      }
     }
     &.active{
       @media (min-width: $small){

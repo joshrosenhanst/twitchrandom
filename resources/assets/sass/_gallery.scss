@@ -165,6 +165,12 @@
         bottom: 0px;
         img{
           width:40px;
+          background:$twitch-purple;
+          display:block;
+          color:white;
+          height:55px;
+          font-size:0.8em;
+          word-wrap:break-word;
         }
       }
     }

@@ -63,6 +63,13 @@ body {
     @media (min-width: 768px) {
       .navbar-twitch li a {
         border-radius: 6px; } }
+    .navbar-twitch li a img {
+      width: 60px;
+      background: #6441A5;
+      display: inline-block;
+      color: white;
+      font-size: 0.8em;
+      word-wrap: break-word; }
   @media (min-width: 768px) {
     .navbar-twitch li.active a {
       background-color: #6441A5;
@@ -342,7 +349,13 @@ body {
       right: 0px;
       bottom: 0px; }
       .gallery .item .item-image .box-art img {
-        width: 40px; }
+        width: 40px;
+        background: #6441A5;
+        display: block;
+        color: white;
+        height: 55px;
+        font-size: 0.8em;
+        word-wrap: break-word; }
   .gallery .item .stream-link {
     display: block;
     margin-left: 5px; }

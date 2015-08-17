@@ -15,7 +15,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li role="presentation"><a href="/">Home</a></li>
+                <li role="presentation" class="active"><a href="/">Home</a></li>
                 <li role="presentation" class="dropdown">
                     <a id="dLabel" data-target="#" href="/game" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                         Games
@@ -27,7 +27,7 @@
                             @if(isset($games_list[$i]))
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1" href="/games/{{ rawurlencode($games_list[$i]['name']) }}">
-                                <img src="{{ $games_list[$i]['img'] }}" alt="">
+                                <img src="{{ $games_list[$i]['img'] }}" alt="{{ htmlentities($games_list[$i]['name']) }}">
                                 <span>{{ $games_list[$i]['name'] }}</span>
                             </a>
                         </li>
