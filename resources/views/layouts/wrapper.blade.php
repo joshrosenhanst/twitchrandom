@@ -14,10 +14,10 @@
 
     @if(env('OFFLINE',true))
     <link rel="stylesheet" href="/css/offline/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/offline/bootstrap-theme.min.css">
+    {{-- <link rel="stylesheet" href="/css/offline/bootstrap-theme.min.css"> --}}
     @else
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"> --}}
     @endif
     {{--no internet --}}
 
@@ -38,7 +38,7 @@
     <script src="/js/offline/bootstrap.min.js"></script>
     @else
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     @endif
     {{--<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>--}}
     <script src="/js/nicescroll.min.js"></script>

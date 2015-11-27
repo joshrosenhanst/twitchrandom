@@ -36,6 +36,14 @@
     margin-right:10px;
   }
 }
+.approved-list{
+  li{
+    overflow:hidden;
+    p{
+      margin:0;
+    }
+  }
+}
 @import "stream";
 @import "gallery";
 @import "games";

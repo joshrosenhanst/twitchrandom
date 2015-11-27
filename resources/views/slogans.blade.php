@@ -35,13 +35,20 @@
         @endif
         <form class="form-inline" method="POST">
             <div class="form-group">
-                <label for="name">New Slogan</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="New Slogan">
+                <label for="slogan">New Slogan</label>
+                <input type="text" class="form-control" id="slogan" name="slogan" placeholder="New Slogan">
                 {{ csrf_field() }}
             </div>
             <button type="submit" class="btn btn-success">Submit Slogan</button>
         </form>
-        <ul class="nav nav-tabs" role="tablist">
+        <h4>Approved Slogans</h4>
+        <p>These are the slogans that made the cut.</p>
+        <ul class="list-group">
+            @foreach($approved as $ap)
+                <li class="list-group-item">{{ $ap->slogan }}</li>
+            @endforeach
+        </ul>
+        {{--  <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#community" aria-controls="community" role="tab" data-toggle="tab">Community Submitted Slogans</a></li>
             <li role="presentation"><a href="#approved" aria-controls="approved" role="tab" data-toggle="tab">Approved Slogans</a></li>
         </ul>
@@ -64,6 +71,6 @@
                     @endforeach
                 </ul>
             </div>
-        </div>
+        </div> --}}
     </div>
 @stop

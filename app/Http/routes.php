@@ -46,6 +46,11 @@ Route::group(array('prefix' => 'stream'), function(){
 Route::group(array('prefix' => 'slogans'), function(){
     Route::get('/', array('uses'=>'SloganController@index'));
     Route::post('/', array('uses'=>'SloganController@create'));
+    //admin controls
+    Route::get('/admin', array('uses'=>'SloganController@admin'));
+    Route::get('/{id}/approve', array('uses'=>'SloganController@approve'));
+    Route::get('/{id}/unapprove', array('uses'=>'SloganController@unapprove'));
+    Route::get('/{id}/destroy', array('uses'=>'SloganController@destroy'));
 });
 
 //individual game pages

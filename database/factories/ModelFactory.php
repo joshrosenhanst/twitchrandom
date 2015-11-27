@@ -13,7 +13,7 @@
 
 $factory->define(App\Slogan::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'slogan' => $faker->name,
         'approved' =>$faker->boolean(50)
     ];
 });
