@@ -13,6 +13,11 @@ body {
     transition: 400ms all; }
     body a:hover, body a:focus {
       color: #7550BA; }
+  body img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 0.05em 0 0.1em;
+    vertical-align: -0.1em; }
 
 .header {
   margin: 10px 0 10px 0; }
@@ -594,7 +599,7 @@ body {
     opacity: 0.3; } }
 
 .slogan-form {
-  margin: 40px 0;
+  margin: 40px auto;
   max-width: 500px;
   text-align: left; }
   .slogan-form label {

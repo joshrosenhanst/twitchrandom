@@ -17,7 +17,7 @@ class SloganController extends Controller
         //$unapproved = Slogan::where("approved","=",0)->get();
 
         return View::make('slogans', array(
-          "approved"=>$approved,
+          "approved"=>$approved->toJson(),
           //"unapproved"=>$unapproved,
           "games_list"=>$this->getCachedGameList(),
           "random_text"=>$this->getRandomText()
@@ -32,7 +32,7 @@ class SloganController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, [
-           'slogan'=>'required|unique:slogans|min:3|alpha_num'
+           'slogan'=>'required|unique:slogans|min:3|string|max:50'
         ]);
         Slogan::create([
             'slogan'=>$request->input('slogan'),

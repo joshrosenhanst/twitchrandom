@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>{{ $game }} | Twitch Random</title>
+<title>{{ $game }} | TwitchRandom</title>
 @stop
 
 @section('meta')

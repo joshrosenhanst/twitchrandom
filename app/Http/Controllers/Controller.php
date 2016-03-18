@@ -16,7 +16,12 @@ abstract class Controller extends BaseController
     }
 
     public function getRandomText(){
-        $array = Lang::get('main.slogans');
+        //$array = Lang::get('main.slogans');
+        //$array = App\Slogan::where("approved","=",1)->get("slogan");
+        //$array = $array->toArray();
+        $approved = App\Slogan::where("approved","=",1)->get();
+        $plucked = $approved->pluck("slogan");
+        $array = $plucked->all();
         return $array[array_rand($array)];
     }
 

@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>{{ $name }} Stream | Twitch Random</title>
+<title>{{ $name }} Stream | TwitchRandom</title>
 @stop
 
 @section('meta')
@@ -123,7 +123,7 @@
                     $("#random-game-gallery").hide();
                 }
                 manStateChange = false;
-                History.pushState({state:"/stream/"+historyurl,stream:historyurl},"Twitch Random | "+historyurl,"/stream/"+historyurl);
+                History.pushState({state:"/stream/"+historyurl,stream:historyurl},"TwitchRandom | "+historyurl,"/stream/"+historyurl);
             }).fail(function(data){
                 console.log(data);
             });

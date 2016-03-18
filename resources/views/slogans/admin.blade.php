@@ -22,7 +22,7 @@
             $(".approved-list a.approve").click(function(event){
                 event.preventDefault();
                 var li = $(this).parents("li");
-                var text = li.find(".slogan-text").text();
+                var text = li.data("slogan-raw");
                 var ul = li.parents(".approved-list");
                 li.prependTo($("#approved .approved-list"));
                 $("#slogan-alert .slogan-title").text(text);
@@ -32,7 +32,7 @@
             $(".approved-list a.unapprove").click(function(e){
                 e.preventDefault();
                 var li = $(this).parents("li");
-                var text = li.find(".slogan-text").text();
+                var text = li.data("slogan-raw");
                 var ul = li.parents(".approved-list");
                 li.prependTo($("#unapproved .approved-list"));
                 $("#slogan-alert .slogan-title").text(text);
@@ -42,7 +42,7 @@
             $(".approved-list a.destroy").click(function(e){
                 e.preventDefault();
                 var li = $(this).parents("li");
-                var text = li.find(".slogan-text").text();
+                var text = li.data("slogan-raw");
                 var ul = li.parents(".approved-list");
                 li.remove();
                 $("#slogan-alert .slogan-title").text(text);
@@ -126,8 +126,8 @@
                 <p>These slogans will appear under the Site Name on the header bar.</p>
                 <ul class="list-group approved-list">
                     @foreach($approved as $ap)
-                        <li class="list-group-item" data-slogan-id="{{ $ap->id }}">
-                            <p><span class="slogan-text">{{ $ap->slogan }}</span>
+                        <li class="list-group-item" data-slogan-id="{{ $ap->id }}" data-slogan-raw="{{ $ap->slogan }}">
+                            <p><span class="slogan-text">{{{ $ap->slogan }}}</span>
                             <span class="pull-right">
                                     <a href="{{ $ap->id }}/approve" title="Approve Slogan" class="btn btn-xs btn-success approve"><span class="glyphicon glyphicon-ok"></span></a>
                                     <a href="{{ $ap->id }}/unapprove" title="Unpprove Slogan" class="btn btn-xs btn-danger unapprove"><span class="glyphicon glyphicon-remove"></span></a>
@@ -143,8 +143,8 @@
                 <p>These slogans can be approved or destroyed (removed from the database).</p>
                 <ul class="list-group approved-list">
                     @foreach($unapproved as $un)
-                        <li class="list-group-item" data-slogan-id="{{ $un->id }}">
-                            <p><span class="slogan-text">{{ $un->slogan }}</span>
+                        <li class="list-group-item" data-slogan-id="{{ $un->id }}" data-slogan-raw="{{ $un->slogan }}">
+                            <p><span class="slogan-text">{{{ $un->slogan }}}</span>
                                 <span class="pull-right">
                                     <a href="{{ $un->id }}/approve" title="Approve Slogan" class="btn btn-xs btn-success approve"><span class="glyphicon glyphicon-ok"></span></a>
                                     <a href="{{ $un->id }}/unapprove" title="Unpprove Slogan" class="btn btn-xs btn-danger unapprove"><span class="glyphicon glyphicon-remove"></span></a>
@@ -157,4 +157,5 @@
             </div>
         </div>
     </div>
+    @include("layouts.footer")
 @stop

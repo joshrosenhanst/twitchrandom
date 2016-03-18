@@ -8,6 +8,7 @@ class Slogan extends Model
 {
     protected $table = 'slogans';
     protected $fillable = ['slogan','approved'];
+    protected $hidden = ['created_at','updated_at'];
 
     public function approve(){
         $this->approved = 1;
