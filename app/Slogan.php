@@ -13,7 +13,7 @@ class Slogan extends Model
         $this->approved = 1;
         $this->save();
     }
-    public function unapprove(){
+    public function reject(){
         $this->approved = 0;
         $this->save();
     }

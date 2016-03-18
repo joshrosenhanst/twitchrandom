@@ -22,29 +22,38 @@
             $(".approved-list a.approve").click(function(event){
                 event.preventDefault();
                 var li = $(this).parents("li");
+                var text = li.find(".slogan-text").text();
                 var ul = li.parents(".approved-list");
                 li.prependTo($("#approved .approved-list"));
+                $("#slogan-alert .slogan-title").text(text);
+                $("#slogan-alert .slogan-action").text("approved");
                 approveSlogan(li.data("slogan-id"));
             });
             $(".approved-list a.unapprove").click(function(e){
                 e.preventDefault();
                 var li = $(this).parents("li");
+                var text = li.find(".slogan-text").text();
                 var ul = li.parents(".approved-list");
                 li.prependTo($("#unapproved .approved-list"));
+                $("#slogan-alert .slogan-title").text(text);
+                $("#slogan-alert .slogan-action").text("rejected");
                 unapproveSlogan(li.data("slogan-id"));
             });
             $(".approved-list a.destroy").click(function(e){
                 e.preventDefault();
                 var li = $(this).parents("li");
+                var text = li.find(".slogan-text").text();
                 var ul = li.parents(".approved-list");
                 li.remove();
+                $("#slogan-alert .slogan-title").text(text);
+                $("#slogan-alert .slogan-action").text("destroyed");
                 destroySlogan(li.data("slogan-id"));
             });
         });
 
         function approveSlogan(id){
             $.ajax({
-                url: ("/slogans/"+id+"/approve")
+                url: ("/admin/slogans/"+id+"/approve")
             })
             .done(function(data){
                 updateCount();
@@ -54,7 +63,7 @@
         }
         function unapproveSlogan(id){
             $.ajax({
-                url: ("/slogans/"+id+"/unapprove")
+                url: ("/admin/slogans/"+id+"/reject")
             })
             .done(function(data){
                 updateCount();
@@ -66,7 +75,7 @@
 
         function destroySlogan(id){
             $.ajax({
-                url: ("/slogans/"+id+"/destroy")
+                url: ("/admin/slogans/"+id+"/destroy")
             })
             .done(function(data){
                 updateCount();
@@ -81,6 +90,7 @@
             var unapprovedCount = $("#unapproved .approved-list li").length;
             $("#approvedCount").text("Approved ("+approvedCount+")");
             $("#unapprovedCount").text("Unapproved ("+unapprovedCount+")");
+            $("#slogan-alert").show();
         }
     </script>
 @stop
@@ -91,6 +101,9 @@
     <div class="container">
         <h2>Slogan Admin</h2>
         <h3>Approve, unapprove or remove slogans.</h3>
+        <div id="slogan-alert" class="alert alert-info">
+            <strong><em class="slogan-title">SLOGAN TITLE</em></strong> has been <span class="slogan-action">ACTION</span>.
+        </div>
         @if(session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
@@ -114,7 +127,7 @@
                 <ul class="list-group approved-list">
                     @foreach($approved as $ap)
                         <li class="list-group-item" data-slogan-id="{{ $ap->id }}">
-                            <p>{{ $ap->slogan }}
+                            <p><span class="slogan-text">{{ $ap->slogan }}</span>
                             <span class="pull-right">
                                     <a href="{{ $ap->id }}/approve" title="Approve Slogan" class="btn btn-xs btn-success approve"><span class="glyphicon glyphicon-ok"></span></a>
                                     <a href="{{ $ap->id }}/unapprove" title="Unpprove Slogan" class="btn btn-xs btn-danger unapprove"><span class="glyphicon glyphicon-remove"></span></a>
@@ -131,7 +144,7 @@
                 <ul class="list-group approved-list">
                     @foreach($unapproved as $un)
                         <li class="list-group-item" data-slogan-id="{{ $un->id }}">
-                            <p>{{ $un->slogan }}
+                            <p><span class="slogan-text">{{ $un->slogan }}</span>
                                 <span class="pull-right">
                                     <a href="{{ $un->id }}/approve" title="Approve Slogan" class="btn btn-xs btn-success approve"><span class="glyphicon glyphicon-ok"></span></a>
                                     <a href="{{ $un->id }}/unapprove" title="Unpprove Slogan" class="btn btn-xs btn-danger unapprove"><span class="glyphicon glyphicon-remove"></span></a>

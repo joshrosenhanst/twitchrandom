@@ -1,11 +1,11 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Twitch Random - Random Twitch.tv Streams</title>
+<title>TwitchRandom - Random Twitch.tv Streams</title>
 @stop
 
 @section('meta')
-<meta name="description" content="Twitch Random grabs a Twitch stream at random for you to watch. You can also filter streams by game. Find something unexpected at http://twitchrandom.com!">
+<meta name="description" content="TwitchRandom grabs a Twitch stream at random for you to watch. You can also filter streams by game. Find something unexpected at http://twitchrandom.com!">
 @stop
 
 @section('css')
@@ -114,7 +114,7 @@
             $("#main-stream-container").remove();
             $("#stream-loading").show();
             $.ajax({
-                url: "/ajax/randomStream"
+                url: "/ajax/randomStream/true"
             }).done(function(data){
                 $(".jumbotron").append(data);
                 var historyurl = $("#main-stream-container .display-name").data("streamlink");
@@ -127,7 +127,7 @@
                     $("#random-game-gallery").hide();
                 }
                 manStateChange = false;
-                History.pushState({state:"/stream/"+historyurl,stream:historyurl},"Twitch Random | "+historyurl,"/stream/"+historyurl);
+                History.pushState({state:"/stream/"+historyurl,stream:historyurl},"TwitchRandom | "+historyurl,"/stream/"+historyurl);
             }).fail(function(data){
                 console.log(data);
             });
@@ -149,7 +149,7 @@
     </div>
 </div>
 <div class="gallery-container lg-container">
-    <h4 class="slogan-highlight">Got a good / funny / unfunny / terrible idea for a slogan? We're taking suggestions: <a href="/slogans">Add it to the list.</a></h4>
+    <div class="alert alert-info slogan-highlight"><span class="glyphicon glyphicon-certificate"></span> Got a good idea for a slogan? <a href="/slogans">Submit a new slogan for TwitchRandom!</a></div>
     <div class="row">
         <div class="gallery featured col-md-12 col-lg-9" id="gallery-featured">
             <div class="gallery-title">

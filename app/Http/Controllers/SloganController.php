@@ -15,14 +15,11 @@ class SloganController extends Controller
     {
         $approved = App\Slogan::where("approved","=",1)->get();
         //$unapproved = Slogan::where("approved","=",0)->get();
-        $games_list = Cache::remember('games_list', 5, function(){
-            return $this->getGameList();
-        });
 
         return View::make('slogans', array(
           "approved"=>$approved,
           //"unapproved"=>$unapproved,
-          "games_list"=>$games_list,
+          "games_list"=>$this->getCachedGameList(),
           "random_text"=>$this->getRandomText()
         ));
     }
@@ -49,14 +46,11 @@ class SloganController extends Controller
 
         $approved = Slogan::where("approved",1)->orderBy("updated_at","desc")->get();
         $unapproved = Slogan::where("approved",0)->orderBy("updated_at","desc")->get();
-        $games_list = Cache::remember('games_list', 5, function(){
-            return $this->getGameList();
-        });
 
         return View::make('slogans.admin', array(
             "approved"=>$approved,
             "unapproved"=>$unapproved,
-            "games_list"=>$games_list,
+            "games_list"=>$this->getCachedGameList(),
             "random_text"=>$this->getRandomText()
         ));
     }
@@ -65,8 +59,8 @@ class SloganController extends Controller
         Slogan::find($id)->approve();
     }
 
-    public function unapprove($id){
-        Slogan::find($id)->unapprove();
+    public function reject($id){
+        Slogan::find($id)->reject();
     }
 
     /**

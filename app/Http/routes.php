@@ -15,7 +15,7 @@ Route::get('/', array('uses'=>'HomeController@home'));
 //Route::get('/feature', array('uses'=>'HomeController@home'));
 Route::get('/randomstream', array('uses'=>'HomeController@randomstream'));
 Route::get('/randomgame', array('uses'=>'HomeController@randomgame'));
-Route::get('/featured', array('uses'=>'HomeController@featured'));
+Route::get('/featured', array('uses'=>'FeatureController@index'));
 Route::get('/missing', array('uses'=>'HomeController@missing'));
 
 //ajax calls
@@ -42,15 +42,11 @@ Route::group(array('prefix' => 'stream'), function(){
     Route::get('/{name}', array('uses'=>'HomeController@stream'));
 });
 
-//slogan pages
+//user slogan pages
 Route::group(array('prefix' => 'slogans'), function(){
     Route::get('/', array('uses'=>'SloganController@index'));
     Route::post('/', array('uses'=>'SloganController@create'));
     //admin controls
-    Route::get('/admin', array('uses'=>'SloganController@admin'));
-    Route::get('/{id}/approve', array('uses'=>'SloganController@approve'));
-    Route::get('/{id}/unapprove', array('uses'=>'SloganController@unapprove'));
-    Route::get('/{id}/destroy', array('uses'=>'SloganController@destroy'));
 });
 
 //individual game pages
@@ -63,6 +59,26 @@ Route::group(array('prefix' => 'games'), function(){
 Route::group(array('prefix' => 'game'), function(){
     Route::get('/', array('uses'=>'GameController@home'));
     Route::get('/{game}', array('uses'=>'GameController@getGame'));
+});
+
+//admin pages
+Route::group(array('prefix' => 'admin'), function(){
+    //Route::get('/', array('uses'=>'UserController@login'));
+    Route::group(array('prefix' => 'slogans'), function(){
+        Route::get('/', array('uses'=>'SloganController@admin'));
+        Route::get('/{id}/approve', array('uses'=>'SloganController@approve'));
+        Route::get('/{id}/reject', array('uses'=>'SloganController@reject'));
+        Route::get('/{id}/destroy', array('uses'=>'SloganController@destroy'));
+    });
+
+    Route::group(array('prefix' => 'features'), function(){
+        Route::get('/', array('uses'=>'FeatureController@admin'));
+        Route::get('/new', array('uses'=>'FeatureController@new'));
+        Route::post('/create', array('uses'=>'FeatureController@create'));
+        Route::get('/{id}/edit', array('uses'=>'FeatureController@edit'));
+        Route::post('/update', array('uses'=>'FeatureController@update'));
+        Route::get('/{id}/destroy', array('uses'=>'FeatureController@destroy'));
+    });
 });
 
 //dev pages

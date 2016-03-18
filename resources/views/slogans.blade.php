@@ -12,65 +12,59 @@
 @stop
 
 @section('js')
+    <script>
+        $(document).ready(function(){
+            var slogans = {!! json_encode($approved) !!};
+            setInterval(function(){
+                var new_slogan = slogans[Math.floor(Math.random() * slogans.length)]["slogan"];
+                $(".slogan-logo .new_slogan").text(new_slogan);
+            }, 2500)
+        });
+    </script>
 @stop
 
 
 @section('content')
     @include("layouts.header")
-    <div class="container">
-        <h2>Slogans</h2>
-        <h3>We need your best slogans!</h3>
-        <p>You may have noticed that in the header we have a rotating slogan. Well, we're out of ideas and need your help! Submit your idea below and we might add it to the list of slogans.</p>
-        @if(session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
+    <div class="marketingcontainer">
+        <div class="container med-container">
+            <h1>Slogans</h1>
+            <h2 class="text-muted">We need your best slogans for Twitch Random!</h2>
+            <p>For each page we randomly select a header slogan from our list of community provided slogans.</p>
+            <p>You can help us out by submitting your idea for a new slogan below. If it's good we might use it on the site!</p>
+            <div class="text-center">
+                <div class="random-slogan-box">
+                    <p class="slogan-logo">Twitch Random<span class="new_slogan">Find Something Unexpected</span></p>
+                </div>
+                <div class="slogan-subtitle">Some sample community slogans.</div>
             </div>
-        @endif
-        @if(count($errors) > 0)
-            <div class="alert alert-danger">
-                @foreach ($errors->all() as $error)
-                    <p>{{ $error }}</p>
-                @endforeach
-            </div>
-        @endif
-        <form class="form-inline" method="POST">
-            <div class="form-group">
-                <label for="slogan">New Slogan</label>
-                <input type="text" class="form-control" id="slogan" name="slogan" placeholder="New Slogan">
-                {{ csrf_field() }}
-            </div>
-            <button type="submit" class="btn btn-success">Submit Slogan</button>
-        </form>
-        <h4>Approved Slogans</h4>
-        <p>These are the slogans that made the cut.</p>
-        <ul class="list-group">
-            @foreach($approved as $ap)
-                <li class="list-group-item">{{ $ap->slogan }}</li>
-            @endforeach
-        </ul>
-        {{--  <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#community" aria-controls="community" role="tab" data-toggle="tab">Community Submitted Slogans</a></li>
-            <li role="presentation"><a href="#approved" aria-controls="approved" role="tab" data-toggle="tab">Approved Slogans</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane active" role="tabpanel" id="community">
-                <h4>Community Submitted Slogans</h4>
-                <p>We haven't checked these slogans yet. They're probably good, who knows?</p>
-                <ul class="list-group">
-                @foreach($unapproved as $un)
-                        <li class="list-group-item">{{ $un->name }}</li>
-                @endforeach
-                </ul>
-            </div>
-            <div class="tab-pane" role="tabpanel" id="approved">
-                <h4>Approved Slogans</h4>
-                <p>These slogans are good enough! We're gonna use them.</p>
-                <ul class="list-group">
-                    @foreach($approved as $ap)
-                        <li class="list-group-item">{{ $ap->name }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        </div> --}}
+
+        </div>
     </div>
+    <div class="container med-container">
+        <form class="slogan-form" method="POST">
+            <div class="form-group">
+                <label for="slogan">Submit New Slogan <span>Keep it short and sweet!</span></label>
+                <input type="text" class="form-control input-lg" id="slogan" name="slogan" placeholder="New Slogan">
+                {{ csrf_field() }}
+                @if(session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg">Submit Slogan</button>
+            </div>
+        </form>
+    </div>
+
+    @include("layouts.footer")
 @stop

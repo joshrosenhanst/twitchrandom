@@ -4,9 +4,40 @@ $:.unshift(lib_path) unless $:.include?(lib_path)
 load './tasks/bower.rake'
 
 require 'rake/testtask'
-task :test do |t|
-  $: << File.expand_path('test/')
-  Dir.glob('./test/**/*_test.rb').each { |file| require file }
+Rake::TestTask.new do |t|
+  t.libs << 'test'
+  t.test_files = FileList['test/**/*_test.rb']
+  t.verbose = true
+end
+
+desc 'Test all Gemfiles from test/*.gemfile'
+task :test_all_gemfiles do
+  require 'term/ansicolor'
+  require 'pty'
+  require 'shellwords'
+  cmd      = 'bundle install --quiet && bundle exec rake --trace'
+  statuses = Dir.glob('./test/gemfiles/*{[!.lock]}').map do |gemfile|
+    env = {'BUNDLE_GEMFILE' => gemfile}
+    cmd_with_env = "  (#{env.map { |k, v| "export #{k}=#{Shellwords.escape v}" } * ' '}; #{cmd})"
+    $stderr.puts Term::ANSIColor.cyan("Testing\n#{cmd_with_env}")
+    PTY.spawn(env, cmd) do |r, _w, pid|
+      begin
+        r.each_line { |l| puts l }
+      rescue Errno::EIO
+        # Errno:EIO error means that the process has finished giving output.
+      ensure
+        ::Process.wait pid
+      end
+    end
+    [$? && $?.exitstatus == 0, cmd_with_env]
+  end
+  failed_cmds = statuses.reject(&:first).map { |(_status, cmd_with_env)| cmd_with_env }
+  if failed_cmds.empty?
+    $stderr.puts Term::ANSIColor.green('Tests pass with all gemfiles')
+  else
+    $stderr.puts Term::ANSIColor.red("Failing (#{failed_cmds.size} / #{statuses.size})\n#{failed_cmds * "\n"}")
+    exit 1
+  end
 end
 
 desc 'Dumps output to a CSS file for testing'

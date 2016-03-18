@@ -21,7 +21,16 @@
 }
 .slogan-highlight{
   font-weight:300;
-  text-align:center;
+  font-size: 18px;
+  line-height: 1.1;
+  margin:10px auto;
+  max-width:660px;
+  padding:5px 15px;
+  .glyphicon{
+    font-size:28px;
+    color:$twitch-purple;
+    vertical-align:middle;
+  }
 }
 .btn-twitch{
   background:$twitch-purple;
@@ -47,6 +56,7 @@
 @import "stream";
 @import "gallery";
 @import "games";
+@import "slogans";
 .offline{
   text-align:center;
   color:$twitch-purple;

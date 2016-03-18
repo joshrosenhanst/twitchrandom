@@ -16,40 +16,20 @@ class HomeController extends Controller {
 	*/
 
 	public function home(){
-        $games_list = Cache::remember('games_list', 5, function(){
-            return $this->getGameList();
-        });
-
 		return View::make('index', array(
-            "games_list"=>$games_list,
+            "games_list"=>$this->getCachedGameList(),
             "random_text"=>$this->getRandomText()
         ));
 	}
-	public function featured(){
-        $games_list = Cache::remember('games_list', 5, function(){
-            return $this->getGameList();
-        });
 
-		return View::make('featured', array(
-            "games_list"=>$games_list,
-            "random_text"=>$this->getRandomText()
-        ));
-	}
 	public function missing(){
-        $games_list = Cache::remember('games_list', 5, function(){
-            return $this->getGameList();
-        });
 		return View::make('404', array(
-            "games_list"=>$games_list,
+            "games_list"=>$this->getCachedGameList(),
             "random_text"=>$this->getRandomText()
         ));
 	}
 	public function randomgame(){
 		$game = $this->getRandomGame();
-
-        /*echo "<pre>";
-        var_dump($this->getTopGames(9));
-        echo "</pre>";*/
         return Redirect::to("/games/".rawurlencode($game));
 	}
 	public function randomstream(){
@@ -59,14 +39,10 @@ class HomeController extends Controller {
 
     public function stream($name){
         $name = rawurldecode($name);
-        $games_list = Cache::remember('games_list', 5, function(){
-            return $this->getGameList();
-        });
         return View::make('stream', array(
             "name"=>$name,
-            "games_list"=>$games_list,
+            "games_list"=>$this->getCachedGameList(),
             "random_text"=>$this->getRandomText()
         ));
     }
-
 }

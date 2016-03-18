@@ -112,7 +112,7 @@
                     <div class="search-container">
                         <input id="game_search" type="text" class="form-control" placeholder="Search for a game" autocomplete="off" spellcheck="false">
                     </div>
-                    <h2>All Games</h2>
+                    <h1>All Games</h1>
                 </div>
                 <div class="games_container row">
                 </div>

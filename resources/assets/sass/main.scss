@@ -6,6 +6,7 @@ $twitch-black:#101014;
 $twitch-purple:#6441A5;
 $twitch-purple-hover:#7550BA;
 $background:blue;
+$background-white:#fafafa;
 $featured:#FFF9D7;
 $stream-large-height:480px;
 $stream-large-width:800px;
@@ -14,7 +15,7 @@ $stream-small-width:620px;
 
 body{
   //min-width:$xsmall;
-  background:#F6F6F6;
+  background:$background-white;
   font-weight:300;
   .body-container{
     max-width:$small;

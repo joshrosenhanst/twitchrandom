@@ -21,22 +21,27 @@
     }
   }
   .nav-pills>li.active>a{
-    background-color:$twitch-purple;
+    //background-color:$twitch-purple;
+    background:transparent;
+    color:$twitch-purple;
     &:hover{
-      background-color:$twitch-purple-hover;
+      //background-color:$twitch-purple-hover;
+      background:$twitch-purple;
+      color:white;
     }
   }
 }
 
 .navbar-twitch{
-  margin:10px 0 10px 0;
+  padding:10px 0 10px 0;
+  margin:0;
+  background:white;
   .navbar-toggle{
     .icon-bar{
-      background-color:#f6f6f6;
+      background-color:$background-white;
     }
   }
   .navbar-brand{
-    color:$twitch-purple;
     display:inline-block;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -44,6 +49,9 @@
     text-decoration:none;
     font-weight:300;
     font-size:24px;
+    .grey{
+      color:#888;
+    }
     .slogan{
       display:block;
       font-size:16px;
