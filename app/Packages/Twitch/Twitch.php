@@ -41,7 +41,7 @@ class Twitch {
     const URI_STREAM = 'streams/';
     const URI_STREAM_RANDOM = 'beta/streams/random/';
     const URI_STREAM_SUMMARY = 'streams/summary/';
-    const URI_STREAMS_FEATURED = 'streams/featured/';
+    const URI_STREAMS_FEATURED = 'streams/featured';
     const URI_STREAMS_SEARCH = 'search/streams/';
     const URI_GAMES_SEARCH = 'search/games/';
     const URI_VIDEO = 'videos/';
@@ -606,19 +606,35 @@ class Twitch {
     /**
      * List the live streams that the authenticated user is following
      *  - requires scope 'user_read'
-     * @param   string
-     * @return  stdClass
+     *
+     * @param string  $token  API access token of an authenticated user
+     * @param integer $limit  Maximum number of objects in streams array
+     *                        Default => 25
+     *                        Maximum => 100
+     * @param integer $offset Object offset for pagination
+     *                        Default => 0
+     * @param boolean $hls    Limit the results to only the streams using HLS
+     *
+     * @return stdClass
      */
-    public function authStreamsFollowed($token)
+    public function authStreamsFollowed($token, $limit = null, $offset = null, $hls = null)
     {
         if ($this->auth_config === false) {
             $this->authConfigException();
         }
 
-        $query_string = $this->buildQueryString(array(
-          'oauth_token' => $token,
-          'client_id' => $this->auth_config['client_id'],
-        ));
+        $query = array(
+            'oauth_token' => $token,
+            'client_id' => $this->auth_config['client_id']
+        );
+
+        foreach (array('limit', 'offset', 'hls') as $param) {
+            if (!is_null($$param)) {
+                $query[$param] = $$param;
+            }
+        }
+
+        $query_string = $this->buildQueryString($query);
 
         return $this->request(self::URI_STREAMS_FOLLOWED_AUTH . $query_string);
     }

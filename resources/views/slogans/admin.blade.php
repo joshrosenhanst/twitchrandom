@@ -100,6 +100,29 @@
     @include("layouts.header")
     <div class="container">
         <h2>Slogan Admin</h2>
+        <h3>Create new approved slogan</h3>
+        <form class="slogan-form" method="POST">
+            <div class="form-group">
+                <label for="slogan">Submit New Approved Slogan</label>
+                <input type="text" class="form-control input-lg" id="slogan" name="slogan" placeholder="{{{ $random_text }}}" maxlength="50">
+                {{ csrf_field() }}
+                @if(session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <p><span class="glyphicon glyphicon-remove"></span> {{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success btn-lg">Submit Slogan</button>
+            </div>
+        </form>
         <h3>Approve, unapprove or remove slogans.</h3>
         <div id="slogan-alert" class="alert alert-info">
             <strong><em class="slogan-title">SLOGAN TITLE</em></strong> has been <span class="slogan-action">ACTION</span>.
@@ -121,9 +144,11 @@
             <li role="presentation"><a href="#unapproved" id="unapprovedCount" aria-controls="unapproved" role="tab" data-toggle="tab">Unapproved ({{ count($unapproved)  }})</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" role="tabpanel" id="approved">
-                <h4>Approved Slogans</h4>
-                <p>These slogans will appear under the Site Name on the header bar.</p>
+            <div class="tab-pane active panel panel-default" role="tabpanel" id="approved">
+                <div class="panel-body">
+                    <h4>Approved Slogans</h4>
+                    <p>These slogans will appear under the Site Name on the header bar.</p>
+                </div>
                 <ul class="list-group approved-list">
                     @foreach($approved as $ap)
                         <li class="list-group-item" data-slogan-id="{{ $ap->id }}" data-slogan-raw="{{ $ap->slogan }}">
@@ -138,9 +163,11 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="tab-pane" role="tabpanel" id="unapproved">
-                <h4>Unapproved Slogans</h4>
-                <p>These slogans can be approved or destroyed (removed from the database).</p>
+            <div class="tab-pane panel panel-default" role="tabpanel" id="unapproved">
+                <div class="panel-body">
+                    <h4>Unapproved Slogans</h4>
+                    <p>These slogans can be approved or destroyed (removed from the database).</p>
+                </div>
                 <ul class="list-group approved-list">
                     @foreach($unapproved as $un)
                         <li class="list-group-item" data-slogan-id="{{ $un->id }}" data-slogan-raw="{{ $un->slogan }}">

@@ -37,7 +37,7 @@
     <script src="/js/offline/jquery.js"></script>
     <script src="/js/offline/bootstrap.min.js"></script>
     @else
-    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.2.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     @endif
     {{--<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>--}}

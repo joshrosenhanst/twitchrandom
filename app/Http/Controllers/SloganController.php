@@ -42,6 +42,18 @@ class SloganController extends Controller
         return Redirect::to("/slogans")->with('status','Slogan submitted. If its any good we might approve it. Thanks!');
     }
 
+    public function adminCreate(Request $request){
+        $this->validate($request, [
+            'slogan'=>'required|unique:slogans|min:3|string|max:50'
+        ]);
+        Slogan::create([
+            'slogan'=>$request->input('slogan'),
+            'approved'=>1
+        ]);
+
+        return Redirect::to("/admin/slogans")->with('status','Slogan approved and created.');
+    }
+
     public function admin(){
 
         $approved = Slogan::where("approved",1)->orderBy("updated_at","desc")->get();

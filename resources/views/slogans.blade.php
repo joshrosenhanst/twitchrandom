@@ -60,11 +60,6 @@
                 <label for="slogan">Submit New Slogan <span>Keep it short and sweet!</span></label>
                 <input type="text" class="form-control input-lg" id="slogan" name="slogan" placeholder="{{{ $random_text }}}" maxlength="50">
                 {{ csrf_field() }}
-                @if(session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
                 @if(count($errors) > 0)
                     <div class="alert alert-danger">
                         @foreach ($errors->all() as $error)
