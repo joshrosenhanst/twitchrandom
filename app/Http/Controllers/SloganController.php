@@ -1,7 +1,13 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Slogan;
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
+use Redirect;
 
 
 class SloganController extends Controller
@@ -13,10 +19,10 @@ class SloganController extends Controller
      */
     public function index()
     {
-        $approved = App\Slogan::where("approved","=",1)->get();
+        $approved = Slogan::where("approved","=",1)->get();
         //$unapproved = Slogan::where("approved","=",0)->get();
 
-        return View::make('slogans', array(
+        return view('slogans', array(
           "approved"=>$approved->toJson(),
           //"unapproved"=>$unapproved,
           "games_list"=>$this->getCachedGameList(),
@@ -59,7 +65,7 @@ class SloganController extends Controller
         $approved = Slogan::where("approved",1)->orderBy("updated_at","desc")->get();
         $unapproved = Slogan::where("approved",0)->orderBy("updated_at","desc")->get();
 
-        return View::make('slogans.admin', array(
+        return view('slogans.admin', array(
             "approved"=>$approved,
             "unapproved"=>$unapproved,
             "games_list"=>$this->getCachedGameList(),

@@ -1,13 +1,19 @@
 <?php
+namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
+use Cache;
+
 use App\Packages\Twitch;
+use App\Slogan;
 
 abstract class Controller extends BaseController
 {
-    use DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     protected $twitch;
 
@@ -19,7 +25,7 @@ abstract class Controller extends BaseController
         //$array = Lang::get('main.slogans');
         //$array = App\Slogan::where("approved","=",1)->get("slogan");
         //$array = $array->toArray();
-        $approved = App\Slogan::where("approved","=",1)->get();
+        $approved = Slogan::where("approved","=",1)->get();
         $plucked = $approved->pluck("slogan");
         $array = $plucked->all();
         return $array[array_rand($array)];

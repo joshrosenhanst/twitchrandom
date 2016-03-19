@@ -58,7 +58,7 @@
         <form class="slogan-form" method="POST">
             <div class="form-group">
                 <label for="slogan">Submit New Slogan <span>Keep it short and sweet!</span></label>
-                <input type="text" class="form-control input-lg" id="slogan" name="slogan" placeholder="{{{ $random_text }}}" maxlength="50">
+                <input type="text" class="form-control input-lg" id="slogan" name="slogan" placeholder="{{ $random_text }}" maxlength="50" required>
                 {{ csrf_field() }}
                 @if(count($errors) > 0)
                     <div class="alert alert-danger">

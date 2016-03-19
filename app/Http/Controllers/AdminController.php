@@ -1,6 +1,10 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
 
 
 class AdminController extends Controller
@@ -12,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return View::make('admin', array(
+        return view('admin', array(
             "games_list" => $this->getCachedGameList(),
             "random_text" => $this->getRandomText()
         ));

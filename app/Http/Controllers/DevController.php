@@ -11,7 +11,7 @@ class DevController extends Controller {
     }
 
     public function mobiletest(){
-        return View::make('layouts.dev.mobiletest', array(
+        return view('layouts.dev.mobiletest', array(
         ));
     }
 

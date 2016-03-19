@@ -1,15 +1,21 @@
 <?php
 
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
 class AjaxController extends Controller {
     public function randomStream($slogan=false){
         //$stream = $this->getRandomStream();
         $stream = $this->twitch->getStreams(null,1,rand(1,8000),null,true)->streams[0];
         if(isset($stream->error)){
-            return View::make('layouts.error', array(
+            return view('layouts.error', array(
                 "errorMsg"=>$stream->message,
             ));
         }else{
-            return View::make('layouts.streamobject', array(
+            return view('layouts.streamobject', array(
                 "stream"=> $stream,
                 "slogan"=>$slogan,
                 "random_text"=>$this->getRandomText()
@@ -22,12 +28,12 @@ class AjaxController extends Controller {
         //$stream = $this->getStreamByName($name);
         $stream = $this->twitch->streamGet($name);
         if(isset($stream->error)){
-            return View::make('layouts.error', array(
+            return view('layouts.error', array(
                 "name"=>$name,
                 "errorMsg"=>$stream->message,
             ));
         }else{
-            return View::make('layouts.streampopup', array(
+            return view('layouts.streampopup', array(
                 "name"=>$name,
                 "stream"=>$stream->stream,
             ));
@@ -39,12 +45,12 @@ class AjaxController extends Controller {
         //$stream = $this->getStreamByName($name);
         $stream = $this->twitch->streamGet($name);
         if(isset($stream->error)){
-            return View::make('layouts.error', array(
+            return view('layouts.error', array(
                 "name"=>$name,
                 "errorMsg"=>$stream->message,
             ));
         }else{
-            return View::make('layouts.streamobject', array(
+            return view('layouts.streamobject', array(
                 "name"=>$name,
                 "stream"=>$stream->stream,
                 "slogan"=>$slogan,
@@ -61,7 +67,7 @@ class AjaxController extends Controller {
         $stream =  array_slice($obj->streams, 0, $limit);
 
         if(isset($stream->error)){
-            return View::make('layouts.error', array(
+            return view('layouts.error', array(
                 "game"=>$game,
                 "errorMsg"=>$stream->message
             ));
@@ -69,21 +75,21 @@ class AjaxController extends Controller {
             if($limit === "1"){
                 //stream
                 if($stream){
-                    return View::make('layouts.streamobject', array(
+                    return view('layouts.streamobject', array(
                         "game"=>$game,
                         "stream"=>$stream[0],
                         "slogan"=>$slogan,
                         "random_text"=>$this->getRandomText()
                     ));
                 }else{
-                    return View::make('layouts.error', array(
+                    return view('layouts.error', array(
                         "game"=>$game,
                         "errorMsg"=>"Game '".$game."' not found",
                     ));
                 }
             }else{
                 //galleries
-                return View::make('layouts.gallery', array(
+                return view('layouts.gallery', array(
                     "galleries"=>$stream,
                     "button"=>true
                 ));
@@ -93,7 +99,7 @@ class AjaxController extends Controller {
 
     public function topStreamsByGame($game){
         $game = rawurldecode($game);
-        return View::make('layouts.gallery', array(
+        return view('layouts.gallery', array(
             //"galleries"=>$this->getGameTopStreams($game),
             "galleries"=>$this->twitch->getStreams($game,9,0,null,true)->streams,
             "button"=>false
@@ -101,7 +107,7 @@ class AjaxController extends Controller {
     }
 
     public function getGallery(){
-        return View::make('layouts.gallery', array(
+        return view('layouts.gallery', array(
             //"galleries"=>$this->getGalleryStreams(),
             "galleries"=>array_slice($this->twitch->getRandomStreams()->streams,0,11),
             "button"=>true
@@ -109,7 +115,7 @@ class AjaxController extends Controller {
     }
 
     public function getFeaturedGallery($num=9){
-        return View::make('layouts.featured', array(
+        return view('layouts.featured', array(
             //"galleries"=>$this->getFeaturedStreams($num),
             "galleries"=>$this->twitch->streamsFeatured($num)->featured,
             "button"=>false
@@ -117,7 +123,7 @@ class AjaxController extends Controller {
     }
 
     public function getAllGames($limit, $offset=0){
-        return View::make('layouts.allgames', array(
+        return view('layouts.allgames', array(
             //"games"=>$this->getTopGames($limit,$offset)
             "games"=>$this->twitch->gamesTop($limit,$offset)
         ));

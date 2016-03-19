@@ -104,7 +104,7 @@
         <form class="slogan-form" method="POST">
             <div class="form-group">
                 <label for="slogan">Submit New Approved Slogan</label>
-                <input type="text" class="form-control input-lg" id="slogan" name="slogan" placeholder="{{{ $random_text }}}" maxlength="50">
+                <input type="text" class="form-control input-lg" id="slogan" name="slogan" placeholder="{{{ $random_text }}}" maxlength="50" required>
                 {{ csrf_field() }}
                 @if(session('status'))
                     <div class="alert alert-success">

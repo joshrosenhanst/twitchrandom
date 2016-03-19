@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class FeatureController extends Controller
 {
@@ -22,7 +21,7 @@ class FeatureController extends Controller
         );
 
         \Stripe\Stripe::setApiKey($stripe['secret_key']);
-        return View::make('featured', array(
+        return view('featured', array(
             "stripe"=>$stripe,
             "games_list"=>$this->getCachedGameList(),
             "random_text"=>$this->getRandomText()
