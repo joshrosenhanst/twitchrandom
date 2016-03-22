@@ -25,6 +25,7 @@ class SloganController extends Controller
         return view('slogans', array(
           "approved"=>$approved->toJson(),
           //"unapproved"=>$unapproved,
+          "emote_list"=>$this->getEmoteList(),
           "games_list"=>$this->getCachedGameList(),
           "random_text"=>$this->getRandomText()
         ));

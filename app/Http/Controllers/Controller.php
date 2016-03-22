@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Cache;
 
 use App\Packages\Twitch;
+use App\Packages\TwitchEmote;
 use App\Slogan;
 
 abstract class Controller extends BaseController
@@ -17,8 +18,16 @@ abstract class Controller extends BaseController
 
     protected $twitch;
 
-    public function __construct(Twitch $twitch){
+    public function __construct(Twitch $twitch, TwitchEmote $twitchEmote){
         $this->twitch = $twitch;
+        $this->twitchEmote = $twitchEmote;
+    }
+
+    public function getEmoteList(){
+        $emote_list = Cache::remember('emote_list', $this->twitchEmote->cacheTime, function(){
+            return $this->twitchEmote->getGlobalList();
+        });
+        return $emote_list->emotes;
     }
 
     public function getRandomText(){

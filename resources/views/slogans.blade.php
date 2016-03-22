@@ -14,6 +14,7 @@
 @section('js')
     <script>
         $(document).ready(function(){
+            $(".emote-container").niceScroll({cursorcolor:"#6441A5"});
             var slogans = {!! $approved !!};
             setInterval(function(){
                 var new_slogan = slogans[Math.floor(Math.random() * slogans.length)]["slogan"];
@@ -72,6 +73,18 @@
                 <button type="submit" class="btn btn-success btn-lg">Submit Slogan</button>
             </div>
         </form>
+        <div id="emote-list">
+            <h3>Supported Twitch Emotes</h3>
+            <h4 class="text-muted">Click an emote to add it to the slogan</h4>
+            <div class="row emote-container">
+                @foreach($emote_list as $name=>$value)
+                <div class="col-md-3">
+                    <img src="https://static-cdn.jtvnw.net/emoticons/v1/{{ $value->image_id }}/2.0">
+                    <p>{{ $name }}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
     </div>
 
     @include("layouts.footer")

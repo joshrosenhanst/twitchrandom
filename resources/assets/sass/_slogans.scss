@@ -1,4 +1,22 @@
-
+#emote-list{
+  margin:40px auto;
+  max-width:500px;
+  .emote-container{
+    max-height:500px;
+    overflow-y:auto;
+    text-align:center;
+    background:white;
+    padding:15px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+    border-radius: 6px;
+    img{
+      margin-top:15px;
+      height:27px;
+    }
+  }
+}
 #slogan-alert{
   display:none;
 }
@@ -67,8 +85,12 @@
       display: block;
       font-size: 32px;
       color: #888;
-      opacity: 0;
-      animation: rotateWordsFirst 2500ms linear infinite 0s;
+      //opacity: 0;
+      //animation: rotateWordsFirst 2500ms linear infinite 0s;
+      animation-name: rotateWordsFirst;
+      animation-duration: 2500ms;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
     }
   }
 }
@@ -78,6 +100,24 @@
   //margin-bottom:30px;
   color:#666;
 }
+@keyframes fadeOut{
+  from{
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+@keyframes fadeIn{
+  from {
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
 @keyframes rotateWordsFirst {
   0% { opacity: 0.4; animation-timing-function: linear;  }
   20% { opacity: 1; }

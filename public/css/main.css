@@ -471,6 +471,23 @@ body {
   width: 50%;
   margin: 0 auto; }
 
+#emote-list {
+  margin: 40px auto;
+  max-width: 500px; }
+  #emote-list .emote-container {
+    max-height: 500px;
+    overflow-y: auto;
+    text-align: center;
+    background: white;
+    padding: 15px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+    border-radius: 6px; }
+    #emote-list .emote-container img {
+      margin-top: 15px;
+      height: 27px; }
+
 #slogan-alert {
   display: none; }
 
@@ -529,14 +546,43 @@ body {
       display: block;
       font-size: 32px;
       color: #888;
-      opacity: 0;
-      -webkit-animation: rotateWordsFirst 2500ms linear infinite 0s;
-      animation: rotateWordsFirst 2500ms linear infinite 0s; }
+      -webkit-animation-name: rotateWordsFirst;
+      animation-name: rotateWordsFirst;
+      -webkit-animation-duration: 2500ms;
+      animation-duration: 2500ms;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite; }
 
 .slogan-subtitle {
   font-style: italic;
   text-align: center;
   color: #666; }
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 @-webkit-keyframes rotateWordsFirst {
   0% {
