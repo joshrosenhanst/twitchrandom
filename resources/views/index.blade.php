@@ -5,7 +5,7 @@
 @stop
 
 @section('meta')
-<meta name="description" content="TwitchRandom grabs a Twitch stream at random for you to watch. You can also filter streams by game. Find something unexpected at http://twitchrandom.com!">
+<meta name="description" content="TwitchRandom grabs a Twitch stream at random for you to watch. You can also filter streams by game. Find something unexpected at https://twitchrandom.com!">
 @stop
 
 @section('css')

@@ -5,7 +5,7 @@
 @stop
 
 @section('meta')
-<meta name="description" content="TwitchRandom.com - Random {{ $game }} streams. Find something unexpected at http://twitchrandom.com!">
+<meta name="description" content="TwitchRandom.com - Random {{ $game }} streams. Find something unexpected at https://twitchrandom.com!">
 @stop
 
 @section('css')

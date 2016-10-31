@@ -53,7 +53,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
                     </a>
                     @else
                     <a class="display-logo" href="/stream/{{ $stream->channel->name }}">
-                        <img src="http://static-cdn.jtvnw.net/ttv-static/404_boxart-50x50.jpg" alt="Default Twitch Profile Image">
+                        <img src="https://static-cdn.jtvnw.net/ttv-static/404_boxart-50x50.jpg" alt="Default Twitch Profile Image">
                     </a>
                     @endif
                 </div>

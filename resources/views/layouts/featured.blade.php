@@ -4,7 +4,7 @@
     <div class="item">
         <div class="item-image">
             <a href="/stream/{{ $gallery->stream->channel->name }}"><img src="{{ $gallery->stream->preview->medium }}" alt="Random Stream: {{ $gallery->stream->channel->status }}" class="img-thumbnail"></a>
-            <a href="/games/{{ $gallery->stream->game }}" class="box-art"><img src="http://static-cdn.jtvnw.net/ttv-boxart/{{ $gallery->stream->game  }}-40x55.jpg" alt="{{ $gallery->stream->game }} - Box Art"></a>
+            <a href="/games/{{ $gallery->stream->game }}" class="box-art"><img src="https://static-cdn.jtvnw.net/ttv-boxart/{{ $gallery->stream->game  }}-40x55.jpg" alt="{{ $gallery->stream->game }} - Box Art"></a>
         </div>
         <a class="stream-link" href="/stream/{{ $gallery->stream->channel->name }}">
             <h5 class="title">{{ $gallery->stream->channel->status or $gallery->stream->channel->display_name }}</h5>
