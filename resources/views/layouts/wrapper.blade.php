@@ -11,6 +11,12 @@
     <meta name="author" content="SpoonCo">
 
     {{-- PRECONNECT --}}
+    <link href="https://player.twitch.tv" rel="preconnect">
+    <link href="https://static-cdn.jtvnw.net" rel="preconnect">
+    <link href="web-cdn.ttvnw.net" rel="preconnect">
+    <link href="https://spade.twitch.tv" rel="preconnect">
+    <link href="https://pubster.twitch.tv" rel="preconnect">
+    <link href="https://api.twitch.tv" rel="preconnect">
 
     @yield("title")
 
