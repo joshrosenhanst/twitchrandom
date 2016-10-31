@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Twitch Random - Page Not Found</title>
+<title>Page Not Found | TwitchRandom</title>
 @stop
 
 @section('meta')
@@ -9,7 +9,7 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/redesign/main.min.css">
+<link rel="stylesheet" href="/css/main.min.css">
 @stop
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('title')
-    <title>Slogan Admin | Twitch Random</title>
+    <title>Slogan Admin | TwitchRandom</title>
 @stop
 
 @section('meta')

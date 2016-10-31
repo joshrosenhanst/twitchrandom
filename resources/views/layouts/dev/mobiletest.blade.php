@@ -1,11 +1,11 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>Twitch Randomizer | Mobile Test</title>
+<title>Mobile Test | TwitchRandom</title>
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/redesign/main.min.css">
+<link rel="stylesheet" href="/css/main.min.css">
 @stop
 
 @section('js')

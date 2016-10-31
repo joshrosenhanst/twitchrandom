@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('title')
-<title>All Games | Twitch Random</title>
+<title>All Games | TwitchRandom</title>
 @stop
 
 @section('meta')
