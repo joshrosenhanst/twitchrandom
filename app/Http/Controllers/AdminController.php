@@ -17,8 +17,7 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin', array(
-            "games_list" => $this->getCachedGameList(),
-            "random_text" => $this->getRandomText()
+
         ));
     }
 }

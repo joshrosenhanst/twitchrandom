@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Slogan;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use Redirect;
 
 
@@ -25,9 +23,7 @@ class SloganController extends Controller
         return view('slogans', array(
           "approved"=>$approved->toJson(),
           //"unapproved"=>$unapproved,
-          "emote_list"=>$this->getEmoteList(),
-          "games_list"=>$this->getCachedGameList(),
-          "random_text"=>$this->getRandomText()
+          "emote_list"=>$this->twitchrandom->getEmoteList(),
         ));
     }
 
@@ -69,8 +65,6 @@ class SloganController extends Controller
         return view('slogans.admin', array(
             "approved"=>$approved,
             "unapproved"=>$unapproved,
-            "games_list"=>$this->getCachedGameList(),
-            "random_text"=>$this->getRandomText()
         ));
     }
 

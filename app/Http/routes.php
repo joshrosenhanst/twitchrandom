@@ -20,12 +20,13 @@ Route::group(array('prefix' => 'dev'), function(){
     Route::get('/mobiletest', array('uses'=>'DevController@mobiletest'));
 });
 
-$this->get('login', 'Auth\AuthController@showLoginForm');
+//$this->get('login', 'Auth\AuthController@showLoginForm');
+//$this->get('post', 'Auth\AuthController@login');
 
 Route::get('/', array('uses'=>'HomeController@home'));
 //Route::get('/feature', array('uses'=>'HomeController@home'));
 Route::get('/randomstream', array('uses'=>'HomeController@randomstream'));
-Route::get('/randomgame', array('uses'=>'HomeController@randomgame'));
+Route::get('/randomgame', array('uses'=>'GameController@randomgame'));
 Route::get('/featured', array('uses'=>'FeatureController@index'));
 Route::get('/missing', array('uses'=>'HomeController@missing'));
 
@@ -54,11 +55,11 @@ Route::group(array('prefix' => 'stream'), function(){
 });
 
 //user slogan pages
-Route::group(array('prefix' => 'slogans'), function(){
+/*Route::group(array('prefix' => 'slogans'), function(){
     Route::get('/', array('uses'=>'SloganController@index'));
     Route::post('/', array('uses'=>'SloganController@create'));
     //admin controls
-});
+});*/
 
 //individual game pages
 Route::group(array('prefix' => 'games'), function(){
@@ -73,6 +74,7 @@ Route::group(array('prefix' => 'game'), function(){
 });
 
 //admin pages
+/*
 Route::group(array('prefix' => 'admin', 'middleware'=>'auth'), function(){
     Route::get('/', array('uses'=>'AdminController@index'));
     Route::group(array('prefix' => 'slogans'), function(){
@@ -91,4 +93,8 @@ Route::group(array('prefix' => 'admin', 'middleware'=>'auth'), function(){
         Route::post('/update', array('uses'=>'FeatureController@update'));
         Route::get('/{id}/destroy', array('uses'=>'FeatureController@destroy'));
     });
-});
+});*/
+
+//Route::auth();
+
+Route::get('/home', 'HomeController@index');

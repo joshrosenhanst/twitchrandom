@@ -145,7 +145,7 @@
     </div>
 </div>
 <div class="gallery-container lg-container">
-    <div class="alert alert-info slogan-highlight"><span class="glyphicon glyphicon-certificate"></span> Got a good idea for a slogan? <a href="/slogans">Submit a new slogan for TwitchRandom!</a></div>
+    {{--<div class="alert alert-info slogan-highlight"><span class="glyphicon glyphicon-certificate"></span> Got a good idea for a slogan? <a href="/slogans">Submit a new slogan for TwitchRandom!</a></div>--}}
     <div class="row">
         <div class="gallery featured col-lg-9 col-md-12" id="gallery-featured">
             <div class="gallery-title">

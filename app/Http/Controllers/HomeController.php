@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use Redirect;
 
@@ -11,23 +10,15 @@ class HomeController extends Controller
 {
     public function home(){
         return view('index', array(
-            "games_list"=>$this->getCachedGameList(),
-            "random_text"=>$this->getRandomText()
         ));
     }
 
     public function missing(){
         return view('404', array(
-            "games_list"=>$this->getCachedGameList(),
-            "random_text"=>$this->getRandomText()
         ));
     }
-    public function randomgame(){
-        $game = $this->getRandomGame();
-        return Redirect::to("/games/".rawurlencode($game));
-    }
     public function randomstream(){
-        $stream = $this->getRandomStreamLink();
+        $stream = $this->twitchrandom->getRandomStreamLink();
         return Redirect::to("/stream/".rawurlencode($stream));
     }
 
@@ -35,8 +26,6 @@ class HomeController extends Controller
         $name = rawurldecode($name);
         return view('stream', array(
             "name"=>$name,
-            "games_list"=>$this->getCachedGameList(),
-            "random_text"=>$this->getRandomText()
         ));
     }
 }

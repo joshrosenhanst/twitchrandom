@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class AjaxController extends Controller {
     public function randomStream($slogan=false){
-        //$stream = $this->getRandomStream();
-        $stream = $this->twitch->getStreams(null,1,rand(1,8000),null,true)->streams[0];
+        $stream = $this->twitchrandom->getRandomStream();
         if(isset($stream->error)){
             return view('layouts.error', array(
                 "errorMsg"=>$stream->message,
@@ -18,15 +16,14 @@ class AjaxController extends Controller {
             return view('layouts.streamobject', array(
                 "stream"=> $stream,
                 "slogan"=>$slogan,
-                "random_text"=>$this->getRandomText()
+                //"random_text"=>$this->getRandomText()
             ));
         }
     }
 
     public function getStreamInfo($name){
         $name = rawurldecode($name);
-        //$stream = $this->getStreamByName($name);
-        $stream = $this->twitch->streamGet($name);
+        $stream = $this->twitchrandom->getStreamByName($name);
         if(isset($stream->error)){
             return view('layouts.error', array(
                 "name"=>$name,
@@ -42,8 +39,7 @@ class AjaxController extends Controller {
 
     public function streamByName($name,$slogan = false){
         $name = rawurldecode($name);
-        //$stream = $this->getStreamByName($name);
-        $stream = $this->twitch->streamGet($name);
+        $stream = $this->twitchrandom->getStreamByName($name);
         if(isset($stream->error)){
             return view('layouts.error', array(
                 "name"=>$name,
@@ -54,17 +50,13 @@ class AjaxController extends Controller {
                 "name"=>$name,
                 "stream"=>$stream->stream,
                 "slogan"=>$slogan,
-                "random_text"=>$this->getRandomText()
+                //"random_text"=>$this->getRandomText()
             ));
         }
     }
     public function streamsByGame($game,$limit,$slogan = false){
-        //$stream = $this->getRandomStream($game);
         $game = rawurldecode($game);
-        //$stream = $this->getGameStreams($game,$limit);
-        $obj = $this->twitch->getStreams($game,100,0,null,true);
-        shuffle($obj->streams);
-        $stream =  array_slice($obj->streams, 0, $limit);
+        $stream = $this->twitchrandom->getGameStreams($game,$limit);
 
         if(isset($stream->error)){
             return view('layouts.error', array(
@@ -79,7 +71,6 @@ class AjaxController extends Controller {
                         "game"=>$game,
                         "stream"=>$stream[0],
                         "slogan"=>$slogan,
-                        "random_text"=>$this->getRandomText()
                     ));
                 }else{
                     return view('layouts.error', array(
@@ -100,38 +91,33 @@ class AjaxController extends Controller {
     public function topStreamsByGame($game){
         $game = rawurldecode($game);
         return view('layouts.gallery', array(
-            //"galleries"=>$this->getGameTopStreams($game),
-            "galleries"=>$this->twitch->getStreams($game,9,0,null,true)->streams,
+            "galleries"=>$this->twitchrandom->getGameTopStreams($game),
             "button"=>false
         ));
     }
 
     public function getGallery(){
         return view('layouts.gallery', array(
-            //"galleries"=>$this->getGalleryStreams(),
-            "galleries"=>array_slice($this->twitch->getRandomStreams()->streams,0,11),
+            "galleries"=>$this->twitchrandom->getGalleryStreams(),
             "button"=>true
         ));
     }
 
     public function getFeaturedGallery($num=9){
         return view('layouts.featured', array(
-            //"galleries"=>$this->getFeaturedStreams($num),
-            "galleries"=>$this->twitch->streamsFeatured($num)->featured,
+            "galleries"=>$this->twitchrandom->getFeaturedStreams($num),
             "button"=>false
         ));
     }
 
     public function getAllGames($limit, $offset=0){
         return view('layouts.allgames', array(
-            //"games"=>$this->getTopGames($limit,$offset)
-            "games"=>$this->twitch->gamesTop($limit,$offset)
+            "games"=>$this->twitchrandom->getTopGames($limit,$offset)
         ));
     }
 
     public function searchGames($search){
-        //$games = $this->getGamesBySearch($search, true);
-        $games = $this->twitch->gamesSearch($search,true);
+        $games = $this->twitchrandom->getGamesBySearch($search, true);
         $array = array();
         foreach($games->games as $game){
             $array[$game->name] = "/games/".rawurlencode($game->name);

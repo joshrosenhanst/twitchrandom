@@ -43,7 +43,7 @@
     {{--<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>--}}
     <script src="/js/nicescroll.min.js"></script>
     <script src="/js/jquery.history.js"></script>
-    <script src="//twemoji.maxcdn.com/2/twemoji.min.js"></script>
+    {{--<script src="//twemoji.maxcdn.com/2/twemoji.min.js"></script>--}}
     @yield("js")
     @if(App::environment('production')) {{-- Don't use analytics for dev pages --}}
     <script>
@@ -58,7 +58,7 @@
 
     </script>
     @endif
-    <script>
+    {{--<script>
         twemoji.parse(document.body, {
             folder: 'svg',
             ext: '.svg',
@@ -72,6 +72,6 @@
                 return ''.concat(options.base, options.size, '/', icon, options.ext);
             }
         });
-    </script>
+    </script>--}}
 </body>
 </html>

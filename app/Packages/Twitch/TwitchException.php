@@ -17,7 +17,7 @@ class TwitchException extends \Exception
     /** @var integer */
     protected $code;
 
-    /** @var \ritero\SDK\TwitchTV\TwitchException */
+    /** @var TwitchException */
     protected $previous;
 
     public function __construct($message = null, $code = 0, TwitchException $previous = null)

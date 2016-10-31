@@ -22,9 +22,7 @@ class FeatureController extends Controller
 
         \Stripe\Stripe::setApiKey($stripe['secret_key']);
         return view('featured', array(
-            "stripe"=>$stripe,
-            "games_list"=>$this->getCachedGameList(),
-            "random_text"=>$this->getRandomText()
+            "stripe"=>$stripe
         ));
     }
 

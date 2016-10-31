@@ -9,7 +9,19 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
 <div class="row stream-details" id="main-stream-container">
     <div class="col-md-8 col-sm-12 stream-cont">
         @if(App::environment('production'))  {{-- Don't embed stream for dev pages --}}
-        <iframe src="http://www.twitch.tv/{{ $stream->channel->name }}/embed" frameborder="0" scrolling="no" width="100%" height="380" class="main-stream" id="main-stream" auto_play="false" autoplay="0" autostart="0"></iframe>
+    {{--  src="http://www.twitch.tv/{{ $stream->channel->name }}/embed" --}}
+        <iframe
+                src="https://player.twitch.tv/?channel={{ $stream->channel->name }}"
+                frameborder="0"
+                scrolling="no"
+                width="100%"
+                height="380"
+                class="main-stream" id="main-stream"
+                auto_play="false"
+                autoplay="0"
+                autostart="0">
+
+        </iframe>
         {{-- Uncomment to use the swf-object+js; You will also need to uncomment the JS blocks at the bottom of this page;
         <div id="main-stream" class="main-stream"></div>
         <div class="loading" id="inside-stream-loading">
@@ -19,7 +31,7 @@ if(isset($stream->channel->status) && strlen($stream->channel->status) > 70){
         --}}
 
         {{--Uncomment to use Flash Object--}}
-        {{--<object id="main-stream" class="main-stream" type="application/x-shockwave-flash" height="380" width="620" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $stream->channel->name }}" bgcolor="#fafafa">
+        {{--<object id="main-stream" class="main-stream" type="application/x-shockwave-flash" height="380" width="620" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={{ $stream->channel->namare }}" bgcolor="#fafafa">
             <param name="allowFullScreen" value="true" />
             <param name="allowScriptAccess" value="always" />
             <param name="allowNetworking" value="all" />

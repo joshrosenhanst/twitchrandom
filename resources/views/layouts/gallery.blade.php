@@ -9,7 +9,7 @@
                 </div>
                 <a class="stream-link" href="/stream/{{ rawurlencode($gallery->channel->name) }}">
                     <h5 class="title">{{ $gallery->channel->status or $gallery->channel->display_name }}</h5>
-                    <p class="description"><span class="viewers"><span class="glyphicon glyphicon-user"></span>{{ $gallery->viewers }}</span> on {{ $gallery->channel->name }}</p>
+                    <p class="description"><span class="viewers"><span class="glyphicon glyphicon-eye-open"></span> {{ $gallery->viewers }}</span> on {{ $gallery->channel->name }}</p>
                 </a>
             </div>
         </div>

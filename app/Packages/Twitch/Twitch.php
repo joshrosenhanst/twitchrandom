@@ -28,6 +28,9 @@ class Twitch {
     /** @var string Set the useragnet */
     private $useragent = 'ritero TwitchSDK dev-0.4.*';
 
+    /** @var string */
+    private $clientId;
+
     /**
      * TwitchAPI URI's
      */
@@ -41,7 +44,7 @@ class Twitch {
     const URI_STREAM = 'streams/';
     const URI_STREAM_RANDOM = 'beta/streams/random/';
     const URI_STREAM_SUMMARY = 'streams/summary/';
-    const URI_STREAMS_FEATURED = 'streams/featured';
+    const URI_STREAMS_FEATURED = 'streams/featured/';
     const URI_STREAMS_SEARCH = 'search/streams/';
     const URI_GAMES_SEARCH = 'search/games/';
     const URI_VIDEO = 'videos/';
@@ -63,9 +66,26 @@ class Twitch {
     const URL_TWITCH_TEAM = "http://api.twitch.tv/api/team/";
 
     /**
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
+     * @param string $clientId
+     */
+    public function setClientId($clientId)
+    {
+        $this->clientId = $clientId;
+    }
+
+    /**
      * SDK constructor
      * @param   array
-     * @throws  \ritero\SDK\TwitchTV\TwitchException
+     * @throws  TwitchException
+     * @throws \InvalidArgumentException
      */
     public function __construct($config = array())
     {
@@ -73,9 +93,15 @@ class Twitch {
             throw new TwitchException('cURL extension is not installed and is required');
         }
 
+        if (!array_key_exists('client_id', $config)) {
+            throw new \InvalidArgumentException('Missing required Client-ID parameter in config
+                @see https://blog.twitch.tv/client-id-required-for-kraken-api-calls-afbb8e95f843');
+        }
+
         if (!empty($config)) {
             if ($this->configValidate($config) === true) {
                 $this->auth_config = $config;
+                $this->setClientId($config['client_id']);
             } else {
                 throw new TwitchException('Wrong Twitch API config parameters');
             }
@@ -252,12 +278,12 @@ class Twitch {
      * @param   integer
      * @return  stdClass
      */
-    public function gamesSearch($query, $live = false)
+    public function gamesSearch($query, $live = true)
     {
         $query_string = $this->buildQueryString(array(
           'query' => $query,
           'type' => "suggest",
-          'live' => true,
+          'live' => $live,
         ));
 
         return $this->request(self::URI_GAMES_SEARCH . $query_string);
@@ -742,7 +768,7 @@ class Twitch {
      * @param   string
      * @param   string
      * @return  stdClass
-     * @throws  \ritero\SDK\TwitchTV\TwitchException
+     * @throws  TwitchException
      */
     private function request($uri, $method = 'GET', $postfields = null)
     {
@@ -756,7 +782,7 @@ class Twitch {
      * @param   string
      * @param   string
      * @return  stdClass
-     * @throws  \ritero\SDK\TwitchTV\TwitchException
+     * @throws  TwitchException
      */
     private function teamRequest($uri, $method = 'GET', $postfields = null)
     {
@@ -773,7 +799,7 @@ class Twitch {
      * @param   string
      * @param   string
      * @return  stdClass
-     * @throws  \ritero\SDK\TwitchTV\TwitchException
+     * @throws  TwitchException
      */
     private function generalRequest($params, $uri, $method = 'GET', $postfields = null)
     {
@@ -784,7 +810,7 @@ class Twitch {
         curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, $this->connect_timeout);
         curl_setopt($crl, CURLOPT_TIMEOUT, $this->timeout);
         curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($crl, CURLOPT_HTTPHEADER, array('Expect:'));
+        curl_setopt($crl, CURLOPT_HTTPHEADER, array('Expect:', 'Client-ID: ' . $this->getClientId()));
         if (isset($params['CURLOPT_SSL_VERIFYPEER'])) {
             curl_setopt($crl, CURLOPT_SSL_VERIFYPEER, $this->ssl_verifypeer);
         }
@@ -846,7 +872,7 @@ class Twitch {
 
     /**
      * Configuration exception
-     * @throws  \ritero\SDK\TwitchTV\TwitchException
+     * @throws  TwitchException
      */
     private function authConfigException()
     {

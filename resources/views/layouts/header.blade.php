@@ -36,7 +36,7 @@
                     </ul>
                 </li>
                 <li role="presentation"><a href="/randomgame">Random Game</a></li>
-                <li role="presentation" class="active"><a href="/featured">Get Featured</a></li>
+                {{--<li role="presentation" class="active"><a href="/featured">Get Featured</a></li>--}}
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
