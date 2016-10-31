@@ -122,7 +122,8 @@ class AjaxController extends Controller {
         foreach($games->games as $game){
             $array[$game->name] = "/games/".rawurlencode($game->name);
         }
-        return Response::json($array);
+        //return Response::json($array);
+        return response()->json($array);
     }
 
 }

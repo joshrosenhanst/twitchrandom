@@ -33,8 +33,11 @@
         var engine = new Bloodhound({
             name: 'games',
             //local: [{name: 'game', link: '/games/Team Fortress 2'}, {name: 'game2', link: '/games/League of Legends'}],
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
             remote:{
                 url: "/ajax/search/%QUERY",
+                wildcard: '%QUERY',
                 filter: function (response) {
                     return $.map(response, function(value,key){
                        return {
@@ -56,10 +59,10 @@
                     }
                 }
             },
-            datumTokenizer: function(d) {
+            /*datumTokenizer: function(d) {
                 return Bloodhound.tokenizers.whitespace(d.name);
             },
-            queryTokenizer: Bloodhound.tokenizers.whitespace
+            queryTokenizer: Bloodhound.tokenizers.whitespace*/
         });
         engine.initialize();
 
@@ -70,9 +73,10 @@
         },{
             name: 'games',
             displayKey: 'name',
-            source: engine.ttAdapter(),
+            source: engine,
             templates: {
                 empty: '<div class="empty-message">No Games Found</div>',
+                //suggestion: Handlebars.compile('<p><a href="link">name</a></p>')
                 suggestion: function(data){
                     return '<p><a href="'+data.link+'">'+data.name+'</a></p>';
                 }

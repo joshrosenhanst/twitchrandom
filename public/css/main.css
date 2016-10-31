@@ -423,27 +423,30 @@ body {
           z-index: 100;
           display: block;
           right: auto; }
-      .all_games .fixed_header .search-container .tt-dropdown-menu {
+      .all_games .fixed_header .search-container .tt-dropdown-menu, .all_games .fixed_header .search-container .tt-menu {
         background: white;
         width: 100%;
         padding: 5px;
         border-radius: 4px;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4); }
-        .all_games .fixed_header .search-container .tt-dropdown-menu .empty-message {
+        .all_games .fixed_header .search-container .tt-dropdown-menu .empty-message, .all_games .fixed_header .search-container .tt-menu .empty-message {
           text-align: center;
           font-style: italic; }
-        .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion {
-          padding: 3px 10px; }
-          .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion p {
-            margin: 0; }
-            .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion p a {
-              display: block; }
-              .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion p a:hover {
-                text-decoration: none; }
-        .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion.tt-cursor {
+        .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion, .all_games .fixed_header .search-container .tt-menu .tt-suggestion {
+          margin: 0; }
+          .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion a, .all_games .fixed_header .search-container .tt-menu .tt-suggestion a {
+            margin: 0;
+            display: block;
+            font-size: 16px;
+            font-weight: 300;
+            padding: 3px 10px; }
+            .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion a:hover, .all_games .fixed_header .search-container .tt-menu .tt-suggestion a:hover {
+              text-decoration: none;
+              background-color: #f5f5f5; }
+        .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion.tt-cursor, .all_games .fixed_header .search-container .tt-menu .tt-suggestion.tt-cursor {
           color: #fff;
           background-color: #6441A5; }
-          .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion.tt-cursor a {
+          .all_games .fixed_header .search-container .tt-dropdown-menu .tt-suggestion.tt-cursor a, .all_games .fixed_header .search-container .tt-menu .tt-suggestion.tt-cursor a {
             color: #fff; }
   .all_games .games_container .game {
     margin-bottom: 10px;
