@@ -70,13 +70,13 @@ body {
       color: #7550BA; }
       .navbar-twitch .navbar-brand:hover .slogan {
         color: #999; }
-  .navbar-twitch li a {
+  .navbar-twitch li a, .navbar-twitch li button {
     font-size: 16px;
     font-weight: 300; }
     @media (min-width: 768px) {
-      .navbar-twitch li a {
+      .navbar-twitch li a, .navbar-twitch li button {
         border-radius: 6px; } }
-    .navbar-twitch li a img {
+    .navbar-twitch li a img, .navbar-twitch li button img {
       width: 60px;
       background: #6441A5;
       display: inline-block;
