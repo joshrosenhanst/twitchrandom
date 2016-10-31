@@ -15,7 +15,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li role="presentation"><a href="/">Home</a></li>
                 <li role="presentation" class="dropdown">
-                    <a id="dLabel" data-target="#" href="/game" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                    <a id="dLabel" data-target="#" href="/games" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                         Games
                         <span class="caret"></span>
                     </a>
