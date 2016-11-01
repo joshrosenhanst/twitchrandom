@@ -5,7 +5,8 @@
 
     RewriteEngine On
 
-    # Redirect Trailing Slashes...
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Handle Front Controller...
@@ -13,45 +14,3 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
-
-# compress text, html, javascript, css, xml:
-<IfModule mod_deflate.c>
-    AddOutputFilter DEFLATE js css
-    AddOutPutFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript application/xml application/xml application/rss+xml application/javascript application/x-javascript
-</IfModule>
-
-#Enable Expires and reset to zero
-ExpiresActive On
-ExpiresDefault A0
-
-# Configure mime expires
-ExpiresDefault "access plus 1 seconds"
-ExpiresByType image/ico "access plus 15552000 seconds"
-ExpiresByType image/gif "access plus 15552000 seconds"
-ExpiresByType image/jpeg "access plus 15552000 seconds"
-ExpiresByType image/png "access plus 15552000 seconds"
-ExpiresByType text/javascript "access plus 7200 seconds"
-ExpiresByType application/x-javascript "access plus 7200 seconds"
-ExpiresByType application/javascript "access plus 7200 seconds"
-
-# Media files - 6 months
-<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf|mp3|mp4)$">
-Header set Pragma "public"
-Header append Cache-Control "public, must-revalidate, proxy-revalidate"
-</FilesMatch>
-
-# HTML etc. files - 1 month
-<FilesMatch "\.(html|htm|xml|txt|xsl)$">
-Header set Pragma "public"
-Header append Cache-Control "public, must-revalidate, proxy-revalidate"
-</FilesMatch>
-
-# Set up 2 Hour caching on commonly updated files
-<filesMatch "\.(xml|txt|html|js|css)$">
-Header set Cache-Control "max-age=0, public, must-revalidate"
-</filesMatch>
-
-# PHP etc. dynamic files - disabled
-<FilesMatch "\.(pl|php|[sf]?cgi|spl)$">
-Header set Cache-Control: "max-age=0, no-store"
-</FilesMatch>

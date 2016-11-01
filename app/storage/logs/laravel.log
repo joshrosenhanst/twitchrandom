@@ -1,0 +1,1027 @@
+[2015-07-13 02:06:16] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:06:55] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:07:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:09:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:10:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:10:07] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:11:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:17:34] local.ERROR: exception 'ErrorException' with message 'file_put_contents(/private/var/www/twitchrandom.dev/app/storage/views/ab4ac1f7ee997790944e8452104a40cc): failed to open stream: Permission denied' in /private/var/www/twitchrandom.dev/bootstrap/compiled.php:4221
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_put_conten...', '/private/var/ww...', 4221, Array)
+#1 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(4221): file_put_contents('/private/var/ww...', '<?php /* HEADER...', 0)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php(80): Illuminate\Filesystem\Filesystem->put('/private/var/ww...', '<?php /* HEADER...')
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(48): Illuminate\View\Compilers\BladeCompiler->compile('/private/var/ww...')
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#7 /private/var/www/twitchrandom.dev/app/storage/views/c1a949bb8701e451b96b401c6fcd7dcb(136): Illuminate\View\View->render()
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9905): include('/private/var/ww...')
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#17 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#19 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#20 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#21 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#22 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#23 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#24 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#25 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#26 {main}
+
+Next exception 'ErrorException' with message 'file_put_contents(/private/var/www/twitchrandom.dev/app/storage/views/ab4ac1f7ee997790944e8452104a40cc): failed to open stream: Permission denied (View: /private/var/www/twitchrandom.dev/app/views/layouts/header.blade.php)' in /private/var/www/twitchrandom.dev/bootstrap/compiled.php:4221
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9907): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-13 02:18:02] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:20:17] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:21:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:23:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:23:56] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:38:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:82
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:41:07] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:41:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:42:30] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:42:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:42:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:42:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:42:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:43:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:43:45] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:53:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:54:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:54:05] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:54:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:54:12] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:54:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:54:47] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:55:42] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 02:56:12] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:01:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:01:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:04:28] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:05:52] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:05:55] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:06:50] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:07:30] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/ab4ac1f7ee997790944e8452104a40cc:12
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/ab4ac1f7ee997790944e8452104a40cc(12): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 12, Array)
+#1 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9905): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/app/storage/views/ed3135ace966dcdb74f375512378b391(85): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9905): include('/private/var/ww...')
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#19 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#20 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#21 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#22 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#23 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#24 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#25 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/header.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/ab4ac1f7ee997790944e8452104a40cc:12
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9907): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/app/storage/views/ed3135ace966dcdb74f375512378b391(85): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9905): include('/private/var/ww...')
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#19 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#20 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#21 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#22 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#23 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#24 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/header.blade.php) (View: /private/var/www/twitchrandom.dev/app/views/layouts/header.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/ab4ac1f7ee997790944e8452104a40cc:12
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9907): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-13 03:08:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:09:06] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:11:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:26:27] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:26:29] local.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$status' in /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12:7
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12(7): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', '/private/var/ww...', 7, Array)
+#1 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9905): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined property: stdClass::$status (View: /private/var/www/twitchrandom.dev/app/views/layouts/gallery.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12:7
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9907): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-13 03:27:29] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-13 03:28:11] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:38:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:39:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:40:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:40:37] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:40:39] local.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$status' in /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12:7
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12(7): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', '/private/var/ww...', 7, Array)
+#1 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9905): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined property: stdClass::$status (View: /private/var/www/twitchrandom.dev/app/views/layouts/gallery.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12:7
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9907): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 00:46:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:49:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:51:13] local.ERROR: exception 'BadMethodCallException' with message 'Method [featured] does not exist.' in /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:268
+Stack trace:
+#0 [internal function]: Illuminate\Routing\Controller->__call('featured', Array)
+#1 [internal function]: HomeController->featured()
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5847): Illuminate\Routing\Controller->callAction('featured', Array)
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5835): Illuminate\Routing\ControllerDispatcher->call(Object(HomeController), Object(Artistan\Urlencode\Extensions\Routing\Route), 'featured')
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5040): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Artistan\Urlencode\Extensions\Routing\Route), Object(Illuminate\Http\Request), 'HomeController', 'featured')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5398): call_user_func_array(Object(Closure), Array)
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5065): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 00:52:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:17] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:20] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:30] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:42] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:43] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:45] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:47] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:47] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:48] local.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$status' in /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12:7
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12(7): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', '/private/var/ww...', 7, Array)
+#1 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9905): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined property: stdClass::$status (View: /private/var/www/twitchrandom.dev/app/views/layouts/gallery.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/3bc6dabda34ad215c81c0651c25c6d12:7
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9907): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9783): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9770): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9761): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(10463): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(9993): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5258): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5067): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 00:52:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:50] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 00:52:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 01:13:29] local.ERROR: exception 'BadMethodCallException' with message 'Method [home] does not exist.' in /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:268
+Stack trace:
+#0 [internal function]: Illuminate\Routing\Controller->__call('home', Array)
+#1 [internal function]: HomeController->home()
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#3 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5847): Illuminate\Routing\Controller->callAction('home', Array)
+#4 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5835): Illuminate\Routing\ControllerDispatcher->call(Object(HomeController), Object(Artistan\Urlencode\Extensions\Routing\Route), 'home')
+#5 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5040): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Artistan\Urlencode\Extensions\Routing\Route), Object(Illuminate\Http\Request), 'HomeController', 'home')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5398): call_user_func_array(Object(Closure), Array)
+#8 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5065): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(5053): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(7825): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8432): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(8379): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(11070): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/bootstrap/compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 01:13:55] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 01:35:36] local.ERROR: exception 'ErrorException' with message 'Undefined variable: stripe' in /private/var/www/twitchrandom.dev/app/storage/views/9fcb3381f6967eea9b4e5a053e867b98:37
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/9fcb3381f6967eea9b4e5a053e867b98(37): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 37, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: stripe (View: /private/var/www/twitchrandom.dev/app/views/featured.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/9fcb3381f6967eea9b4e5a053e867b98:37
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 02:11:47] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 02:56:45] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 02:56:49] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 02:56:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 02:56:53] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 03:01:58] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 03:03:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 03:03:57] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 03:04:08] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069(101): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 101, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/streamobject.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 03:04:12] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069(101): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 101, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/streamobject.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 03:04:15] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069(101): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 101, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/streamobject.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 03:04:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 03:04:19] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069(101): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 101, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/streamobject.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 03:04:30] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069(101): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 101, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/streamobject.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 03:04:33] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069(101): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 101, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/streamobject.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 03:04:34] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069(101): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 101, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/streamobject.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 03:04:37] local.ERROR: exception 'ErrorException' with message 'Undefined variable: random_text' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069(101): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/private/var/ww...', 101, Array)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/private/var/ww...')
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#6 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#7 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: random_text (View: /private/var/www/twitchrandom.dev/app/views/layouts/streamobject.blade.php)' in /private/var/www/twitchrandom.dev/app/storage/views/cf11235275082e2ef5c3fd19065df069:101
+Stack trace:
+#0 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/private/var/ww...', Array)
+#2 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/private/var/ww...', Array)
+#3 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#4 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/View/View.php(76): Illuminate\View\View->renderContents()
+#5 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Http/Response.php(43): Illuminate\View\View->render()
+#6 /private/var/www/twitchrandom.dev/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1501): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1036): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1001): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(745): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Session/Middleware.php(72): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Cookie/Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 /private/var/www/twitchrandom.dev/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 /private/var/www/twitchrandom.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(641): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 /private/var/www/twitchrandom.dev/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-14 03:04:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-14 19:13:52] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method ritero\SDK\TwitchTV\TwitchSDK::getRandomStreams()' in /private/var/www/twitchrandom.dev/app/controllers/BaseController.php:83
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

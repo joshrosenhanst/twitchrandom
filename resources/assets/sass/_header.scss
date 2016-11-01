@@ -1,0 +1,101 @@
+.header{
+  margin:10px 0 10px 0;
+  .logo-title{
+    color:$twitch-purple;
+    display:inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-decoration:none;
+    font-weight:300;
+    font-size:24px;
+    line-height:40px;
+    &:hover{
+      color:$twitch-purple-hover;
+    }
+  }
+  .nav-pills{
+    li.all_games{
+      text_align:center;
+      font-size:1.1em;
+      font-weight:bold;
+    }
+  }
+  .nav-pills>li.active>a{
+    //background-color:$twitch-purple;
+    background:transparent;
+    color:$twitch-purple;
+    &:hover{
+      //background-color:$twitch-purple-hover;
+      background:$twitch-purple;
+      color:white;
+    }
+  }
+}
+
+.navbar-twitch{
+  padding:10px 0 10px 0;
+  margin:0;
+  background:white;
+  .navbar-toggle{
+    .icon-bar{
+      background-color:$background-white;
+    }
+  }
+  .navbar-brand{
+    display:inline-block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding:5px 15px;
+    text-decoration:none;
+    font-weight:300;
+    font-size:24px;
+    img{
+      float:left;
+      height:40px;
+    }
+    .grey{
+      color:#888;
+    }
+    .slogan{
+      display:block;
+      font-size:16px;
+      color:#888;
+    }
+    &:hover{
+      color:$twitch-purple-hover;
+      .slogan{
+        color:#999;
+      }
+    }
+  }
+  li{
+    a,button{
+      @media (min-width: $small){
+        border-radius:6px;
+      }
+      font-size:16px;
+      font-weight:300;
+      img{
+        width:60px;
+        background:$twitch-purple;
+        display:inline-block;
+        color:white;
+        font-size:0.8em;
+        word-wrap:break-word;
+      }
+    }
+    &.active{
+      @media (min-width: $small){
+        a{
+          background-color:$twitch-purple;
+          color:white;
+          transition:400ms all;
+          border:0;
+          &:hover{
+            background-color:$twitch-purple-hover;
+          }
+        }
+      }
+    }
+  }
+}
