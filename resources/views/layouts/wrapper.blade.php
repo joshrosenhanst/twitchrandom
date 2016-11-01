@@ -10,6 +10,9 @@
     <meta name="robots" content="index,follow,noarchive" />
     <meta name="author" content="SpoonCo">
 
+    {{-- FAVICONS --}}
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
     {{-- PRECONNECT --}}
     <link href="https://player.twitch.tv" rel="preconnect">
     <link href="https://static-cdn.jtvnw.net" rel="preconnect">
