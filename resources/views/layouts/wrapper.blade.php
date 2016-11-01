@@ -11,7 +11,8 @@
     <meta name="author" content="SpoonCo">
 
     {{-- FAVICONS --}}
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/favicon.ico?1" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-icon-precomposed.png" rel="apple-touch-icon-precomposed">
 
     {{-- PRECONNECT --}}
     <link href="https://player.twitch.tv" rel="preconnect">
