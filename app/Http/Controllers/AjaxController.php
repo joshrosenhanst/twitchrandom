@@ -46,12 +46,19 @@ class AjaxController extends Controller {
                 "errorMsg"=>$stream->message,
             ));
         }else{
-            return view('layouts.streamobject', array(
-                "name"=>$name,
-                "stream"=>$stream->stream,
-                "slogan"=>$slogan,
-                //"random_text"=>$this->getRandomText()
-            ));
+            if($stream->stream){
+                return view('layouts.streamobject', array(
+                    "name"=>$name,
+                    "stream"=>$stream->stream,
+                    "slogan"=>$slogan,
+                    //"random_text"=>$this->getRandomText()
+                ));
+            }else{
+                return view('layouts.error', array(
+                    "name"=>$name,
+                    "errorMsg"=>"User is not streaming right now.",
+                ));
+            }
         }
     }
     public function streamsByGame($game,$limit,$slogan = false){
