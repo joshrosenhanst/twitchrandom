@@ -89,4 +89,4 @@ Route::group(array('prefix' => 'admin', 'middleware'=>'auth'), function(){
 
 //Route::auth();
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
