@@ -61,7 +61,9 @@ Route::group(array('prefix' => 'games'), function(){
 
 //individual game pages
 Route::group(array('prefix' => 'game'), function(){
-    Route::get('/', array('uses'=>'GameController@home'));
+    Route::get('/', array(function(){
+        return Redirect::to("/games");
+    }));
     Route::get('/{game}', array('uses'=>'GameController@getGame'));
 });
 
