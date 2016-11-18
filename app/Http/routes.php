@@ -1,17 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-
 //dev pages
 Route::group(array('prefix' => 'dev'), function(){
     Route::get('/', array(function(){
@@ -27,8 +15,8 @@ Route::get('/', array('uses'=>'HomeController@home'));
 //Route::get('/feature', array('uses'=>'HomeController@home'));
 Route::get('/randomstream', array('uses'=>'HomeController@randomstream'));
 Route::get('/randomgame', array('uses'=>'GameController@randomgame'));
-Route::get('/featured', array('uses'=>'FeatureController@index'));
-Route::get('/missing', array('uses'=>'HomeController@missing'));
+//Route::get('/featured', array('uses'=>'FeatureController@index'));
+//Route::get('/missing', array('uses'=>'HomeController@missing'));
 
 //ajax calls
 Route::group(array('prefix' => 'ajax'), function()
@@ -53,6 +41,10 @@ Route::group(array('prefix' => 'stream'), function(){
     }));
     Route::get('/{name}', array('uses'=>'HomeController@stream'));
 });
+
+Route::get('/streams', array(function(){
+    return Redirect::to("/");
+}));
 
 //user slogan pages
 /*Route::group(array('prefix' => 'slogans'), function(){
