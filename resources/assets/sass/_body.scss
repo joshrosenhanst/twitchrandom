@@ -101,7 +101,7 @@
 .ad.horizontal{
   //width:728px;
   //width:992px;
-  height:90px;
+  max-height:90px;
   //border:1px solid #ccc;
   margin:5px auto;
   padding:0;
@@ -115,6 +115,7 @@
 .ad.block{
   margin:10px 0;
   text-align:center;
+  max-height:300px;
   @media (max-width:$large) {
     margin:10px auto;
     padding:0;
