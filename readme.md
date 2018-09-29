@@ -1,27 +1,24 @@
-## Laravel PHP Framework
+# TwitchRandom
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+TwitchRandom is a Laravel project that finds random video games streams to watch using the Twitch.tv API.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Libraries
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+- Laravel 5.2
+- Twitch.tv API v5
+- [TwitchTV SDK for PHP](https://github.com/jofner/Twitch-SDK)
+- jQuery 2.2.4
+- jquery.history
+- jquery.nicescroll
+- Boostrap 3.3.7
+- Sass
 
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+## Dev Setup
+1. Get a Twitch.tv API key
+1. Install all Laravel requirements
+1. Clone repo
+1. Create Mysql DB "twitchrandom" and import the `twitchrandom.sql` file into it: `mysql -u root -p twitchrandom < twitchrandom.sql` (issue: database needs to exist before the artisan runs)
+1. Copy .env.default to .env and set values
+1. `composer install`
+1. `npm install`
+1. Set group permissions for Laravel folders (`storage/` and `bootstrap/cache/`) to your server (`www-data`). You may need to create internal storage folders: https://stackoverflow.com/questions/38483837/please-provide-a-valid-cache-path
