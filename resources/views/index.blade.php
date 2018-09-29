@@ -190,6 +190,5 @@
         </div>
     </div>
 </div>
-@include("layouts.ads.horizontal2")
 @include("layouts.footer")
 @stop
