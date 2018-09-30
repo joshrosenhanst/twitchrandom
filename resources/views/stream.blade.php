@@ -137,7 +137,6 @@
 @section('content')
 @include("layouts.header")
 <div class="jumbocontainer">
-    @include("layouts.ads.horizontal")
     <div class="container med-container stream-container">
         <div class="jumbotron">
 
@@ -187,6 +186,5 @@
         </div>
     </div>
 </div>
-@include("layouts.ads.horizontal2")
 @include("layouts.footer")
 @stop
