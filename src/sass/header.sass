@@ -1,23 +1,30 @@
 #app-header
+  border-bottom: 1px solid $twitch-purple
+  padding: 10px 0
+  background: $white
 
 #header-menu
-  padding: 10px 0
+  +container
   display: flex
-  flex-direction: row
-  .nav-left
-    align-self: flex-start
-  .nav-right
-    align-self: flex-end
-    justify-self: flex-end
+  justify-content: space-between
+  align-content: center
+  .nav-left,.nav-right
+    height: 54px
   .menu-item
+    display: inline-block
     border-radius: 6px
-    padding: 10px 15px
+    padding: 15px
     transition: background-color 500ms
     &:hover,&:focus
-      background-color: $grey-lighter
+      background-color: $grey-lightest
 
+#logo
+  line-height: 20px
+  display: block
+  padding: 7px 15px
 #primary_logo
   display: block
+  font-size: 24px
 #slogan
   display: block
   color: $grey

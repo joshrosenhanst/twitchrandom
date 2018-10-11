@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.sass';
 import App from './App';
+import AppHeader from './components/AppHeader/AppHeader';
 import * as serviceWorker from './serviceWorker';
 
+ReactDOM.hydrate(<AppHeader />, document.getElementById('app-header'));
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
