@@ -5,32 +5,41 @@ import { ReactComponent as Logo} from '../../logo.svg'
 
 class StreamContainer extends Component {
   render() {
-    let bannerStyle = {
-      backgroundImage: `url(${this.props.channel.banner})`
-    }
-    return (
-      <section id="stream-embed-section" style={bannerStyle}>
-        <div id="stream-container">
-          <StreamEmbed id="stream-embed" channel={this.props.channel.name}></StreamEmbed>
-          <div id="stream-info">
-            <h2 className="stream_title">{this.props.channel.title}</h2>
-            <div id="stream-meta">
-              <a className="channel_logo" href={"/stream/"+this.props.channel.name}>
-                <img src={this.props.channel.logo} alt={this.props.channel.name+" logo"} />
-              </a>
-              <div className="channel_info">
-                <a className="channel_name" href={"/stream/"+this.props.channel.name}>{this.props.channel.name}</a>
-                { (this.props.channel.game) && (<div className="channel_game">Playing {this.props.channel.game}</div>) }
-                <div className="channel_viewers">{this.props.channel.viewers} Viewers</div>
+    console.log(this.props.channel);
+    if(this.props.channel){
+      let bannerStyle = {
+        backgroundImage: `url(${this.props.channel.banner})`
+      }
+      return (
+        <section id="stream-embed-section" style={bannerStyle}>
+          <div id="stream-container">
+            <StreamEmbed id="stream-embed" channel={this.props.channel.name}></StreamEmbed>
+            <div id="stream-info">
+              <h2 className="stream_title">{this.props.channel.title}</h2>
+              <div id="stream-meta">
+                <a className="channel_logo" href={"/stream/"+this.props.channel.name}>
+                  <img src={this.props.channel.logo} alt={this.props.channel.name+" logo"} />
+                </a>
+                <div className="channel_info">
+                  <a className="channel_name" href={"/stream/"+this.props.channel.name}>{this.props.channel.name}</a>
+                  { (this.props.channel.game) && (<div className="channel_game">Playing {this.props.channel.game}</div>) }
+                  <div className="channel_viewers">{this.props.channel.viewers} Viewers</div>
+                </div>
+              </div>
+              <div id="random-stream-button">
+                <a href="/random" className="random-button">
+                  <Logo /> Random Stream
+                </a>
               </div>
             </div>
-            <div id="random-stream-button">
-              <a href="/random" className="random-button"><Logo /> Random Stream</a>
-            </div>
           </div>
-        </div>
-      </section>
-    );
+        </section>
+      );
+    }else{
+      return (
+        <div>Loading</div>
+      );
+    }
   }
 }
 
