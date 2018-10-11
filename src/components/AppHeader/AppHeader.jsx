@@ -17,16 +17,16 @@ class AppHeader extends Component {
   render() {
     return (
       <nav id="header-menu">
-        <div class="nav-left">
+        <div className="nav-left">
           <a href="/" id="logo" title="TwitchRandom Home Page">
             <span id="primary_logo">TwitchRandom</span>
             <span id="slogan">{this.randomSlogan}</span>
           </a>
         </div>
-        <div class="nav-right">
-          <a href="/" class="menu-item" title="TwitchRandom Home Page">Home</a>
-          <a href="/games" class="menu-item" title="View All Games">Games</a>
-          <a href="/random" class="menu-item" title="Get a Random Stream">Random Stream</a>
+        <div className="nav-right">
+          <a href="/" className="menu-item" title="TwitchRandom Home Page">Home</a>
+          <a href="/games" className="menu-item" title="View All Games">Games</a>
+          <a href="/random" className="menu-item" title="Get a Random Stream">Random Stream</a>
         </div>
       </nav>
     );
