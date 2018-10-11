@@ -1,0 +1,72 @@
+@import "../../sass/shared"
+
+#stream-embed-section
+  background-image: none
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: 1200px auto
+  background-color: #101014
+  border-bottom: 1px solid #6441A5
+  padding-bottom: 10px
+  padding-top: 10px
+
+#stream-container
+  +container
+  display: flex
+
+#stream-embed
+  flex-grow: 4
+
+#stream-info
+  flex-basis: 300px
+  display: flex
+  flex-direction: column
+  padding: 15px
+  background-color: rgba($stream-background-color,0.8)
+  h2.stream_title
+    color: $white
+    font-size: 20px
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
+
+#stream-meta
+  display: flex
+  padding: 5px
+  margin: 10px 0
+  border-radius: 2px
+  border-width: 0 4px
+  border-style: solid
+  border-color: $twitch-purple
+  background-color: rgba($body-background-color, 0.8)
+  .channel_logo
+    flex-grow: 0
+    flex-basis: 45px
+    margin-right: 10px
+    img
+
+  .channel_info
+    flex-grow: 1
+
+  .channel_name
+    font-weight: bold
+
+#random-stream-button
+  margin-top: auto
+  text-align: center
+  a.random-button
+    display: inline-block
+    padding: 14px 20px
+    font-weight: bold
+    background-color: $twitch-purple
+    color: $white
+    border-radius: 4px
+    line-height: 1
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
+    svg
+      fill: currentColor
+      height: 1.2em
+      width: 1.2em
+      vertical-align: -4px
+      filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8))
+    &:hover,&:focus
+      background-color: $twitch-purple-hover
+
