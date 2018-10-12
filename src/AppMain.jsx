@@ -15,6 +15,7 @@ class AppMain extends Component {
     this.state = {
       channel: null
     };
+    this.handleRequestRandom = this.handleRequestRandom.bind(this)
   }
   getStreamData(stream) {
     return {
@@ -27,8 +28,14 @@ class AppMain extends Component {
       preview: stream.preview.large
     };
   }
+  handleRequestRandom() {
+    this.getRandomChannel();
+  }
   getRandomChannel() {
     let randomNumber = Math.floor(Math.random() * 8000);
+    this.setState({
+      channel: null
+    });
     fetch(API_URL+ENDPOINTS.STREAMS + "?limit=3&offset=" + randomNumber, {
       headers: {
         'Client-ID': API_KEY
@@ -39,7 +46,7 @@ class AppMain extends Component {
         console.log(data);
         this.setState({
           channel: this.getStreamData(data.streams[0])
-        })
+        });
       })
       .catch(error => console.log(error));
   }
@@ -49,7 +56,10 @@ class AppMain extends Component {
   render() {
     return (
       <div id="app-main">
-        <StreamContainer channel={this.state.channel}></StreamContainer>
+        <StreamContainer 
+          channel={this.state.channel}
+          onRequestRandom={this.handleRequestRandom}
+        ></StreamContainer>
       </div>
     );
   }

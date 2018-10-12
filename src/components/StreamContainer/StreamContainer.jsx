@@ -4,8 +4,16 @@ import StreamEmbed from '../StreamEmbed/StreamEmbed'
 import { ReactComponent as Logo} from '../../logo.svg'
 
 class StreamContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.handleGetRandom = this.handleGetRandom.bind(this);
+  }
+  handleGetRandom(e) {
+    e.preventDefault();
+    this.props.onRequestRandom(e);
+  }
   render() {
-    console.log(this.props.channel);
+    //console.log(this.props.channel);
     if(this.props.channel){
       let bannerStyle = {
         backgroundImage: `url(${this.props.channel.banner})`
@@ -27,7 +35,8 @@ class StreamContainer extends Component {
                 </div>
               </div>
               <div id="random-stream-button">
-                <a href="/random" className="random-button">
+                <a href="/random" className="random-button" title="Get Random Stream"
+                  onClick={this.handleGetRandom}>
                   <Logo /> Random Stream
                 </a>
               </div>
@@ -37,7 +46,14 @@ class StreamContainer extends Component {
       );
     }else{
       return (
-        <div>Loading</div>
+        <section id="stream-embed-section">
+          <div id="stream-container">
+            <div id="loading">
+              <Logo />
+              <div>Loading Stream</div>
+            </div>
+          </div>
+        </section>
       );
     }
   }
