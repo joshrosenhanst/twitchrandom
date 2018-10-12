@@ -15,38 +15,6 @@
   box-shadow: 0 1px 5px rgba(0,0,0,0.75)
   display: flex
 
-#loading
-  flex-grow: 1
-  text-align: center
-  color: $twitch-purple
-  font-weight: bold
-  padding: 150px 0
-  animation: colorChange 3s infinite
-  svg
-    margin-left: 10px
-    fill: currentColor
-    width: 50px
-    height: 50px
-    animation: logoRotate 6s infinite
-
-@keyframes logoRotate
-  0%
-    transform: rotateX(0deg)
-  50%
-    transform: rotateX(180deg)
-  100%
-    transform: rotateX(0deg)
-
-
-@keyframes colorChange
-  0%
-    color: $twitch-purple
-  50%
-    color: $white
-  100%
-    color: $twitch-purple
-
-
 #stream-embed
   flex-grow: 4
   iframe

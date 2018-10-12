@@ -4,7 +4,7 @@ import AppHeader from './components/AppHeader/AppHeader';
 import AppMain from './AppMain';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.hydrate(<AppHeader />, document.getElementById('app-header'));
+ReactDOM.render(<AppHeader />, document.getElementById('app-header'));
 ReactDOM.render(<AppMain />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

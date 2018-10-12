@@ -84,11 +84,28 @@ strong
   color: $strong-color
   font-weight: $strong-weight
 
-noscript
+noscript#main-noscript
   text-align: center
   display: block
-  padding: 20px 0
+  padding: 200px 0
+  background-color: $stream-background-color
+  border-bottom: 1px solid $twitch-purple
   font-weight: bold
+  color: $white
+
+#loading
+  flex-grow: 1
+  text-align: center
+  color: $twitch-purple
+  font-weight: bold
+  padding: 150px 0
+  animation: colorChange 3s infinite
+  svg
+    margin-left: 10px
+    fill: currentColor
+    width: 50px
+    height: 50px
+    animation: logoRotate 6s infinite
 
 @import './header'
 @import './footer'
