@@ -1,33 +1,62 @@
 @import "../../sass/shared"
 
 .app-gallery
+  +container
   background-color: $white
-  padding: 20px
-  margin: 5px 0
+  margin: 10px auto
+  padding: 10px 20px
+  border: 1px solid $grey-lighter
+  border-radius: 2px
 
   .gallery-header
     display: flex
     justify-content: space-between
-    h1.gallery-title
-      color: $twitch-purple
+    margin-bottom: 10px
+    .gallery-title
+      font-size: 22px
     .gallery-reload
       +button
 
+  .gallery-items
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    column-gap: 20px
+    row-gap: 20px
+    .gallery-item
+      //flex: 1
+      //padding: 0 10px
 
-  .gallery-item
 
   .gallery-item-screenshot
+    position: relative
+    display: block
+    border-radius: 4px
+    overflow: hidden
+    margin-bottom: 5px
+    img
+      display: block
 
   .overlay
-    +overlay
-    background: rgba($stream-background-color, 0.4)
+    @extend %overlay
+    background: linear-gradient(0deg, $stream-background-color 20%, transparent)
     color: $white
+    padding: 5px
+    font-size: 0.75rem
+    text-align: right
 
   .gallery-item-meta
+    display: flex
 
   .gallery-item-logo
+    flex-basis: 45px
+    flex-shrink: 0
+    margin-right: 10px
+
+  .gallery-item-info
+    flex-grow: 1
 
   .gallery-item-name
+    font-weight: bold
 
   .gallery-item-game
 
