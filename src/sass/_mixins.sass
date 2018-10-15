@@ -105,6 +105,27 @@
 %overlay
   +overlay
 
+=button($background-color: $twitch-purple,$background-color-hover: $twitch-purple-hover, $text-color: $white)
+  display: inline-block
+  padding: 6px 12px
+  background-color: $background-color
+  color: $text-color
+  border-radius: 4px
+  line-height: 1
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
+  text-align: center
+  cursor: pointer
+  svg
+    fill: currentColor
+    height: 1.2em
+    width: 1.2em
+    vertical-align: -4px
+    filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8))
+  &:hover,&:focus
+    background-color: $background-color-hover
+
+
+
 =container
     margin: 0 auto
     position: relative
