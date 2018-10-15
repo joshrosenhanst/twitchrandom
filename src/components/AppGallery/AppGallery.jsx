@@ -42,22 +42,32 @@ class AppGallery extends React.Component {
         channel={item}
       ></GalleryItem>
     );
+    const galleryClass = "app-gallery" + (this.props.featured?" featured":"");
     return (
-      <section className="app-gallery">
+      <section className={galleryClass}>
         <header className="gallery-header">
           <h3 className="gallery-title">
-            {this.props.galleryTitle} Gallery
+            {this.props.galleryTitle}
           </h3>
+          {!this.props.featured && (
           <button className="gallery-reload" onClick={this.requestNewGallery}>
             <Logo /> Randomize
           </button>
+          )}
         </header>
         <div className="gallery-items">
           {galleryItems}
+          {this.props.featured && (
+          <div className="ad">Ad</div>
+          )}
         </div>
       </section>
     );
   }
 }
+
+AppGallery.defaultProps = {
+  featured: false
+};
 
 export default AppGallery;
