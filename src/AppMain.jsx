@@ -12,7 +12,8 @@ const ENDPOINTS = {
 }
 const AUTH_HEADERS = {
   headers: {
-    'Client-ID': API_KEY
+    'Client-ID': API_KEY,
+    'Accept': 'application/vnd.twitchtv.v5+json'
   }
 };
 
@@ -24,8 +25,21 @@ class AppMain extends Component {
       galleryChannels: [],
       featuredStreams: []
     };
-    this.handleRequestRandom = this.handleRequestRandom.bind(this)
+    this.handleRequestStream = this.handleRequestStream.bind(this);
+    this.handleRequestGallery = this.handleRequestGallery.bind(this);
   }
+
+  handleRequestStream() {
+    this.getRandomStream();
+  }
+  handleRequestGallery() {
+    this.getRandomGalleryChannels();
+  }
+
+  /*
+    getStreamData() - Map the properties in the stream object into a new object.
+    stream - single object from the Twitch API JSON response.
+  */
   getStreamData(stream) {
     return {
       id: stream.channel._id,
@@ -38,51 +52,79 @@ class AppMain extends Component {
       preview: stream.preview.large
     };
   }
+
+  /*
+    getGalleryData() - Map all of the gallery streams in the array using getStreamData().
+    streams - array of stream objects from the Twitch API JSON response.
+  */
   getGalleryData(streams) {
     return streams.map(item => this.getStreamData(item))
   }
+
+  /*
+    getFeaturedStreamData() - Map all of the featured streams in the array using getStreamData().
+    streams - array of stream objects from the Twitch API JSON response.
+  */
   getFeaturedStreamData(streams){
     return streams.map(item => this.getStreamData(item.stream))
   }
-  handleRequestRandom() {
-    this.getRandomChannels();
+
+  /*
+    fetchTwitchEndpoint() - Use the Fetch API to request data from Twitch. Returns a promise which resolves to a JSON object.
+  */
+  async fetchTwitchEndpoint(endpoint, query){
+    return fetch(API_URL + endpoint + query, AUTH_HEADERS)
+      .then(response => response.json())
+      .catch(error => console.log(error));
   }
   
   /*
-    getRandomChannels() - get details about 4 live streams, requested from a random offset. The first item becomes the embedded stream, the other items become the random gallery.
+    getRandomStream() - fetch details for 1 live stream, requested from a random offset.
   */
-  getRandomChannels() {
+  getRandomStream() {
     let randomNumber = Math.floor(Math.random() * 8000);
     this.setState({
-      channel: null,
-      galleryChannels: []
+      channel: null
     });
-    fetch(API_URL+ENDPOINTS.STREAMS + "?limit=9&offset=" + randomNumber, AUTH_HEADERS)
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data);
-        let mainChannel = data.streams.shift();
+    this.fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=1&offset=" + randomNumber)
+      .then(data => {
         this.setState({
-          channel: this.getStreamData(mainChannel),
-          galleryChannels: this.getGalleryData(data.streams)
+          channel: this.getStreamData(data.streams[0])
         });
       })
-      .catch(error => console.log(error));
   }
 
+  /*
+    getRandomGalleryChannels() - fetch details for 8 live streams, requested from a random offset.
+  */
+  getRandomGalleryChannels() {
+    let randomNumber = Math.floor(Math.random() * 8000);
+    this.setState({
+      galleryChannels: []
+    });
+    this.fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=8&offset=" + randomNumber)
+      .then(data => {
+        this.setState({
+          galleryChannels: this.getGalleryData(data.streams)
+        });
+      });
+  }
+
+  /*
+    getFeaturedGalleryChannels() - fetch details for the top 3 featured streams.
+  */
   getFeaturedGalleryChannels() {
-    fetch(API_URL+ENDPOINTS.FEATURED_STREAMS + "?limit=3", AUTH_HEADERS)
-      .then(response => response.json())
+    this.fetchTwitchEndpoint(ENDPOINTS.FEATURED_STREAMS, "?limit=3")
       .then(data => {
         this.setState({
           featuredStreams: this.getFeaturedStreamData(data.featured)
         });
-      })
-      .catch(error => console.log(error));
+      });
   }
 
   componentDidMount() {
-    this.getRandomChannels();
+    this.getRandomStream();
+    this.getRandomGalleryChannels();
     this.getFeaturedGalleryChannels();
   }
   render() {
@@ -90,7 +132,7 @@ class AppMain extends Component {
       <div id="app-main">
         <StreamContainer 
           channel={this.state.channel}
-          onRequestRandom={this.handleRequestRandom}
+          onRequestRandom={this.handleRequestStream}
         ></StreamContainer>
         <AppGallery 
           items={this.state.featuredStreams}
@@ -100,7 +142,7 @@ class AppMain extends Component {
         <AppGallery 
           items={this.state.galleryChannels}
           galleryTitle="Random Streams"
-          onRequestRandom={this.handleRequestRandom}
+          onRequestRandom={this.handleRequestGallery}
         ></AppGallery>
       </div>
     );
@@ -108,4 +150,3 @@ class AppMain extends Component {
 }
 
 export default AppMain;
-// <StreamContainer></StreamContainer>

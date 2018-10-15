@@ -24,7 +24,7 @@ function GalleryItem(props){
   );
 }
 
-class AppGallery extends React.Component {
+class AppGallery extends Component {
   constructor(props) {
     super(props);
     this.requestNewGallery = this.requestNewGallery.bind(this);
@@ -36,33 +36,51 @@ class AppGallery extends React.Component {
   }
 
   render() {
-    const galleryItems = this.props.items.map((item) => 
-      <GalleryItem 
-        key={item.id}
-        channel={item}
-      ></GalleryItem>
-    );
-    const galleryClass = "app-gallery" + (this.props.featured?" featured":"");
-    return (
-      <section className={galleryClass}>
-        <header className="gallery-header">
-          <h3 className="gallery-title">
-            {this.props.galleryTitle}
-          </h3>
-          {!this.props.featured && (
-          <button className="gallery-reload" onClick={this.requestNewGallery}>
-            <Logo /> Randomize
-          </button>
-          )}
-        </header>
-        <div className="gallery-items">
-          {galleryItems}
-          {this.props.featured && (
-          <div className="ad">Ad</div>
-          )}
-        </div>
-      </section>
-    );
+
+    if(this.props.items.length){
+      const galleryItems = this.props.items.map((item) => 
+        <GalleryItem 
+          key={item.id}
+          channel={item}
+        ></GalleryItem>
+      );
+      const galleryClass = "app-gallery" + (this.props.featured?" featured":"");
+      return (
+        <section className={galleryClass}>
+          <header className="gallery-header">
+            <h3 className="gallery-title">
+              {this.props.galleryTitle}
+            </h3>
+            {!this.props.featured && (
+            <button className="gallery-reload" onClick={this.requestNewGallery}>
+              <Logo /> Randomize
+            </button>
+            )}
+          </header>
+          <div className="gallery-items">
+            {galleryItems}
+            {this.props.featured && (
+            <div className="ad">Ad</div>
+            )}
+          </div>
+        </section>
+      );
+    }else{
+      // return a loading template
+      return (
+        <section className="app-gallery">
+          <header className="gallery-header">
+            <h3 className="gallery-title">
+              {this.props.galleryTitle}
+            </h3>
+          </header>
+          <div className="loading">
+            <Logo />
+            <div>Loading Gallery</div>
+          </div>
+        </section>
+      );
+    }
   }
 }
 
