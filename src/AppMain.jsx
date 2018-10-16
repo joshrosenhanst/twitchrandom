@@ -2,20 +2,9 @@ import React, { Component } from 'react';
 import './AppMain.sass';
 import StreamContainer from './components/StreamContainer/StreamContainer';
 import AppGallery from './components/AppGallery/AppGallery';
+import { API_URL, ENDPOINTS, AUTH_HEADERS } from './TwitchAPIConstants';
 
-const API_KEY = process.env.REACT_APP_TWITCH_API_KEY;
-const API_URL = "https://api.twitch.tv/kraken";
-const ENDPOINTS = {
-  STREAMS: "/streams/",
-  FEATURED_STREAMS: "/streams/featured/",
-  GAMES: "/games/"
-}
-const AUTH_HEADERS = {
-  headers: {
-    'Client-ID': API_KEY,
-    'Accept': 'application/vnd.twitchtv.v5+json'
-  }
-};
+
 
 class AppMain extends Component {
   constructor(props){
