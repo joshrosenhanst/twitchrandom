@@ -1,0 +1,31 @@
+@import "../../sass/shared"
+
+#game-list
+    +container
+
+#game-list-header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 10px
+    h2
+        font-size: 36px
+
+#game-list-main
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    column-gap: 20px
+    row-gap: 20px
+
+#load-games
+    +button
+    margin: 10px auto
+    display: block
+    padding: 14px 20px
+    
+.game-display
+    .game-poster
+
+    .game-name
+        font-weight: bold
+
+    .game-viewers
