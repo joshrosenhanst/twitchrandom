@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './GameList.sass';
 import { ENDPOINTS, fetchTwitchEndpoint } from '../../TwitchAPI';
-import { ReactComponent as Logo} from '../../logo.svg'
+import { ReactComponent as Logo} from '../../logo.svg';
+import GameAutoSuggest from './GameAutosuggest';
 
 function GameDisplay(props) {
   return (
@@ -89,7 +90,8 @@ class GameList extends Component {
         <React.Fragment>
         <section id="game-list">
             <header id="game-list-header">
-                <h2>All Games</h2>
+              <h2>All Games</h2>
+              <GameAutoSuggest></GameAutoSuggest>
             </header>
             <div id="game-list-main">
               {gameDisplays}
