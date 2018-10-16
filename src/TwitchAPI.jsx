@@ -3,7 +3,7 @@ const API_URL = "https://api.twitch.tv/kraken";
 const ENDPOINTS = {
   STREAMS: "/streams/",
   FEATURED_STREAMS: "/streams/featured/",
-  GAMES: "/games/"
+  GAMES: "/games/top/"
 }
 const AUTH_HEADERS = {
   headers: {
