@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './AppMain.sass';
 import StreamContainer from './components/StreamContainer/StreamContainer';
 import AppGallery from './components/AppGallery/AppGallery';
-import { API_URL, ENDPOINTS, AUTH_HEADERS } from './TwitchAPIConstants';
+import { ENDPOINTS, fetchTwitchEndpoint } from './TwitchAPI';
 
 
 
@@ -57,15 +57,6 @@ class AppMain extends Component {
   getFeaturedStreamData(streams){
     return streams.map(item => this.getStreamData(item.stream))
   }
-
-  /*
-    fetchTwitchEndpoint() - Use the Fetch API to request data from Twitch. Returns a promise which resolves to a JSON object.
-  */
-  async fetchTwitchEndpoint(endpoint, query){
-    return fetch(API_URL + endpoint + query, AUTH_HEADERS)
-      .then(response => response.json())
-      .catch(error => console.log(error));
-  }
   
   /*
     getRandomStream() - fetch details for 1 live stream, requested from a random offset.
@@ -75,7 +66,7 @@ class AppMain extends Component {
     this.setState({
       channel: null
     });
-    this.fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=1&offset=" + randomNumber)
+    fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=1&offset=" + randomNumber)
       .then(data => {
         this.setState({
           channel: this.getStreamData(data.streams[0])
@@ -91,7 +82,7 @@ class AppMain extends Component {
     this.setState({
       galleryChannels: []
     });
-    this.fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=8&offset=" + randomNumber)
+    fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=8&offset=" + randomNumber)
       .then(data => {
         this.setState({
           galleryChannels: this.getGalleryData(data.streams)
@@ -103,7 +94,7 @@ class AppMain extends Component {
     getFeaturedGalleryChannels() - fetch details for the top 3 featured streams.
   */
   getFeaturedGalleryChannels() {
-    this.fetchTwitchEndpoint(ENDPOINTS.FEATURED_STREAMS, "?limit=3")
+    fetchTwitchEndpoint(ENDPOINTS.FEATURED_STREAMS, "?limit=3")
       .then(data => {
         this.setState({
           featuredStreams: this.getFeaturedStreamData(data.featured)
