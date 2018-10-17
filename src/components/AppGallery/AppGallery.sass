@@ -4,10 +4,15 @@
   +container
   background-color: $white
   margin: 15px auto
-  padding: 10px 20px
-  border: 1px solid $grey-lighter
+  padding: 10px 15px
+  border-style: solid
+  border-color: $grey-lighter
+  border-width: 1px 0
   border-radius: 2px
   min-height: 300px
+  +tablet
+    border-width: 1px
+    padding: 10px 20px
 
   .gallery-header
     display: flex
@@ -51,6 +56,9 @@
     flex-basis: 45px
     flex-shrink: 0
     margin-right: 10px
+    +until($l_mobile)
+      display: none
+
 
   .gallery-item-info
     flex-grow: 1
@@ -59,6 +67,8 @@
     font-weight: bold
 
   .gallery-item-game
+    +until($l_mobile)
+      font-size: 14px
 
   &.featured
     background-color: $featured-background-color
