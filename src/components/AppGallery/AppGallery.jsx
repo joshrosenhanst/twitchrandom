@@ -17,7 +17,7 @@ function GalleryItem(props){
         </a>
         <div className="gallery-item-info">
           <a className="gallery-item-name" href={"/stream/" + props.channel.name}>{props.channel.name}</a> 
-          { (props.channel.game) && (<div className="gallery-item-game">Playing {props.channel.game}</div>) }
+          { (props.channel.game) && (<div className="gallery-item-game">Playing <a href={"/games/"+props.channel.game}>{props.channel.game}</a></div>) }
         </div>
       </div>
     </div>
