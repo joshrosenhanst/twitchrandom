@@ -26,9 +26,10 @@
   .gallery-items
     display: grid
     grid-template-columns: 1fr 1fr
-    column-gap: 20px
+    column-gap: 10px
     row-gap: 20px
     +tablet
+      grid-gap: 20px
       grid-template-columns: 1fr 1fr 1fr 1fr
     .ad
 
@@ -50,7 +51,9 @@
     text-align: right
 
   .gallery-item-meta
-    display: flex
+    overflow: hidden
+    +from($l_mobile)
+      display: flex
 
   .gallery-item-logo
     flex-basis: 45px
@@ -61,14 +64,18 @@
 
 
   .gallery-item-info
-    flex-grow: 1
+    +until($l_mobile)
+      font-size: 14px
+    +tablet
+      flex-grow: 1
 
   .gallery-item-name
     font-weight: bold
+    display: block
+    word-break: break-all
+    
 
   .gallery-item-game
-    +until($l_mobile)
-      font-size: 14px
 
   &.featured
     background-color: $featured-background-color
