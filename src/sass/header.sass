@@ -6,26 +6,26 @@
 #header-menu
   +container
   display: flex
-  +until($l_mobile)
+  +until($mobile_nav)
     flex-direction: column
-  +from($l_mobile)
+  +from($mobile_nav)
     justify-content: space-between
     align-items: center
   .nav-left,.nav-right
     display: flex
-    +from($l_mobile)
+    +from($mobile_nav)
       height: 54px
-    +until($l_mobile)
+    +until($mobile_nav)
       justify-content: space-around
       align-items: center
   .menu-item
     border-radius: 6px
     padding: 5px 10px
     transition: background-color 500ms
-    +from($l_mobile)
+    +from($mobile_nav)
       display: inline-block
       padding: 15px
-    +until($l_mobile)
+    +until($mobile_nav)
       text-align: center
       flex-grow: 1
       flex-shrink: 0
@@ -37,7 +37,7 @@
   line-height: 20px
   display: block
   padding: 7px 10px
-  +from($l_mobile)
+  +from($mobile_nav)
     padding: 7px 15px
 #primary_logo
   display: block
