@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './AppMain.sass';
 import StreamContainer from './components/StreamContainer/StreamContainer';
 import AppGallery from './components/AppGallery/AppGallery';
-import { ENDPOINTS, fetchTwitchEndpoint } from './TwitchAPI';
+import { ENDPOINTS, fetchTwitchEndpoint, API_KEY } from './TwitchAPI';
 
 
 
@@ -12,7 +12,8 @@ class AppMain extends Component {
     this.state = {
       channel: null,
       galleryChannels: [],
-      featuredStreams: []
+      featuredStreams: [],
+      hasError: false
     };
     this.handleRequestStream = this.handleRequestStream.bind(this);
     this.handleRequestGallery = this.handleRequestGallery.bind(this);
@@ -23,6 +24,13 @@ class AppMain extends Component {
   }
   handleRequestGallery() {
     this.getRandomGalleryChannels();
+  }
+
+  caughtError(error) {
+    this.setState({
+      hasError: true
+    });
+    console.log(error);
   }
 
   /*
@@ -72,6 +80,9 @@ class AppMain extends Component {
           channel: this.getStreamData(data.streams[0])
         });
       })
+      .catch(error => {
+        this.caughtError(error);
+      });
   }
 
   /*
@@ -87,6 +98,9 @@ class AppMain extends Component {
         this.setState({
           galleryChannels: this.getGalleryData(data.streams)
         });
+      })
+      .catch(error => {
+        this.caughtError(error);
       });
   }
 
@@ -99,6 +113,9 @@ class AppMain extends Component {
         this.setState({
           featuredStreams: this.getFeaturedStreamData(data.featured)
         });
+      })
+      .catch(error => {
+        this.caughtError(error);
       });
   }
 
@@ -107,7 +124,20 @@ class AppMain extends Component {
     this.getRandomGalleryChannels();
     this.getFeaturedGalleryChannels();
   }
+  componentDidCatch(error, info) {
+    this.setState({
+      hasError: true
+    });
+    console.log(error, info);
+  }
   render() {
+    if(!API_KEY || this.state.hasError){
+      return (
+        <div id="app-error">
+          <h2>Error connecting to Twitch</h2>
+        </div>
+      );
+    }
     return (
       <div id="app-main">
         <StreamContainer 

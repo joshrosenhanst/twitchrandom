@@ -17,9 +17,12 @@ const AUTH_HEADERS = {
   fetchTwitchEndpoint() - Use the Fetch API to request data from Twitch. Returns a promise which resolves to a JSON object.
 */
 async function fetchTwitchEndpoint(endpoint, query) {
-  return fetch(API_URL + endpoint + query, AUTH_HEADERS)
-    .then(response => response.json())
-    .catch(error => console.log(error));
+  if(API_KEY){
+    return fetch(API_URL + endpoint + query, AUTH_HEADERS)
+      .then(response => response.json());
+  }else{
+    return false;
+  }
 }
 
 export { API_KEY, API_URL, ENDPOINTS, AUTH_HEADERS, fetchTwitchEndpoint };
