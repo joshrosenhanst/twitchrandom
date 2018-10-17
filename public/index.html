@@ -233,9 +233,7 @@ noscript#main-noscript {
 #header-menu {
   margin: 0 auto;
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-content: center; }
+  display: flex; }
   @media screen and (min-width: 1088px) {
     #header-menu {
       max-width: 960px;
@@ -261,20 +259,46 @@ noscript#main-noscript {
     #header-menu {
       max-width: 1344px;
       width: 1344px; } }
+  @media screen and (max-width: 425px) {
+    #header-menu {
+      flex-direction: column; } }
+  @media screen and (min-width: 426px) {
+    #header-menu {
+      justify-content: space-between;
+      align-items: center; } }
   #header-menu .nav-left, #header-menu .nav-right {
-    height: 54px; }
+    display: flex; }
+    @media screen and (min-width: 426px) {
+      #header-menu .nav-left, #header-menu .nav-right {
+        height: 54px; } }
+    @media screen and (max-width: 425px) {
+      #header-menu .nav-left, #header-menu .nav-right {
+        justify-content: space-around;
+        align-items: center; } }
   #header-menu .menu-item {
-    display: inline-block;
     border-radius: 6px;
-    padding: 15px;
+    padding: 5px 10px;
     transition: background-color 500ms; }
+    @media screen and (min-width: 426px) {
+      #header-menu .menu-item {
+        display: inline-block;
+        padding: 15px; } }
+    @media screen and (max-width: 425px) {
+      #header-menu .menu-item {
+        text-align: center;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 50%; } }
     #header-menu .menu-item:hover, #header-menu .menu-item:focus {
       background-color: #ebebeb; }
 
 #logo {
   line-height: 20px;
   display: block;
-  padding: 7px 15px; }
+  padding: 7px 10px; }
+  @media screen and (min-width: 426px) {
+    #logo {
+      padding: 7px 15px; } }
 
 #primary_logo {
   display: block;
@@ -286,7 +310,7 @@ noscript#main-noscript {
 
 #app-footer {
   text-align: center;
-  margin: 10px 0; }
+  margin: 10px 0; }     
     </style>
     <title>TwitchRandom | Random Twitch.tv Streams - Find something unexpected</title>
   </head>
@@ -300,7 +324,7 @@ noscript#main-noscript {
           </a>
         </div>
         <div class="nav-right">
-          <a href="/" class="menu-item" title="TwitchRandom Home Page">Home</a><a href="/games" class="menu-item" title="View All Games">Games</a><a href="/random" class="menu-item" title="Get a Random Stream">Random Stream</a>
+          <a href="/" class="menu-item" title="TwitchRandom Home Page">Home</a><a href="/games" className="menu-item" title="View All Games">Browse Games</a><a href="/random" className="menu-item" title="Get a Random Stream">Random Stream</a>
         </div>
       </nav>
     </header>
