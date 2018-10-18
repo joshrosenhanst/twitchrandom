@@ -48,7 +48,7 @@ class StreamContainer extends Component {
       return (
         <section id="stream-embed-section">
           <div id="stream-container">
-            <div id="loading">
+            <div className="loading">
               <Logo />
               <div>Loading Stream</div>
             </div>

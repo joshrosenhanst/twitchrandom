@@ -95,38 +95,58 @@
 %arrow
   +arrow
 
-=overlay($offset: 0)
+=bottom-overlay($offset: 0)
   bottom: $offset
-  left: $offset
+  right: 0
+  left: 0
   position: absolute
-  right: $offset
-  top: $offset
 
 %overlay
-  +overlay
+  +bottom-overlay
+
+=button($background-color: $twitch-purple,$background-color-hover: $twitch-purple-hover, $text-color: $white)
+  display: inline-block
+  padding: 8px 16px
+  background-color: $background-color
+  border: 0
+  color: $text-color
+  border-radius: 4px
+  line-height: 1
+  text-align: center
+  cursor: pointer
+  font-size: 1rem
+  svg
+    fill: currentColor
+    height: 1.2em
+    width: 1.2em
+    vertical-align: -4px
+  &:hover,&:focus
+    background-color: $background-color-hover
+
+
 
 =container
-    margin: 0 auto
-    position: relative
-    +desktop
-        max-width: $desktop - (2 * $gap)
-        width: $desktop - (2 * $gap)
-        &.is-fluid
-            margin-left: $gap
-            margin-right: $gap
-            max-width: none
-            width: auto
-    +until-widescreen
-        &.is-widescreen
-            max-width: $widescreen - (2 * $gap)
-            width: auto
-    +until-fullhd
-        &.is-fullhd
-            max-width: $fullhd - (2 * $gap)
-            width: auto
-    +widescreen
-        max-width: $widescreen - (2 * $gap)
-        width: $widescreen - (2 * $gap)
-    +fullhd
-        max-width: $fullhd - (2 * $gap)
-        width: $fullhd - (2 * $gap)
+  margin: 0 auto
+  position: relative
+  +desktop
+    max-width: $desktop - (2 * $gap)
+    width: $desktop - (2 * $gap)
+    &.is-fluid
+      margin-left: $gap
+      margin-right: $gap
+      max-width: none
+      width: auto
+  +until-widescreen
+    &.is-widescreen
+      max-width: $widescreen - (2 * $gap)
+      width: auto
+  +until-fullhd
+    &.is-fullhd
+      max-width: $fullhd - (2 * $gap)
+      width: auto
+  +widescreen
+    max-width: $widescreen - (2 * $gap)
+    width: $widescreen - (2 * $gap)
+  +fullhd
+    max-width: $fullhd - (2 * $gap)
+    width: $fullhd - (2 * $gap)

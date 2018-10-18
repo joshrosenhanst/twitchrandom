@@ -6,22 +6,39 @@
 #header-menu
   +container
   display: flex
-  justify-content: space-between
-  align-content: center
+  +until($mobile_nav)
+    flex-direction: column
+  +from($mobile_nav)
+    justify-content: space-between
+    align-items: center
   .nav-left,.nav-right
-    height: 54px
+    display: flex
+    +from($mobile_nav)
+      height: 54px
+    +until($mobile_nav)
+      justify-content: space-around
+      align-items: center
   .menu-item
-    display: inline-block
     border-radius: 6px
-    padding: 15px
+    padding: 5px 10px
     transition: background-color 500ms
+    +from($mobile_nav)
+      display: inline-block
+      padding: 15px
+    +until($mobile_nav)
+      text-align: center
+      flex-grow: 1
+      flex-shrink: 0
+      flex-basis: 50%
     &:hover,&:focus
       background-color: $grey-lightest
 
 #logo
   line-height: 20px
   display: block
-  padding: 7px 15px
+  padding: 7px 10px
+  +from($mobile_nav)
+    padding: 7px 15px
 #primary_logo
   display: block
   font-size: 24px

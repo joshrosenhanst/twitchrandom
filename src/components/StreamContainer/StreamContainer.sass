@@ -4,25 +4,32 @@
   background-image: none
   background-repeat: no-repeat
   background-position: center center
-  background-size: 1200px auto
+  background-size: auto
   background-color: $stream-background-color
   border-bottom: 1px solid $twitch-purple
-  padding-bottom: 40px
-  padding-top: 40px
+  padding: 10px 0
+  +tablet
+    padding-bottom: 40px
+    padding-top: 40px
 
 #stream-container
   +container
   box-shadow: 0 1px 5px rgba(0,0,0,0.75)
   display: flex
+  flex-direction: column
+  +tablet
+    flex-direction: row
 
 #stream-embed
-  flex-grow: 4
+  +tablet
+    flex-grow: 4
   iframe
     display: block
 
 #stream-info
-  flex-basis: 400px
-  height: 380px
+  +tablet
+    flex-basis: 400px
+    height: 380px
   display: flex
   flex-direction: column
   padding: 15px
@@ -31,6 +38,9 @@
     color: $white
     font-size: 20px
     text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
+    +until($l_mobile)
+      max-width: 550px
+      margin: 0 auto
 
 #stream-meta
   display: flex
@@ -41,11 +51,17 @@
   border-style: solid
   border-color: $twitch-purple
   background-color: rgba($body-background-color, 0.8)
+  +until($l_mobile)
+    max-width: 550px
+    margin: 10px auto
   .channel_logo
     flex-grow: 0
-    flex-basis: 45px
+    flex-basis: 100px
     margin-right: 10px
+    +tablet
+      flex-basis: 45px
     img
+      display: block
 
   .channel_info
     flex-grow: 1
@@ -57,20 +73,9 @@
   margin-top: auto
   text-align: center
   a.random-button
-    display: inline-block
+    +button
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
     padding: 14px 20px
     font-weight: bold
-    background-color: $twitch-purple
-    color: $white
-    border-radius: 4px
-    line-height: 1
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
     svg
-      fill: currentColor
-      height: 1.2em
-      width: 1.2em
-      vertical-align: -4px
       filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8))
-    &:hover,&:focus
-      background-color: $twitch-purple-hover
-

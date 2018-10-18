@@ -1,0 +1,81 @@
+@import "../../sass/shared"
+
+.app-gallery
+  +container
+  background-color: $white
+  margin: 15px auto
+  padding: 10px 15px
+  border-style: solid
+  border-color: $grey-lighter
+  border-width: 1px 0
+  border-radius: 2px
+  min-height: 300px
+  +tablet
+    border-width: 1px
+    padding: 10px 20px
+
+  .gallery-header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 10px
+    .gallery-title
+      font-size: 22px
+    .gallery-reload
+      +button
+
+  .gallery-items
+    display: grid
+    grid-template-columns: 1fr 1fr
+    column-gap: 10px
+    row-gap: 20px
+    +tablet
+      grid-gap: 20px
+      grid-template-columns: 1fr 1fr 1fr 1fr
+    .ad
+
+  .gallery-item-screenshot
+    position: relative
+    display: block
+    border-radius: 4px
+    overflow: hidden
+    margin-bottom: 5px
+    img
+      display: block
+
+  .overlay
+    @extend %overlay
+    background: linear-gradient(0deg, $stream-background-color 20%, transparent)
+    color: $white
+    padding: 5px
+    font-size: 0.75rem
+    text-align: right
+
+  .gallery-item-meta
+    overflow: hidden
+    +from($l_mobile)
+      display: flex
+
+  .gallery-item-logo
+    flex-basis: 45px
+    flex-shrink: 0
+    margin-right: 10px
+    +until($l_mobile)
+      display: none
+
+
+  .gallery-item-info
+    +until($l_mobile)
+      font-size: 14px
+    +tablet
+      flex-grow: 1
+
+  .gallery-item-name
+    font-weight: bold
+    display: block
+    word-break: break-all
+    
+
+  .gallery-item-game
+
+  &.featured
+    background-color: $featured-background-color
