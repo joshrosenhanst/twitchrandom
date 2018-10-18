@@ -122,8 +122,15 @@
     vertical-align: -4px
   &:hover,&:focus
     background-color: $background-color-hover
+    color: $text-color
 
-
+=button-with-shadow
+  +button
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
+  padding: 14px 20px
+  font-weight: bold
+  svg
+    filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8))
 
 =container
   margin: 0 auto

@@ -85,10 +85,10 @@ strong
   color: $strong-color
   font-weight: $strong-weight
 
-noscript#main-noscript
+noscript#main-noscript, #app-error
   text-align: center
   display: block
-  padding: 200px 0
+  padding: 175px 0
   background-color: $stream-background-color
   border-bottom: 1px solid $twitch-purple
   font-weight: bold
@@ -107,6 +107,15 @@ noscript#main-noscript
     width: 50px
     height: 50px
     animation: logoRotate 6s infinite
+
+#app-error
+  font-size: 36px
+  h2
+    font-weight: bold
+    font-size: 36px
+
+.main-button
+  +button-with-shadow
 
 @import './header'
 @import './footer'

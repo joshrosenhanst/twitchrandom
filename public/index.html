@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#6441A5">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <!--Critical Inline Styles-->
-    <style type="text/css">/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+    <style type="text/css">
       html,
       body,
       p,
@@ -200,10 +200,10 @@
         color: #363636;
         font-weight: 700; }
       
-      noscript#main-noscript {
+      noscript#main-noscript, #app-error {
         text-align: center;
         display: block;
-        padding: 200px 0;
+        padding: 175px 0;
         background-color: #101014;
         border-bottom: 1px solid #6441A5;
         font-weight: bold;
@@ -224,6 +224,38 @@
           height: 50px;
           -webkit-animation: logoRotate 6s infinite;
                   animation: logoRotate 6s infinite; }
+      
+      #app-error {
+        font-size: 36px; }
+        #app-error h2 {
+          font-weight: bold;
+          font-size: 36px; }
+      
+      .main-button {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #6441A5;
+        border: 0;
+        color: white;
+        border-radius: 4px;
+        line-height: 1;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1rem;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+        padding: 14px 20px;
+        font-weight: bold; }
+        .main-button svg {
+          fill: currentColor;
+          height: 1.2em;
+          width: 1.2em;
+          vertical-align: -4px; }
+        .main-button:hover, .main-button:focus {
+          background-color: #7550BA;
+          color: white; }
+        .main-button svg {
+          -webkit-filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.8));
+                  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.8)); }
       
       #app-header {
         border-bottom: 1px solid #6441A5;
@@ -310,7 +342,7 @@
       
       #app-footer {
         text-align: center;
-        margin: 10px 0; }    
+        margin: 10px 0; }
     </style>
     <title>TwitchRandom | Random Twitch.tv Streams - Find something unexpected</title>
   </head>
@@ -324,7 +356,7 @@
           </a>
         </div>
         <div class="nav-right">
-          <a href="/games" className="menu-item" title="View All Games">Browse Games</a><a href="/random" className="menu-item" title="Get a Random Stream">Random Stream</a>
+          <a href="/games" class="menu-item" title="View All Games">Browse Games</a><a href="/random" class="menu-item" title="Get a Random Stream">Random Stream</a>
         </div>
       </nav>
     </header>
