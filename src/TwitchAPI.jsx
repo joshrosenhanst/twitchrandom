@@ -4,7 +4,8 @@ const ENDPOINTS = {
   STREAMS: "/streams/",
   FEATURED_STREAMS: "/streams/featured/",
   GAMES: "/games/top/",
-  GAMES_SEARCH: "/search/games/"
+  GAMES_SEARCH: "/search/games/",
+  USERS: "/users/"
 }
 const AUTH_HEADERS = {
   headers: {
@@ -16,7 +17,7 @@ const AUTH_HEADERS = {
 /*
   fetchTwitchEndpoint() - Use the Fetch API to request data from Twitch. Returns a promise which resolves to a JSON object.
 */
-async function fetchTwitchEndpoint(endpoint, query) {
+async function fetchTwitchEndpoint(endpoint, query = "") {
   if(API_KEY){
     return fetch(API_URL + endpoint + query, AUTH_HEADERS)
       .then(response => response.json());
