@@ -24,8 +24,8 @@ class AppHeader extends Component {
           </a>
         </div>
         <div className="nav-right">
-          <a href="/games" className="menu-item" title="View All Games">Browse Games</a>
-          <a href="/random" className="menu-item" title="Get a Random Stream">Random Stream</a>
+          <a href="/games/" className="menu-item" title="View All Games">Browse Games</a>
+          <a href="/" className="menu-item" title="Get a Random Stream">Random Stream</a>
         </div>
       </nav>
     );
