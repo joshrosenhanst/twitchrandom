@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './AppGallery.sass';
 import { ReactComponent as Logo} from '../../logo.svg'
 
 function GalleryItem(props){
   return (
     <div className="gallery-item">
-      <a href={"/stream/" + props.channel.name} className="gallery-item-screenshot">
+      <Link to={"/streams/" + props.channel.name} className="gallery-item-screenshot">
         <img src={props.channel.preview} alt={props.channel.name+" Stream Preview"}/>
         <span className="overlay">
           {props.channel.viewers} Viewers
         </span>
-      </a>
+      </Link>
       <div className="gallery-item-meta">
-        <a className="gallery-item-logo" href={"/stream/" + props.channel.name}>
+        <Link to={"/streams/" + props.channel.name} className="gallery-item-logo">
           <img src={props.channel.logo} alt={props.channel.name+" logo"} />
-        </a>
+        </Link>
         <div className="gallery-item-info">
-          <a className="gallery-item-name" href={"/stream/" + props.channel.name}>{props.channel.name}</a> 
-          { (props.channel.game) && (<div className="gallery-item-game">Playing <a href={"/games/"+props.channel.game}>{props.channel.game}</a></div>) }
+          <Link className="gallery-item-name" to={"/streams/" + props.channel.name}>{props.channel.name}</Link> 
+          { (props.channel.game) && (
+            <div className="gallery-item-game">
+              Playing <Link to={"/games/"+props.channel.game}>{props.channel.game}</Link>
+            </div>
+          ) }
         </div>
       </div>
     </div>

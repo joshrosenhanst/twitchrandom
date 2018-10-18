@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './StreamContainer.sass';
 import StreamEmbed from '../StreamEmbed/StreamEmbed'
 import { ReactComponent as Logo} from '../../logo.svg'
@@ -25,20 +26,26 @@ class StreamContainer extends Component {
             <div id="stream-info">
               <h2 className="stream_title">{this.props.channel.title}</h2>
               <div id="stream-meta">
-                <a className="channel_logo" href={"/stream/"+this.props.channel.name}>
+                <Link to={"/streams/"+this.props.channel.name} className="channel_logo">
                   <img src={this.props.channel.logo} alt={this.props.channel.name+" logo"} />
-                </a>
+                </Link>
                 <div className="channel_info">
-                  <a className="channel_name" href={"/stream/"+this.props.channel.name}>{this.props.channel.name}</a>
-                  { (this.props.channel.game) && (<div className="channel_game">Playing {this.props.channel.game}</div>) }
+                  <Link to={"/streams/"+this.props.channel.name} className="channel_name">
+                    {this.props.channel.name}
+                  </Link>
+                  { (this.props.channel.game) && (
+                    <div className="channel_game">
+                      Playing <Link to={"/games/"+this.props.channel.game}>{this.props.channel.game}</Link>
+                    </div>
+                  ) }
                   <div className="channel_viewers">{this.props.channel.viewers} Viewers</div>
                 </div>
               </div>
               <div id="random-stream-button">
-                <a href="/random" className="random-button" title="Get Random Stream"
+                <Link to="/" className="main-button" title="Get Random Stream"
                   onClick={this.handleGetRandom}>
                   <Logo /> Random Stream
-                </a>
+                </Link>
               </div>
             </div>
           </div>
