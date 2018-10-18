@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './GameList.sass';
 import { ENDPOINTS, fetchTwitchEndpoint } from '../../TwitchAPI';
 import { ReactComponent as Logo} from '../../logo.svg';
@@ -7,11 +8,11 @@ import GameAutoSuggest from './GameAutosuggest';
 function GameDisplay(props) {
   return (
     <div className="game-display">
-      <a href="/games/" className="game-poster">
+      <Link to={"/games/"+props.game.name} className="game-poster">
         <img src={props.game.poster} alt={props.game.name+" Box Art"} />
-      </a>
+      </Link>
       <div className="game-info">
-        <a href="/games/" className="game-name">{props.game.name}</a>
+        <Link to={"/games/"+props.game.name} className="game-name">{props.game.name}</Link>
         <div className="game-viewers">{props.game.viewers} Viewers</div>
       </div>
     </div>
