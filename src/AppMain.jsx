@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import './AppMain.sass';
+import { Link } from 'react-router-dom';
+import './sass/inline_styles.sass';
 import StreamContainer from './components/StreamContainer/StreamContainer';
 import AppGallery from './components/AppGallery/AppGallery';
 import { ENDPOINTS, fetchTwitchEndpoint, API_KEY } from './TwitchAPI';
-
-
+import { ReactComponent as Logo} from './logo.svg';
+import shuffle from 'lodash/shuffle';
 
 class AppMain extends Component {
   constructor(props){
     super(props);
     this.state = {
-      channel: null,
+      stream: props.match.params.stream || null,
+      game: props.match.params.game || null,
+      channel_data: null,
+      channel_offline: false,
       galleryChannels: [],
       featuredStreams: [],
       hasError: false
     };
+    console.log(this.state.stream);
+    console.log(this.state.game);
     this.handleRequestStream = this.handleRequestStream.bind(this);
     this.handleRequestGallery = this.handleRequestGallery.bind(this);
   }
@@ -31,6 +37,15 @@ class AppMain extends Component {
       hasError: true
     });
     console.log(error);
+  }
+
+  /*
+    shuffleAndSlice(array, limit) - Shuffle an array and then return a limited number of cells. Uses the lodash shuffle function (which uses a version of the Fisher-Yates shuffle )
+  */
+  shuffleAndSlice(array, limit){
+    if(limit > array.length) limit = array.length;
+
+    return shuffle(array).slice(0, limit);
   }
 
   /*
@@ -67,18 +82,91 @@ class AppMain extends Component {
   }
   
   /*
-    getRandomStream() - fetch details for 1 live stream, requested from a random offset.
+    getRandomStream() - fetch details for a live stream, requested from a random offset.
+    There are thousands of live streams at any time, so we can just plug a random offset in and grab a game.
   */
-  getRandomStream() {
+  getRandomStream(game = null) {
     let randomNumber = Math.floor(Math.random() * 8000);
     this.setState({
-      channel: null
+      stream: null,
+      channel_data: null
     });
     fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=1&offset=" + randomNumber)
       .then(data => {
-        this.setState({
-          channel: this.getStreamData(data.streams[0])
-        });
+        if(data._total > 0){
+          this.setState({
+            channel_data: this.getStreamData(data.streams[0]),
+            channel_offline: false
+          });
+        }else{
+          this.caughtError("Unable to get random stream.");
+        }
+      })
+      .catch(error => {
+        this.caughtError(error);
+      });
+  }
+
+  /*
+    getRandomStreamByGame() - fetch details for a live stream, filtered by game name.
+    Grab the top 100 streams for this game, then shuffle and return 1 stream using shuffleAndSlice(). 
+  */
+  getRandomStreamByGame(game){
+    this.setState({
+      stream: null,
+      channel_data: null
+    });
+    fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=100&game=" + game)
+      .then(data => {
+        if(data._total > 0){
+          let streams = this.shuffleAndSlice(data.streams, 1);
+          this.setState({
+            channel_data: this.getStreamData(streams[0]),
+            channel_offline: false
+          });
+        }else{
+          this.caughtError("No streams available for this game.");
+        }
+      })
+      .catch(error => {
+        this.caughtError(error);
+      });
+  }
+
+  /*
+    getChannelID(name) - v5 of the Twitch API requires a channel ID to get stream info, rather than a channel name. getChannelID(name) sends a query with the name and returns a promise with the ID.
+  */
+  async getChannelID(name) {
+    return fetchTwitchEndpoint(ENDPOINTS.USERS, "?login="+name)
+      .then(data => {
+        if(data._total > 0){
+          return data.users[0]._id;
+        }else{
+          return false;
+        }
+      });
+  }
+
+  /*
+    getStream() - fetch details for a stream, specified by channel name.
+  */
+  getStream(stream) {
+    this.setState({
+      channel_data: null
+    });
+    this.getChannelID(stream)
+      .then(id => fetchTwitchEndpoint(ENDPOINTS.STREAMS + id))
+      .then(data => {
+        if(data.stream){
+          this.setState({
+            channel_data: this.getStreamData(data.stream),
+            channel_offline: false
+          });
+        }else{
+          this.setState({
+            channel_offline: true
+          });
+        }
       })
       .catch(error => {
         this.caughtError(error);
@@ -120,7 +208,17 @@ class AppMain extends Component {
   }
 
   componentDidMount() {
-    this.getRandomStream();
+    if(this.state.stream){
+      console.log("get stream");
+      console.log(ENDPOINTS.STREAMS + this.state.stream)
+      this.getStream(this.state.stream);
+    }else if(this.state.game){
+      console.log("get game");
+      this.getRandomStreamByGame(this.state.game);
+    }else{
+      console.log("get random");
+      this.getRandomStream();
+    }
     this.getRandomGalleryChannels();
     this.getFeaturedGalleryChannels();
   }
@@ -138,10 +236,18 @@ class AppMain extends Component {
         </div>
       );
     }
+    if(this.state.channel_offline){
+      return (
+        <div id="app-error">
+          <h2>Channel Offline</h2>
+          <Link to="/" className="main-button"><Logo /> Go to the Home Page</Link>
+        </div>
+      );
+    }
     return (
       <div id="app-main">
         <StreamContainer 
-          channel={this.state.channel}
+          channel={this.state.channel_data}
           onRequestRandom={this.handleRequestStream}
         ></StreamContainer>
         <AppGallery 
