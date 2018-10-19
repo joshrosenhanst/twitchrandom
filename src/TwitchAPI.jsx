@@ -14,16 +14,32 @@ const AUTH_HEADERS = {
   }
 };
 
+function TwitchRandomException(status,message) {
+  this.message = message;
+  this.status = status;
+  this.name = 'TwitchRandomException';
+}
+
+function TwitchException(message, status, type) {
+  this.message = message;
+  this.status = status;
+  this.type = type;
+  this.name = 'TwitchException';
+}
+
 /*
   fetchTwitchEndpoint() - Use the Fetch API to request data from Twitch. Returns a promise which resolves to a JSON object.
 */
 async function fetchTwitchEndpoint(endpoint, query = "") {
   if(API_KEY){
     return fetch(API_URL + endpoint + query, AUTH_HEADERS)
-      .then(response => response.json());
+      .then(response => response.json())
+      .catch(error => {
+        throw new TwitchException(error.message, error.status, error.error);
+      });
   }else{
-    return false;
+    throw TwitchRandomException("NO_KEY","Missing Twitch API key.");
   }
 }
 
-export { API_KEY, API_URL, ENDPOINTS, AUTH_HEADERS, fetchTwitchEndpoint };
+export { API_KEY, API_URL, ENDPOINTS, AUTH_HEADERS, fetchTwitchEndpoint, TwitchException, TwitchRandomException };
