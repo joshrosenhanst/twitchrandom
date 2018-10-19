@@ -12,8 +12,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={AppMain} />
-      <Route path="/games/:game" component={AppMain} />
-      <Route path="/streams/:stream" component={AppMain} />
+      <Route path="/games/:game+" component={AppMain} />
+      <Route path="/streams/:stream+" component={AppMain} />
       <Route exact path="/games" component={GamePage} />
       <Route component={NotFoundPage} />
     </Switch>
