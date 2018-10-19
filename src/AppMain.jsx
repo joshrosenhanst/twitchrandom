@@ -10,8 +10,6 @@ class AppMain extends Component {
   constructor(props){
     super(props);
     this.state = {
-      stream: props.match.params.stream || null,
-      game: props.match.params.game || null,
       channel_data: null,
       channel_offline: false,
       galleryChannels: [],
@@ -124,7 +122,6 @@ class AppMain extends Component {
   getRandomStream(game = null) {
     let randomNumber = Math.floor(Math.random() * 8000);
     this.setState({
-      stream: null,
       channel_data: null
     });
     fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=1&offset=" + randomNumber)
@@ -149,7 +146,6 @@ class AppMain extends Component {
   */
   getRandomStreamByGame(game){
     this.setState({
-      stream: null,
       channel_data: null
     });
     console.log(game);
@@ -258,9 +254,9 @@ class AppMain extends Component {
   }
 
   componentDidMount() {
-    if(this.state.stream){
-      this.getStream(this.state.stream);
-    }else if(this.state.game){
+    if(this.props.match.params.stream){
+      this.getStream(this.props.match.params.stream);
+    }else if(this.props.match.params.game){
       this.getRandomStreamByGame(this.state.game);
     }else{
       this.getRandomStream();
@@ -273,6 +269,7 @@ class AppMain extends Component {
     console.log(error, info);
   }
   render() {
+    console.log("render");
     let stream_template = "";
     let gallery_template = "";
     let featured_gallery_template = "";
@@ -290,6 +287,8 @@ class AppMain extends Component {
     } else {
       stream_template = (
         <StreamContainer 
+          stream={this.props.match.params.stream}
+          game={this.props.match.params.game}
           channel={this.state.channel_data}
           onRequestRandom={this.handleRequestStream}
         ></StreamContainer>
