@@ -259,14 +259,10 @@ class AppMain extends Component {
 
   componentDidMount() {
     if(this.state.stream){
-      console.log("get stream");
-      console.log(ENDPOINTS.STREAMS + this.state.stream)
       this.getStream(this.state.stream);
     }else if(this.state.game){
-      console.log("get game");
       this.getRandomStreamByGame(this.state.game);
     }else{
-      console.log("get random");
       this.getRandomStream();
     }
     this.getRandomGalleryChannels();
