@@ -128,11 +128,13 @@ class StreamContainer extends Component {
       if(this.state.channel && this.state.channel.name !== this.props.stream){
         if(this.props.stream !== prevProps.stream){
           this.getStream(this.props.stream);
+          window.scrollTo(0,0);
         }
       }
     }else if(this.props.game){
       if(this.props.game !== prevProps.game){
         this.getRandomStreamByGame(this.props.game);
+        window.scrollTo(0,0);
       }
     }
   }
