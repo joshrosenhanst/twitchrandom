@@ -43,7 +43,11 @@ class StreamPage extends Component {
   render() {
     if(this.state.connection_error){
       return (
-        <AppError>Error connecting to Twitch</AppError>
+        <React.Fragment>
+          <AppHeader />
+          <AppError>Error connecting to Twitch</AppError>
+          <footer id="app-footer">All Twitch materials are the property of Twitch.</footer>
+        </React.Fragment>
       );
     }
 
