@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './AppGallery.sass';
+import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getGalleryData, getFeaturedStreamData, shuffleAndSlice } from '../../utilities';
 import { ReactComponent as Logo} from '../../logo.svg'
 
 function GalleryItem(props){
@@ -29,21 +30,96 @@ function GalleryItem(props){
   );
 }
 
+function FeaturedGallery() {
+  return (
+    <AppGallery
+      galleryTitle="Featured Gallery"
+      featured={true}
+    >
+      <div className="square_ad">Ad</div>
+    </AppGallery>
+  );
+}
+
 class AppGallery extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      channels: [],
+      gallery_error: false
+    }
     this.requestNewGallery = this.requestNewGallery.bind(this);
   }
 
   requestNewGallery(e) {
     e.preventDefault();
-    this.props.onRequestRandom(e);
+    this.getRandomGalleryChannels();
+  }
+
+  /*
+    getRandomGalleryChannels() - fetch details for 50 live streams, requested from a random offset. shuffleAndSlice() down to 8 results.
+  */
+  getRandomGalleryChannels() {
+    let randomNumber = Math.floor(Math.random() * 8000);
+    this.setState({
+      channels: []
+    });
+    fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=100&offset=" + randomNumber)
+      .then(data => {
+        if(data._total > 0){
+          let gallery_streams = shuffleAndSlice(data.streams, 8);
+          this.setState({
+            channels: getGalleryData(gallery_streams),
+            gallery_error: false
+          });
+        }else{
+          throw new TwitchRandomException('NO_GALLERY','Unable to fetch gallery.');
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          gallery_error: true
+        });
+      });
+  }
+
+  /*
+    getFeaturedGalleryChannels() - fetch details for the top 3 featured streams.
+  */
+  getFeaturedGalleryChannels() {
+    fetchTwitchEndpoint(ENDPOINTS.FEATURED_STREAMS, "?limit=3")
+      .then(data => {
+        if(data.featured.length > 0){
+          this.setState({
+            channels: getFeaturedStreamData(data.featured)
+          });
+        }else{
+          throw new TwitchRandomException("NO_FEATURED_GALLERY","Unable to fetch featured gallery.");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          gallery_error: true
+        });
+      });
+  }
+
+  componentDidMount() {
+    if(this.props.featured){
+      this.getFeaturedGalleryChannels();
+    }else{
+      this.getRandomGalleryChannels();
+    }
   }
 
   render() {
-
-    if(this.props.items.length){
-      const galleryItems = this.props.items.map((item) => 
+    if(this.state.gallery_error) {
+      return false;
+    }
+    if(this.state.channels.length){
+      const galleryItems = this.state.channels.map((item) => 
         <GalleryItem 
           key={item.id}
           channel={item}
@@ -64,9 +140,7 @@ class AppGallery extends Component {
           </header>
           <div className="gallery-items">
             {galleryItems}
-            {this.props.featured && (
-            <div className="ad">Ad</div>
-            )}
+            {this.props.featured && this.props.children}
           </div>
         </section>
       );
@@ -90,7 +164,8 @@ class AppGallery extends Component {
 }
 
 AppGallery.defaultProps = {
-  featured: false
+  featured: false,
+  galleryTitle: "Random Streams"
 };
 
-export default AppGallery;
+export { AppGallery, FeaturedGallery };

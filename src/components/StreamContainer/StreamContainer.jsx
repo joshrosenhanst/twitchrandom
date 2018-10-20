@@ -1,44 +1,175 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './StreamContainer.sass';
-import StreamEmbed from '../StreamEmbed/StreamEmbed'
+import StreamEmbed from '../StreamEmbed/StreamEmbed';
+import AppError from '../AppError/AppError';
+import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getStreamData, shuffleAndSlice, getChannelID } from '../../utilities';
 import { ReactComponent as Logo} from '../../logo.svg'
 
 class StreamContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      stream_error: false,
+      channel_offline: false,
+      channel: {}
+    }
     this.handleGetRandom = this.handleGetRandom.bind(this);
   }
+
   handleGetRandom(e) {
     e.preventDefault();
-    this.props.onRequestRandom(e);
+    this.getRandomStream();
   }
+
+  /*
+    getRandomStream() - fetch details for a live stream, requested from a random offset.
+    There are thousands of live streams at any time, so we can just plug a random offset in and grab a game.
+  */
+  getRandomStream() {
+    let randomNumber = Math.floor(Math.random() * 8000);
+    this.setState({
+      channel: null,
+      stream_error: false,
+      channel_offline: false
+    });
+    fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=1&offset=" + randomNumber)
+      .then(data => {
+        if(data._total > 0){
+          this.setState({
+            channel: getStreamData(data.streams[0])
+          }, () => {
+            this.props.onSetHistory("/streams/"+this.state.channel.name)
+          });
+        }else{
+          throw new TwitchRandomException("NO_STREAM","Unable to get random stream.");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          stream_error: true
+        });
+      });
+  }
+
+  /*
+    getRandomStreamByGame() - fetch details for a live stream, filtered by game name.
+    Grab the top 100 streams for this game, then shuffle and return 1 stream using shuffleAndSlice(). 
+  */
+  getRandomStreamByGame(game){
+    this.setState({
+      channel: null,
+      stream_error: false,
+      channel_offline: false
+    });
+    fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=100&game=" + encodeURIComponent(game))
+      .then(data => {
+        if(data._total > 0){
+          let streams = shuffleAndSlice(data.streams, 1);
+          this.setState({
+            channel: getStreamData(streams[0])
+          });
+        }else{
+          throw new TwitchRandomException("NO_STREAM","No streams available for this game.");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          stream_error: true
+        });
+      });
+  }
+
+  /*
+    getStream() - fetch details for a stream, specified by channel name.
+  */
+  getStream(stream) {
+    this.setState({
+      channel: null,
+      channel_offline: false,
+      stream_error: false
+    });
+    getChannelID(stream)
+      .then(id => fetchTwitchEndpoint(ENDPOINTS.STREAMS + id))
+      .then(data => {
+        if(data.stream){
+          this.setState({
+            channel: getStreamData(data.stream)
+          });
+        }else{
+          this.setState({
+            channel_offline: true
+          });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          stream_error: true
+        });
+      });
+  }
+
+  componentDidMount() {
+    if(this.props.stream){
+      this.getStream(this.props.stream);
+    }else if(this.props.game){
+      this.getRandomStreamByGame(this.props.game);
+    }else{
+      this.getRandomStream();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.stream){
+      // before we grab the stream, check that we aren't already displaying it
+      if(this.state.channel && this.state.channel.name !== this.props.stream){
+        if(this.props.stream !== prevProps.stream){
+          this.getStream(this.props.stream);
+        }
+      }
+    }else if(this.props.game){
+      if(this.props.game !== prevProps.game){
+        this.getRandomStreamByGame(this.props.game);
+      }
+    }
+  }
+
   render() {
-    //console.log(this.props.channel);
-    if(this.props.channel){
+    if(this.state.stream_error){
+      return <AppError>Stream Unavailable</AppError>;
+    }
+    
+    if(this.state.channel_offline){
+      return <AppError>Channel Offline</AppError>;
+    }
+
+    if(this.state.channel && this.state.channel.id){
       let bannerStyle = {
-        backgroundImage: `url(${this.props.channel.banner})`
+        backgroundImage: `url(${this.state.channel.banner})`
       }
       return (
         <section id="stream-embed-section" style={bannerStyle}>
           <div id="stream-container">
-            <StreamEmbed id="stream-embed" channel={this.props.channel.name}></StreamEmbed>
+            <StreamEmbed id="stream-embed" channel={this.state.channel.name}></StreamEmbed>
             <div id="stream-info">
-              <h2 className="stream_title">{this.props.channel.title}</h2>
+              <h2 className="stream_title">{this.state.channel.title}</h2>
               <div id="stream-meta">
-                <Link to={"/streams/"+this.props.channel.name} className="channel_logo">
-                  <img src={this.props.channel.logo} alt={this.props.channel.name+" logo"} />
+                <Link to={"/streams/"+this.state.channel.name} className="channel_logo">
+                  <img src={this.state.channel.logo} alt={this.state.channel.name+" logo"} />
                 </Link>
                 <div className="channel_info">
-                  <Link to={"/streams/"+this.props.channel.name} className="channel_name">
-                    {this.props.channel.name}
+                  <Link to={"/streams/"+this.state.channel.name} className="channel_name">
+                    {this.state.channel.name}
                   </Link>
-                  { (this.props.channel.game) && (
+                  { (this.state.channel.game) && (
                     <div className="channel_game">
-                      Playing <Link to={"/games/"+this.props.channel.game}>{this.props.channel.game}</Link>
+                      Playing <Link to={"/games/"+this.state.channel.game}>{this.state.channel.game}</Link>
                     </div>
                   ) }
-                  <div className="channel_viewers">{this.props.channel.viewers} Viewers</div>
+                  <div className="channel_viewers">{this.state.channel.viewers} Viewers</div>
                 </div>
               </div>
               <div id="random-stream-button">
@@ -66,7 +197,7 @@ class StreamContainer extends Component {
   }
 }
 
-StreamContainer.defaultProps = {
+/*StreamContainer.defaultProps = {
   channel: {
     name: "giantbomb8",
     title: "Giant Bomb Infinte",
@@ -75,6 +206,6 @@ StreamContainer.defaultProps = {
     viewers: 200,
     banner: "https://static-cdn.jtvnw.net/jtv_user_pictures/973a9b47-c687-41c2-b3c6-b2618fc2a678-profile_banner-480.png"
   }
-};
+};*/
 
 export default StreamContainer;
