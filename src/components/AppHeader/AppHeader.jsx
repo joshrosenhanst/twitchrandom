@@ -8,11 +8,21 @@ const sloganList = [
 class AppHeader extends Component {
   constructor(props){
     super(props);
-    this.randomSlogan = this.getRandomSlogan();
+    this.state = {
+      randomSlogan: this.getRandomSlogan()
+    };
   }
 
   getRandomSlogan() {
     return sloganList[Math.floor(Math.random() * sloganList.length)];
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.reloadSlogan && this.props.reloadSlogan !== prevProps.reloadSlogan){
+      this.setState({
+        randomSlogan: this.getRandomSlogan()
+      });
+    }
   }
 
   render() {
@@ -23,7 +33,7 @@ class AppHeader extends Component {
             <div className="nav-left">
               <Link to="/" id="logo" title="TwitchRandom Home Page">
                 <span id="primary_logo">TwitchRandom</span>
-                <span id="slogan">{this.randomSlogan}</span>
+                <span id="slogan">{this.state.randomSlogan}</span>
               </Link>
             </div>
             <div className="nav-right">

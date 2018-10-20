@@ -45,6 +45,9 @@ class StreamContainer extends Component {
           throw new TwitchRandomException("NO_STREAM","Unable to get random stream.");
         }
       })
+      .then(() => {
+        this.props.onDoneReload();
+      })
       .catch(error => {
         console.log(error);
         this.setState({
@@ -123,6 +126,11 @@ class StreamContainer extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    // if the forceReload flag is set (i.e on visiting the home page), grab a random stream
+    if(this.props.forceReload && this.props.forceReload !== prevProps.forceReload){
+      this.getRandomStream();
+    }
+
     if(this.props.stream){
       // before we grab the stream, check that we aren't already displaying it
       if(this.state.channel && this.state.channel.name !== this.props.stream){
@@ -175,8 +183,7 @@ class StreamContainer extends Component {
                 </div>
               </div>
               <div id="random-stream-button">
-                <Link to="/" className="main-button" title="Get Random Stream"
-                  onClick={this.handleGetRandom}>
+                <Link to="/" className="main-button" title="Get Random Stream">
                   <Logo /> Random Stream
                 </Link>
               </div>
@@ -198,16 +205,5 @@ class StreamContainer extends Component {
     }
   }
 }
-
-/*StreamContainer.defaultProps = {
-  channel: {
-    name: "giantbomb8",
-    title: "Giant Bomb Infinte",
-    logo: "https://static-cdn.jtvnw.net/jtv_user_pictures/b93a19e9-a04b-4848-8f56-e4d44c21b221-profile_image-300x300.png",
-    game: "xsy",
-    viewers: 200,
-    banner: "https://static-cdn.jtvnw.net/jtv_user_pictures/973a9b47-c687-41c2-b3c6-b2618fc2a678-profile_banner-480.png"
-  }
-};*/
 
 export default StreamContainer;

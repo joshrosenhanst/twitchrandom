@@ -10,19 +10,30 @@ class StreamPage extends Component {
   constructor(props){
     super(props);
     this.state = {
-      galleryChannels: [],
-      featuredStreams: [],
-      // error states
+      reloadStream: false,
       connection_error: !API_KEY,
-      gallery_error: false,
-      featured_gallery_error: false
     };
 
     this.handleSetHistory = this.handleSetHistory.bind(this);
+    this.handleDoneReload = this.handleDoneReload.bind(this);
   }
 
   handleSetHistory(url) {
     this.props.history.push(url);
+  }
+
+  handleDoneReload(e) {
+    this.setState({
+      reloadStream: false
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.forceReload && this.props.forceReload !== prevProps.forceReload){
+      this.setState({
+        reloadStream: true
+      });
+    }
   }
 
   componentDidCatch(error, info) {
@@ -38,12 +49,16 @@ class StreamPage extends Component {
 
     return (
       <React.Fragment>
-        <AppHeader />
+        <AppHeader 
+          reloadSlogan={this.state.reloadStream} 
+        />
         <main id="app-main">
           <StreamContainer 
             stream={this.props.match.params.stream}
             game={this.props.match.params.game}
             onSetHistory={this.handleSetHistory}
+            forceReload={this.state.reloadStream}
+            onDoneReload={this.handleDoneReload}
           />
           <FeaturedGallery />
           <AppGallery />
