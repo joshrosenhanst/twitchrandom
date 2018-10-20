@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" render={props => <StreamPage {...props} forceReload={true} />} />
+      <Route exact path="/" component={StreamPage} />
       <Route path="/games/:game+" component={StreamPage} />
       <Route path="/streams/:stream+" component={StreamPage} />
       <Route exact path="/games" component={GamePage} />

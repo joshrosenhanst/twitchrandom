@@ -18,7 +18,8 @@ class AppHeader extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if(this.props.reloadSlogan && this.props.reloadSlogan !== prevProps.reloadSlogan){
+    if(this.props.location.pathname !== "/" && this.props.location !== prevProps.location){
+      // location has changed, get a new slogan
       this.setState({
         randomSlogan: this.getRandomSlogan()
       });

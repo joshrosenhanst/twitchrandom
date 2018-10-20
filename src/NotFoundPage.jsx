@@ -7,7 +7,7 @@ class NotFoundPage extends Component {
     render () {
         return (
             <React.Fragment>
-                <AppHeader />
+                <AppHeader location={this.props.location} />
                 <main id="app-error">
                     <h2>Page Not Found</h2>
                     <Link to="/" className="main-button"><Logo /> Go to the Home Page</Link>

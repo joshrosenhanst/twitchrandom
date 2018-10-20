@@ -35,7 +35,7 @@ class GamePage extends Component {
     }
     return (
       <React.Fragment>
-        <AppHeader />
+        <AppHeader location={this.props.location} />
         {page_output}
         <footer id="app-footer">All Twitch materials are the property of Twitch.</footer>
       </React.Fragment>

@@ -10,30 +10,14 @@ class StreamPage extends Component {
   constructor(props){
     super(props);
     this.state = {
-      reloadStream: false,
       connection_error: !API_KEY,
     };
 
     this.handleSetHistory = this.handleSetHistory.bind(this);
-    this.handleDoneReload = this.handleDoneReload.bind(this);
   }
 
   handleSetHistory(url) {
     this.props.history.push(url);
-  }
-
-  handleDoneReload(e) {
-    this.setState({
-      reloadStream: false
-    });
-  }
-
-  componentDidUpdate(prevProps) {
-    if(this.props.forceReload && this.props.forceReload !== prevProps.forceReload){
-      this.setState({
-        reloadStream: true
-      });
-    }
   }
 
   componentDidCatch(error, info) {
@@ -44,7 +28,7 @@ class StreamPage extends Component {
     if(this.state.connection_error){
       return (
         <React.Fragment>
-          <AppHeader />
+          <AppHeader location={this.props.location} />
           <AppError>Error connecting to Twitch</AppError>
           <footer id="app-footer">All Twitch materials are the property of Twitch.</footer>
         </React.Fragment>
@@ -53,16 +37,13 @@ class StreamPage extends Component {
 
     return (
       <React.Fragment>
-        <AppHeader 
-          reloadSlogan={this.state.reloadStream} 
-        />
+        <AppHeader location={this.props.location} />
         <main id="app-main">
           <StreamContainer 
+            location={this.props.location}
             stream={this.props.match.params.stream}
             game={this.props.match.params.game}
             onSetHistory={this.handleSetHistory}
-            forceReload={this.state.reloadStream}
-            onDoneReload={this.handleDoneReload}
           />
           <FeaturedGallery />
           <AppGallery />

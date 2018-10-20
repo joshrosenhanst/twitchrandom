@@ -45,9 +45,6 @@ class StreamContainer extends Component {
           throw new TwitchRandomException("NO_STREAM","Unable to get random stream.");
         }
       })
-      .then(() => {
-        this.props.onDoneReload();
-      })
       .catch(error => {
         console.log(error);
         this.setState({
@@ -126,8 +123,8 @@ class StreamContainer extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    // if the forceReload flag is set (i.e on visiting the home page), grab a random stream
-    if(this.props.forceReload && this.props.forceReload !== prevProps.forceReload){
+    // if we just switched to the home page, get a random stream
+    if(this.props.location.pathname === "/" && this.props.location !== prevProps.location){
       this.getRandomStream();
     }
 
