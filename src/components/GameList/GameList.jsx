@@ -91,7 +91,7 @@ class GameList extends Component {
         <React.Fragment>
         <section id="game-list">
             <header id="game-list-header">
-              <h2>All Games</h2>
+              <h2>Browse Games</h2>
               <GameAutoSuggest></GameAutoSuggest>
             </header>
             <div id="game-list-main">

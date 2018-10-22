@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import AppHeader from './components/AppHeader/AppHeader';
 import GameList from './components/GameList/GameList';
 import { ReactComponent as Logo} from './logo.svg';
@@ -35,6 +36,10 @@ class GamePage extends Component {
     }
     return (
       <React.Fragment>
+        <Helmet>
+          <title>Browse Games | TwitchRandom | Random Twitch.tv Streams - Find something unexpected</title>
+          <meta name="desription" content="TwitchRandom.com - Browse all live games. Find something unexpected at https://twitchrandom.com!" />
+        </Helmet>
         <AppHeader location={this.props.location} />
         {page_output}
         <footer id="app-footer">All Twitch materials are the property of Twitch.</footer>
