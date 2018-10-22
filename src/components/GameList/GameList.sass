@@ -6,15 +6,20 @@
 #game-list-header
     display: flex
     justify-content: space-between
-    padding: 20px 0
+    padding: 10px 15px
     h2
-        font-size: 36px
+        font-size: 32px
+    +until($mobile_nav)
+        flex-direction: column
 
 #game-list-main
     display: grid
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    grid-template-columns: 1fr 1fr 1fr
     column-gap: 20px
     row-gap: 20px
+    padding: 0 15px
+    +tablet
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr
 
 #load-games
     +button
@@ -24,9 +29,18 @@
     
 .game-display
     .game-poster
+        display: block
+        img
+            display: block
+
+    .game-info
+        +until($l_mobile)
+            font-size: 12px
 
     .game-name
         font-weight: bold
+        display: block
+        word-break: break-word
 
     .game-viewers
 
@@ -52,7 +66,7 @@
     box-shadow: inset 0 1px 2px rgba(10,10,10,.1)
     width: 100%
     max-width: 100%
-    margin-top: 12px
+    margin-top: 6px
     // States
     &:focus,
     &.is-focused,
@@ -70,7 +84,7 @@
     top: 0
     height: 2.25em
     width: 2.25em
-    margin-top: 12px
+    margin-top: 6px
     z-index: 4
     display: flex
     justify-content: center

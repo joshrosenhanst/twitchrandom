@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import AppHeader from './components/AppHeader/AppHeader';
+import AppError from './components/AppError/AppError';
 import GameList from './components/GameList/GameList';
-import { ReactComponent as Logo} from './logo.svg';
 
 class GamePage extends Component {
   constructor(props) {
@@ -21,12 +20,7 @@ class GamePage extends Component {
   render () {
     let page_output = "";
     if(this.state.hasError){
-      page_output (
-        <main id="app-error">
-          <h2>Error connecting to Twitch</h2>
-          <Link to="/" className="main-button"><Logo /> Go to the Home Page</Link>
-        </main>
-      );
+      page_output = <AppError>Error connecting to Twitch</AppError>;
     }else{
       page_output = (
         <main id="app-main">
