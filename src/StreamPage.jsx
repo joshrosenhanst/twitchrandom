@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './sass/inline_styles.sass';
+import Helmet from 'react-helmet';
 import AppHeader from './components/AppHeader/AppHeader';
 import StreamContainer from './components/StreamContainer/StreamContainer';
 import { AppGallery, FeaturedGallery } from './components/AppGallery/AppGallery';
@@ -28,6 +29,10 @@ class StreamPage extends Component {
     if(this.state.connection_error){
       return (
         <React.Fragment>
+          <Helmet>
+            <title>TwitchRandom | Random Twitch.tv Streams - Find something unexpected</title>
+            <meta name="description" content="TwitchRandom.com finds random Twitch streams for you. Find something unexpected at https://twitchrandom.com!" />
+          </Helmet>
           <AppHeader location={this.props.location} />
           <AppError>Error connecting to Twitch</AppError>
           <footer id="app-footer">All Twitch materials are the property of Twitch.</footer>
@@ -37,6 +42,10 @@ class StreamPage extends Component {
 
     return (
       <React.Fragment>
+        <Helmet>
+          <title>TwitchRandom | Random Twitch.tv Streams - Find something unexpected</title>
+          <meta name="description" content="TwitchRandom.com finds random Twitch streams for you. Find something unexpected at https://twitchrandom.com!" />
+        </Helmet>
         <AppHeader location={this.props.location} />
         <main id="app-main">
           <StreamContainer 
