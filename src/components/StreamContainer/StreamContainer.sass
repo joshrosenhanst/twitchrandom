@@ -17,6 +17,7 @@
   box-shadow: 0 1px 5px rgba(0,0,0,0.75)
   display: flex
   flex-direction: column
+  background-color: rgba($body-background-color,0.8)
   +tablet
     flex-direction: row
 
@@ -25,41 +26,37 @@
     flex-grow: 4
   iframe
     display: block
+    min-height: 520px
 
 #stream-info
-  +tablet
-    flex-basis: 400px
-    height: 380px
   display: flex
   flex-direction: column
-  padding: 15px
-  background-color: rgba($stream-background-color,0.8)
+  padding: 10px
+  font-size: 0.9rem
+  +desktop
+    flex-basis: 400px
+  h1.stream_name
+    font-size: 18px
+    font-weight: 700
+    line-height: 1
   h2.stream_title
-    color: $white
-    font-size: 20px
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
+    font-size: 16px
+    font-weight: 400
     +until($l_mobile)
       max-width: 550px
       margin: 0 auto
 
 #stream-meta
   display: flex
-  padding: 5px
-  margin: 10px 0
-  border-radius: 2px
-  border-width: 0 4px
-  border-style: solid
-  border-color: $twitch-purple
-  background-color: rgba($body-background-color, 0.8)
+  padding: 0
+  margin-bottom: 5px
   +until($l_mobile)
     max-width: 550px
     margin: 10px auto
   .channel_logo
-    flex-grow: 0
-    flex-basis: 100px
+    flex: none
+    width: 45px
     margin-right: 10px
-    +tablet
-      flex-basis: 45px
     img
       display: block
 
@@ -68,6 +65,18 @@
 
   .channel_name
     font-weight: bold
+  
+#stream-chat-container
+  margin-bottom: 15px
+  &.active
+    flex-grow: 1
+  #chat_embed
+    min-height: 380px
+
+#stream-controls
+  display: flex
+  justify-content: space-between
+  margin-top: auto
 
 #random-stream-button
   margin-top: auto

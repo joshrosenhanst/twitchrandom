@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './StreamContainer.sass';
 import StreamEmbed from '../StreamEmbed/StreamEmbed';
+import ChatEmbed from '../ChatEmbed/ChatEmbed';
 import AppError from '../AppError/AppError';
 import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getStreamData, shuffleAndSlice, getChannelID } from '../../utilities';
 import { ReactComponent as Logo} from '../../logo.svg'
@@ -12,14 +13,22 @@ class StreamContainer extends Component {
     this.state = {
       stream_error: false,
       channel_offline: false,
-      channel: {}
+      channel: {},
+      chat_active: true
     }
     this.handleGetRandom = this.handleGetRandom.bind(this);
+    this.toggleChat = this.toggleChat.bind(this);
   }
 
   handleGetRandom(e) {
     e.preventDefault();
     this.getRandomStream();
+  }
+
+  toggleChat() {
+    this.setState({
+      chat_active: !this.state.chat_active
+    });
   }
 
   /*
@@ -39,7 +48,7 @@ class StreamContainer extends Component {
           this.setState({
             channel: getStreamData(data.streams[0])
           }, () => {
-            this.props.onSetHistory("/streams/"+this.state.channel.name)
+            //this.props.onSetHistory("/streams/"+this.state.channel.name)
           });
         }else{
           throw new TwitchRandomException("NO_STREAM","Unable to get random stream.");
@@ -162,14 +171,13 @@ class StreamContainer extends Component {
           <div id="stream-container">
             <StreamEmbed id="stream-embed" channel={this.state.channel.name}></StreamEmbed>
             <div id="stream-info">
-              <h2 className="stream_title">{this.state.channel.title}</h2>
               <div id="stream-meta">
                 <Link to={"/streams/"+this.state.channel.name} className="channel_logo">
                   <img src={this.state.channel.logo} alt={this.state.channel.name+" logo"} />
                 </Link>
                 <div className="channel_info">
                   <Link to={"/streams/"+this.state.channel.name} className="channel_name">
-                    {this.state.channel.name}
+                    <h1 className="stream_name">{this.state.channel.name}</h1>
                   </Link>
                   { (this.state.channel.game) && (
                     <div className="channel_game">
@@ -179,10 +187,12 @@ class StreamContainer extends Component {
                   <div className="channel_viewers">{this.state.channel.viewers} Viewers</div>
                 </div>
               </div>
-              <div id="random-stream-button">
+              <ChatEmbed channel={this.state.channel.name} active={this.state.chat_active} toggleChat={this.toggleChat} />
+              <div id="stream-controls">
                 <Link to="/" className="main-button" title="Get Random Stream">
                   <Logo /> Random Stream
                 </Link>
+                <button className="button" onClick={this.toggleChat}>Chat</button>
               </div>
             </div>
           </div>
