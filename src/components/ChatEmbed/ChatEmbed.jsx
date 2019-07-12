@@ -17,7 +17,11 @@ const ChatEmbed = (props) => {
   }else{
     return (
       <div id="stream-chat-container">
-        <button onClick={props.toggleChat}>Show Chat</button>
+        <div className="chat_header">Stream Chat</div>
+        <div id="hidden_chat_notice">
+          <div class="chat_notice_text">Chat is hidden.</div>
+          <button onClick={props.toggleChat}>Show Chat</button>
+        </div>
       </div>
     );
   }

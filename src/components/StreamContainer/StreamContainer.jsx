@@ -6,6 +6,18 @@ import ChatEmbed from '../ChatEmbed/ChatEmbed';
 import AppError from '../AppError/AppError';
 import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getStreamData, shuffleAndSlice, getChannelID } from '../../utilities';
 import { ReactComponent as Logo } from '../../icons/logo.svg';
+import { ReactComponent as CommentIcon } from '../../icons/comment.svg';
+import { ReactComponent as CommentSlashIcon } from '../../icons/comment-slash.svg';
+
+const ChatToggleButton = (props) => {
+  if(props.active){
+    return (
+      <button className="toggle-chat active" onClick={props.toggleChat}><CommentSlashIcon /> Hide Chat</button>
+    )
+  }else{
+    return null;
+  }
+};
 
 class StreamContainer extends Component {
   constructor(props) {
@@ -184,15 +196,17 @@ class StreamContainer extends Component {
                       Playing <Link to={"/games/"+this.state.channel.game}>{this.state.channel.game}</Link>
                     </div>
                   ) }
-                  <div className="channel_viewers">{this.state.channel.viewers} Viewers</div>
+                  <div className="channel_sub">
+                    <span className="channel_viewers">{this.state.channel.viewers} Viewers</span>
+                    <ChatToggleButton active={this.state.chat_active} toggleChat={this.toggleChat} />
+                  </div>
                 </div>
               </div>
               <ChatEmbed channel={this.state.channel.name} active={this.state.chat_active} toggleChat={this.toggleChat} />
-              <div id="stream-controls">
+              <div id="random-stream-button">
                 <Link to="/" className="main-button" title="Get Random Stream">
                   <Logo /> Random Stream
                 </Link>
-                <button className="toggle-chat" onClick={this.toggleChat}>Chat</button>
               </div>
             </div>
           </div>

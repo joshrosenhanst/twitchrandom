@@ -17,7 +17,7 @@
   box-shadow: 0 1px 5px rgba(0,0,0,0.75)
   display: flex
   flex-direction: column
-  background-color: rgba($body-background-color,0.8)
+  background-color: rgba($body-background-color,1)
   +tablet
     flex-direction: row
 
@@ -31,7 +31,7 @@
 #stream-info
   display: flex
   flex-direction: column
-  padding: 10px
+  padding: 10px 0
   font-size: 0.9rem
   +desktop
     flex-basis: 400px
@@ -48,8 +48,8 @@
 
 #stream-meta
   display: flex
-  padding: 0
-  margin-bottom: 5px
+  padding: 0 10px 5px 10px
+  border-bottom: 1px solid $twitch-panel-border
   +until($l_mobile)
     max-width: 550px
     margin: 10px auto
@@ -59,27 +59,49 @@
     margin-right: 10px
     img
       display: block
+  
+  .toggle-chat
+    +transparent-button-small
 
   .channel_info
     flex-grow: 1
 
   .channel_name
     font-weight: bold
+
+  .channel_sub
+    display: flex
+    justify-content: space-between
   
 #stream-chat-container
-  margin-bottom: 15px
-  &.active
-    flex-grow: 1
+  flex-grow: 1
   #chat_embed
     min-height: 380px
 
-#stream-controls
-  display: flex
-  justify-content: space-between
-  margin-top: auto
-  .toggle-chat
-    +button
+  .chat_header
+    padding: 0 10px 0 20px
+    border-bottom: 1px solid $twitch-panel-border
+    line-height: 50px
+    font-size: 12px
+  
+  #hidden_chat_notice
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 330px
+    .chat_notice_text
+      font-size: 14px
+      margin-bottom: 10px
+    button
+      +button
+      font-size: 12px
+      padding: 8px 10px
+      border: 1px solid transparent
+
 
 #random-stream-button
+  padding-top: 15px
+  border-top: 1px solid $twitch-panel-border
   margin-top: auto
   text-align: center
