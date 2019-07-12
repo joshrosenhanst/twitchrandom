@@ -124,6 +124,26 @@
     background-color: $background-color-hover
     color: $text-color
 
+=transparent-button-small
+  display: inline-flex
+  align-items: center
+  padding: 1px 4px
+  background-color: $body-background-color
+  border: 1px solid $twitch-purple
+  border-radius: 4px
+  text-align: center
+  cursor: pointer
+  font-size: 0.8rem
+  color: $twitch-purple
+  svg
+    fill: currentColor
+    height: 1.2em
+    width: 1.2em
+    flex: none
+    margin-right: 2px
+  &:hover,&:focus
+    background-color: $transparent-button-hover
+
 =button-with-shadow
   +button
   text-shadow: 1px 1px 0 rgba(0,0,0,0.8)
