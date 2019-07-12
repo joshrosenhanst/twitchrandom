@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './AppGallery.sass';
 import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getGalleryData, getFeaturedStreamData, shuffleAndSlice } from '../../utilities';
-import { ReactComponent as Logo} from '../../logo.svg'
+import { ReactComponent as Logo} from '../../icons/logo.svg'
 
 function GalleryItem(props){
   return (

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './GameList.sass';
 import { ENDPOINTS, fetchTwitchEndpoint } from '../../utilities';
-import { ReactComponent as Logo} from '../../logo.svg';
+import { ReactComponent as Logo} from '../../icons/logo.svg';
 import GameAutoSuggest from './GameAutosuggest';
 
 function GameDisplay(props) {

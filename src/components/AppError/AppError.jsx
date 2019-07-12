@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ReactComponent as Logo} from '../../logo.svg';
+import { ReactComponent as Logo} from '../../icons/logo.svg';
 import { Link } from 'react-router-dom';
 
 class AppError extends Component {

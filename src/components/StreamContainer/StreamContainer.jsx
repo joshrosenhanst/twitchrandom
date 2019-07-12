@@ -5,7 +5,7 @@ import StreamEmbed from '../StreamEmbed/StreamEmbed';
 import ChatEmbed from '../ChatEmbed/ChatEmbed';
 import AppError from '../AppError/AppError';
 import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getStreamData, shuffleAndSlice, getChannelID } from '../../utilities';
-import { ReactComponent as Logo} from '../../logo.svg'
+import { ReactComponent as Logo } from '../../icons/logo.svg';
 
 class StreamContainer extends Component {
   constructor(props) {
@@ -192,7 +192,7 @@ class StreamContainer extends Component {
                 <Link to="/" className="main-button" title="Get Random Stream">
                   <Logo /> Random Stream
                 </Link>
-                <button className="button" onClick={this.toggleChat}>Chat</button>
+                <button className="toggle-chat" onClick={this.toggleChat}>Chat</button>
               </div>
             </div>
           </div>

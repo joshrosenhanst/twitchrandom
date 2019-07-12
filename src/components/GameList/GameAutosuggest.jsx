@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ENDPOINTS, fetchTwitchEndpoint } from '../../utilities';
 import Autosuggest from 'react-autosuggest';
-import { ReactComponent as Search} from '../../magnifying-glass.svg';
+import { ReactComponent as Search } from '../../icons/magnifying-glass.svg';
 import debounce from 'lodash/debounce';
 
 const getSuggestionValue = suggestion => suggestion.name;
