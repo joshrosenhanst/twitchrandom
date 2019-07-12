@@ -25,8 +25,9 @@ class StreamEmbed extends Component {
 
 StreamEmbed.defaultProps = {
   width: "100%",
-  height: "380",
-  layout: "video"
+  height: "100%",
+  layout: "video",
+  autoplay: false
 };
 
 export default StreamEmbed;
