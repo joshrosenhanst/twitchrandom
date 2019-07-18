@@ -1,6 +1,7 @@
 import shuffle from 'lodash/shuffle';
 
 const API_KEY = process.env.REACT_APP_TWITCH_API_KEY;
+const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
 const API_URL = "https://api.twitch.tv/kraken";
 const ENDPOINTS = {
   STREAMS: "/streams/",
@@ -27,6 +28,33 @@ function TwitchException(message, status, type) {
   this.status = status;
   this.type = type;
   this.name = 'TwitchException';
+}
+
+function getLocalData(key = null){
+  const localData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  if(key){
+    return localData[key];
+  }
+  return localData;
+}
+
+function updateLocalData(key, value) {
+  const localData = getLocalData();
+  localData[key] = value;
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(localData));
+}
+
+/*
+  getChatActive() - Get the 'chat_active' value from localStorage if set. Default to true.
+*/
+function getChatActive(){
+  const localData = getLocalData();
+  if(localData && localData['chat_active'] !== undefined){
+    return localData['chat_active'];
+  }
+
+  return true;
 }
 
 /*
@@ -59,9 +87,9 @@ async function getChannelID(name) {
 }
 
 /*
-    getStreamData() - Map the properties in the stream object into a new object.
-    stream - single object from the Twitch API JSON response.
-  */
+  getStreamData() - Map the properties in the stream object into a new object.
+  stream - single object from the Twitch API JSON response.
+*/
 function getStreamData(stream) {
   return {
     id: stream.channel._id,
@@ -113,5 +141,8 @@ export {
   getStreamData,
   getGalleryData,
   getFeaturedStreamData,
-  shuffleAndSlice
+  shuffleAndSlice,
+  getLocalData,
+  updateLocalData,
+  getChatActive
 };

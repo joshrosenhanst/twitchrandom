@@ -4,9 +4,8 @@ import './StreamContainer.sass';
 import StreamEmbed from '../StreamEmbed/StreamEmbed';
 import ChatEmbed from '../ChatEmbed/ChatEmbed';
 import AppError from '../AppError/AppError';
-import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getStreamData, shuffleAndSlice, getChannelID } from '../../utilities';
+import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getStreamData, shuffleAndSlice, getChannelID, getChatActive, updateLocalData } from '../../utilities';
 import { ReactComponent as Logo } from '../../icons/logo.svg';
-import { ReactComponent as CommentIcon } from '../../icons/comment.svg';
 import { ReactComponent as CommentSlashIcon } from '../../icons/comment-slash.svg';
 
 const ChatToggleButton = (props) => {
@@ -26,7 +25,7 @@ class StreamContainer extends Component {
       stream_error: false,
       channel_offline: false,
       channel: {},
-      chat_active: true
+      chat_active: getChatActive() 
     }
     this.handleGetRandom = this.handleGetRandom.bind(this);
     this.toggleChat = this.toggleChat.bind(this);
@@ -38,9 +37,11 @@ class StreamContainer extends Component {
   }
 
   toggleChat() {
+    let chat_active = !this.state.chat_active;
     this.setState({
-      chat_active: !this.state.chat_active
+      chat_active
     });
+    updateLocalData('chat_active', chat_active);
   }
 
   /*
