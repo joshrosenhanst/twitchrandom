@@ -3,8 +3,8 @@ import React from 'react';
 const ChatEmbed = (props) => {
   if(props.active){
     return (
-      <div id="stream-chat-container" class="active">
-        <iframe frameborder="0"
+      <div id="stream-chat-container" className="active">
+        <iframe frameBorder="0"
           scrolling="no"
           id="chat_embed"
           title="Twitch Chat Embed"
@@ -19,7 +19,7 @@ const ChatEmbed = (props) => {
       <div id="stream-chat-container">
         <div className="chat_header">Stream Chat</div>
         <div id="hidden_chat_notice">
-          <div class="chat_notice_text">Chat is hidden.</div>
+          <div className="chat_notice_text">Chat is hidden.</div>
           <button onClick={props.toggleChat}>Show Chat</button>
         </div>
       </div>
