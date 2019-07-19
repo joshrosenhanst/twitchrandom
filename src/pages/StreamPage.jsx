@@ -22,15 +22,21 @@ class StreamPage extends Component {
     super(props);
     this.state = {
       connection_error: !API_KEY,
-      slogan: getRandomSlogan()
+      slogan: getRandomSlogan(),
+      title: null
     };
 
     this.handleSetHistory = this.handleSetHistory.bind(this);
     this.handleGetSlogan = this.handleGetSlogan.bind(this);
   }
 
-  handleSetHistory(url) {
+  handleSetHistory(url, name=null) {
     this.props.history.push(url);
+    if(name){
+      this.setState({
+        title: name + " | TwitchRandom"
+      });
+    }
   }
 
   handleGetSlogan() {
@@ -43,7 +49,15 @@ class StreamPage extends Component {
     console.log(error, info);
   }
 
-  render() {
+  componentDidMount() {
+    if(this.props.match.params.stream){
+      this.setState({
+        title: this.props.match.params.stream + " | TwitchRandom"
+      });
+    }
+  }
+
+  render() {;
     if(this.state.connection_error){
       return (
         <>
@@ -57,7 +71,7 @@ class StreamPage extends Component {
 
     return (
       <>
-        <MetaTags />
+        <MetaTags title={this.state.title} />
         <AppHeader slogan={this.state.slogan} />
         <main id="app-main">
           <StreamContainer 

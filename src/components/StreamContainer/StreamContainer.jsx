@@ -63,7 +63,7 @@ class StreamContainer extends Component {
             channel: getStreamData(data.streams[0])
           }, () => {
             if(updateURL){
-              this.props.onSetHistory("/streams/"+this.state.channel.name);
+              this.props.onSetHistory("/streams/"+this.state.channel.name, this.state.channel.name);
             }
           });
         }else{
