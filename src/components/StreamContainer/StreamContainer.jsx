@@ -143,14 +143,21 @@ class StreamContainer extends Component {
     }else if(this.props.game){
       this.getRandomStreamByGame(this.props.game);
     }else{
-      this.getRandomStream();
+      // if the component is loaded via /random route, set the stream URL to the channel name
+      this.getRandomStream(this.props.location.pathname === "/random");
     }
   }
 
   componentDidUpdate(prevProps) {
-    // if we just switched to the home page, get a random stream
-    if(this.props.location.pathname === "/" && this.props.location !== prevProps.location){
-      this.getRandomStream();
+    if(this.props.location.key !== prevProps.location.key){
+      // if the user just switched to either the home page or /random, grab a random stream
+      // for /random, update the URL to the stream name
+      if(this.props.location.pathname === "/"){
+        this.getRandomStream();
+      }
+      if(this.props.location.pathname === "/random"){
+        this.getRandomStream(true);
+      }
     }
 
     if(this.props.stream){
@@ -208,7 +215,7 @@ class StreamContainer extends Component {
               </div>
               <ChatEmbed channel={this.state.channel.name} active={this.state.chat_active} toggleChat={this.toggleChat} />
               <div id="random-stream-button">
-                <Link to="/" className="main-button" title="Get Random Stream">
+                <Link to="/random" className="main-button" title="Get Random Stream">
                   <Logo /> Random Stream
                 </Link>
               </div>

@@ -14,7 +14,7 @@ function AppHeader(props) {
           </div>
           <div className="nav-right">
             <Link to="/games/" className="menu-item" title="View All Games">Browse Games</Link>
-            <Link to="/" className="menu-item" title="Get a Random Stream">Random Stream</Link>
+            <Link to="/random" className="menu-item" title="Get a Random Stream">Random Stream</Link>
           </div>
         </nav>
       </header>
