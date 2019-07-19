@@ -48,8 +48,9 @@ class StreamContainer extends Component {
     getRandomStream() - fetch details for a live stream, requested from a random offset.
     There are thousands of live streams at any time, so we can just plug a random offset in and grab a game.
   */
-  getRandomStream() {
+  getRandomStream(updateURL = false) {
     let randomNumber = Math.floor(Math.random() * 8000);
+    this.props.onGetSlogan();
     this.setState({
       channel: null,
       stream_error: false,
@@ -61,7 +62,9 @@ class StreamContainer extends Component {
           this.setState({
             channel: getStreamData(data.streams[0])
           }, () => {
-            //this.props.onSetHistory("/streams/"+this.state.channel.name)
+            if(updateURL){
+              this.props.onSetHistory("/streams/"+this.state.channel.name);
+            }
           });
         }else{
           throw new TwitchRandomException("NO_STREAM","Unable to get random stream.");

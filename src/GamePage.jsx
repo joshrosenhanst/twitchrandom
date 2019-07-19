@@ -3,13 +3,24 @@ import Helmet from 'react-helmet';
 import AppHeader from './components/AppHeader/AppHeader';
 import AppError from './components/AppError/AppError';
 import GameList from './components/GameList/GameList';
+import { getRandomSlogan } from './slogans';
+
+function MetaTags(props){
+  return (
+    <Helmet>
+      <title>{props.title || "Browse Games | TwitchRandom"}</title>
+      <meta name="desription" content="TwitchRandom - TwitchRandom finds random Twitch streams for you. Find something unexpected!" />
+    </Helmet>
+  );
+}
 
 class GamePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasError: false
-    }
+      hasError: false,
+      slogan: getRandomSlogan()
+    };
   }
   componentDidCatch(error, info) {
     this.setState({
@@ -18,26 +29,25 @@ class GamePage extends Component {
     console.log(error, info);
   }
   render () {
-    let page_output = "";
     if(this.state.hasError){
-      page_output = <AppError>Error connecting to Twitch</AppError>;
-    }else{
-      page_output = (
-        <main id="app-main">
-          <GameList />
-        </main>
+      return (
+        <>
+          <MetaTags />
+          <AppHeader slogan={this.state.slogan} />
+          <AppError>Error connecting to Twitch</AppError>
+          <footer id="app-footer">All Twitch materials are the property of Twitch.</footer>
+        </>
       );
     }
     return (
-      <React.Fragment>
-        <Helmet>
-          <title>Browse Games | TwitchRandom | Random Twitch.tv Streams - Find something unexpected</title>
-          <meta name="desription" content="TwitchRandom.com - Browse all live games. Find something unexpected at https://twitchrandom.com!" />
-        </Helmet>
-        <AppHeader location={this.props.location} />
-        {page_output}
+      <>
+        <MetaTags />
+        <AppHeader slogan={this.state.slogan} />
+        <main id="app-main">
+          <GameList />
+        </main>
         <footer id="app-footer">All Twitch materials are the property of Twitch.</footer>
-      </React.Fragment>
+      </>
     );
   }
 }
