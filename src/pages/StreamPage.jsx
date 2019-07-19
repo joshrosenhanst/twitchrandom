@@ -28,10 +28,14 @@ class StreamPage extends Component {
 
     this.handleSetHistory = this.handleSetHistory.bind(this);
     this.handleGetSlogan = this.handleGetSlogan.bind(this);
+    this.handleSetName = this.handleSetName.bind(this);
   }
 
-  handleSetHistory(url, name=null) {
+  handleSetHistory(url) {
     this.props.history.push(url);
+  }
+
+  handleSetName(name) {
     if(name){
       this.setState({
         title: name + " | TwitchRandom"
@@ -51,9 +55,7 @@ class StreamPage extends Component {
 
   componentDidMount() {
     if(this.props.match.params.stream){
-      this.setState({
-        title: this.props.match.params.stream + " | TwitchRandom"
-      });
+      this.handleSetName(this.props.match.params.stream)
     }
   }
 
@@ -80,6 +82,7 @@ class StreamPage extends Component {
             game={this.props.match.params.game}
             onSetHistory={this.handleSetHistory}
             onGetSlogan={this.handleGetSlogan}
+            onSetName={this.handleSetName}
           />
           <FeaturedGallery />
           <AppGallery />

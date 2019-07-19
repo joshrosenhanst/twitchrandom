@@ -63,7 +63,8 @@ class StreamContainer extends Component {
             channel: getStreamData(data.streams[0])
           }, () => {
             if(updateURL){
-              this.props.onSetHistory("/streams/"+this.state.channel.name, this.state.channel.name);
+              this.props.onSetHistory("/streams/"+this.state.channel.name);
+              this.props.onSetName(this.state.channel.display_name);
             }
           });
         }else{
@@ -122,6 +123,8 @@ class StreamContainer extends Component {
         if(data.stream){
           this.setState({
             channel: getStreamData(data.stream)
+          }, () => {
+            this.props.onSetName(this.state.channel.display_name);
           });
         }else{
           this.setState({
@@ -200,7 +203,7 @@ class StreamContainer extends Component {
                 </Link>
                 <div className="channel_info">
                   <Link to={"/streams/"+this.state.channel.name} className="channel_name">
-                    <h1 className="stream_name">{this.state.channel.name}</h1>
+                    <h1 className="stream_name">{this.state.channel.display_name}</h1>
                   </Link>
                   { (this.state.channel.game) && (
                     <div className="channel_game">

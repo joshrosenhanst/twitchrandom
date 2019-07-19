@@ -91,8 +91,10 @@ async function getChannelID(name) {
   stream - single object from the Twitch API JSON response.
 */
 function getStreamData(stream) {
+  console.log(stream);
   return {
     id: stream.channel._id,
+    display_name: stream.channel.display_name,
     name: stream.channel.name,
     title: stream.channel.status,
     logo: stream.channel.logo,
