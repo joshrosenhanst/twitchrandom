@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './sass/inline_styles.sass';
+import '../sass/inline_styles.sass';
 import Helmet from 'react-helmet';
-import AppHeader from './components/AppHeader/AppHeader';
-import StreamContainer from './components/StreamContainer/StreamContainer';
-import { AppGallery, FeaturedGallery } from './components/AppGallery/AppGallery';
-import AppError from './components/AppError/AppError';
-import { API_KEY } from './utilities';
-import { getRandomSlogan } from './slogans';
+import AppHeader from '../components/AppHeader/AppHeader';
+import StreamContainer from '../components/StreamContainer/StreamContainer';
+import { AppGallery, FeaturedGallery } from '../components/AppGallery/AppGallery';
+import AppError from '../components/AppError/AppError';
+import { API_KEY } from '../utilities';
+import { getRandomSlogan } from '../slogans';
 
 function MetaTags(props){
   return (

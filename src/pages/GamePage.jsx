@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import AppHeader from './components/AppHeader/AppHeader';
-import AppError from './components/AppError/AppError';
-import GameList from './components/GameList/GameList';
-import { getRandomSlogan } from './slogans';
+import AppHeader from '../components/AppHeader/AppHeader';
+import AppError from '../components/AppError/AppError';
+import GameList from '../components/GameList/GameList';
+import { getRandomSlogan } from '../slogans';
 
 function MetaTags(props){
   return (

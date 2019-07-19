@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import StreamPage from './StreamPage';
-import GamePage from './GamePage';
-import NotFoundPage from './NotFoundPage';
+import StreamPage from './pages/StreamPage';
+import GamePage from './pages/GamePage';
+import NotFoundPage from './pages/NotFoundPage';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
