@@ -12,7 +12,6 @@ function MetaTags(props){
   return (
     <Helmet>
       <title>{props.title || "TwitchRandom | Random Twitch.tv Streams - Find something unexpected!"}</title>
-      <meta name="description" content="TwitchRandom finds random Twitch streams for you. Find something unexpected!" />
     </Helmet>
   );
 }
