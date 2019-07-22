@@ -92,7 +92,7 @@ class GameList extends Component {
         <section id="game-list">
           <header id="game-list-header">
             <h2>Browse Games</h2>
-            <GameAutoSuggest></GameAutoSuggest>
+            <GameAutoSuggest />
           </header>
           <div id="game-list-main">
             {gameDisplays}
