@@ -9,7 +9,7 @@
   border-color: $grey-lighter
   border-width: 1px 0
   border-radius: 2px
-  min-height: 300px
+  //min-height: 300px
   +tablet
     border-width: 1px
     padding: 10px 20px
@@ -17,9 +17,11 @@
   .gallery-header
     display: flex
     justify-content: space-between
+    align-items: center
     margin-bottom: 10px
     .gallery-title
-      font-size: 22px
+      font-size: 20px
+      font-weight: 400
     .gallery-reload
       +button
 
@@ -76,6 +78,7 @@
     
 
   .gallery-item-game
+    font-size: 0.9rem
 
   &.featured
     background-color: $featured-background-color
