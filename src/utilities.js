@@ -68,7 +68,7 @@ async function fetchTwitchEndpoint(endpoint, query = "") {
         throw new TwitchException(error.message, error.status, error.error);
       });
   }else{
-    throw TwitchRandomException("NO_KEY","Missing Twitch API key.");
+    throw new TwitchRandomException("NO_KEY","Missing Twitch API key.");
   }
 }
 
