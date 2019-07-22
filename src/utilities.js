@@ -73,6 +73,20 @@ async function fetchTwitchEndpoint(endpoint, query = "") {
 }
 
 /*
+  fetchTwitchGameList() - Fetch the GAMES endpoint with the set limit/offset. Returns a promise which resolves to a JSON list of games if successful or an exception.
+*/
+async function fetchTwitchGameList(limit = 100, offset = 0) {
+  return fetchTwitchEndpoint(ENDPOINTS.GAMES, `?limit=${limit}&offset=${offset}`)
+    .then(data => {
+      if(data.top){
+        return data.top;
+      }else{
+        throw new TwitchRandomException("FAIL_GAMES","Unable to load Twitch games list.");
+      }
+    });
+}
+
+/*
   getChannelID(name) - v5 of the Twitch API requires a channel ID to get stream info, rather than a channel name. getChannelID(name) sends a query with the name and returns a promise with the ID.
 */
 async function getChannelID(name) {
@@ -145,5 +159,6 @@ export {
   shuffleAndSlice,
   getLocalData,
   updateLocalData,
-  getChatActive
+  getChatActive,
+  fetchTwitchGameList
 };

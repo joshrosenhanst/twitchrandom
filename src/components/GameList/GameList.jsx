@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './GameList.sass';
-import { ENDPOINTS, fetchTwitchEndpoint } from '../../utilities';
+import AppError from '../AppError/AppError';
+import { fetchTwitchGameList } from '../../utilities';
 import { ReactComponent as Logo} from '../../icons/logo.svg';
 import GameAutoSuggest from './GameAutosuggest';
 
@@ -26,7 +27,8 @@ class GameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      games: new Map()
+      games: new Map(),
+      error: false
     };
     this.handleRequestNextPage = this.handleRequestNextPage.bind(this);
   }
@@ -63,18 +65,33 @@ class GameList extends Component {
   */
   getGames() {
     const limit = 100;
-    fetchTwitchEndpoint(ENDPOINTS.GAMES, `?limit=${limit}&offset=${this.state.games.size}`)
-      .then(data => {
+    fetchTwitchGameList(limit, this.state.games.size)
+      .then(games => {
         this.setState({
-          games: new Map([...this.state.games, ...this.createMap(data.top)])
+          games: new Map([...this.state.games, ...this.createMap(games)]),
+          error: false
         });
       })
+      .catch(error => {
+        console.log(error);
+        if(error.status === "FAIL_GAMES"){
+          this.setState({
+            error: error.message
+          });
+        }
+      });
   }
 
   componentDidMount() {
     this.getGames();
   }
   render() {
+    if(this.state.error){
+      return (
+        <AppError>{this.state.error}</AppError>
+      );
+    }
+    
     if(this.state.games.size){
       // foreach object in this.state.games Map, create a <GameDisplay> template
       let gameDisplays = [];
