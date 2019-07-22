@@ -14,7 +14,7 @@ function MetaTags(props){
   );
 }
 
-class GamePage extends Component {
+class BrowseGamesPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,4 +52,4 @@ class GamePage extends Component {
   }
 }
 
-export default GamePage;
+export default BrowseGamesPage;
