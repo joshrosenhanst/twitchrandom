@@ -76,7 +76,7 @@ class GameList extends Component {
   }
   render() {
     if(this.state.games.size){
-      // foreach object in this.state.games, create a <GameDisplay> template
+      // foreach object in this.state.games Map, create a <GameDisplay> template
       let gameDisplays = [];
       this.state.games.forEach((game, key) => {
         gameDisplays.push(
@@ -88,30 +88,30 @@ class GameList extends Component {
       });
 
       return (
-        <React.Fragment>
+        <>
         <section id="game-list">
-            <header id="game-list-header">
-              <h2>Browse Games</h2>
-              <GameAutoSuggest></GameAutoSuggest>
-            </header>
-            <div id="game-list-main">
-              {gameDisplays}
-            </div>
+          <header id="game-list-header">
+            <h2>Browse Games</h2>
+            <GameAutoSuggest></GameAutoSuggest>
+          </header>
+          <div id="game-list-main">
+            {gameDisplays}
+          </div>
         </section>
         <button id="load-games" onClick={this.handleRequestNextPage}>Load More Games</button>
-        </React.Fragment>
+        </>
       );
     }else{
       // return a loading template
       return (
         <section id="game-list">
-            <header id="game-list-header">
-                <h2>All Games</h2>
-            </header>
-            <div className="loading">
-              <Logo />
-              <div>Loading Games</div>
-            </div>
+          <header id="game-list-header">
+            <h2>Browse Games</h2>
+          </header>
+          <div className="loading">
+            <Logo />
+            <div>Loading Games</div>
+          </div>
         </section>
       );
     }
