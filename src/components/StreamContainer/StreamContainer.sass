@@ -22,11 +22,12 @@
     flex-direction: row
 
 #stream-embed
-  +tablet
+  +from($l_mobile)
     flex-grow: 4
+    iframe
+      min-height: 520px
   iframe
     display: block
-    min-height: 520px
 
 #stream-info
   display: flex
@@ -50,9 +51,6 @@
   display: flex
   padding: 0 10px 5px 10px
   border-bottom: 1px solid $twitch-panel-border
-  +until($l_mobile)
-    max-width: 550px
-    margin: 10px auto
   .channel_logo
     flex: none
     width: 45px
@@ -75,10 +73,9 @@
   
 #stream-chat-container
   flex-grow: 1
-  #chat_embed
-    min-height: 380px
 
   .chat_header
+    display: none
     padding: 0 10px 0 20px
     border-bottom: 1px solid $twitch-panel-border
     line-height: 50px
@@ -89,7 +86,7 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    height: 330px
+    padding: 4px 0
     .chat_notice_text
       font-size: 14px
       margin-bottom: 10px
@@ -98,6 +95,16 @@
       font-size: 12px
       padding: 8px 10px
       border: 1px solid transparent
+  
+  +tablet
+    #chat_embed
+      min-height: 380px
+    #hidden_chat_notice
+      height: 330px
+      padding: 0
+    .chat_header
+      display: block
+  
 
 
 #random-stream-button
