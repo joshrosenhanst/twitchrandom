@@ -810,7 +810,7 @@ class Twitch {
         curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, $this->connect_timeout);
         curl_setopt($crl, CURLOPT_TIMEOUT, $this->timeout);
         curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($crl, CURLOPT_HTTPHEADER, array('Expect:', 'Client-ID: ' . $this->getClientId()));
+        curl_setopt($crl, CURLOPT_HTTPHEADER, array('Accept: application/vnd.twitchtv.v5+json', 'Client-ID: ' . $this->getClientId()));
         if (isset($params['CURLOPT_SSL_VERIFYPEER'])) {
             curl_setopt($crl, CURLOPT_SSL_VERIFYPEER, $this->ssl_verifypeer);
         }
