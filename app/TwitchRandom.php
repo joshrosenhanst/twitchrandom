@@ -90,8 +90,11 @@ class TwitchRandom implements TwitchRandomContract{
      * Maybe use the beta random for this?
     */
     public function getGalleryStreams(){
-        $streams = $this->twitch->getRandomStreams();
-        return array_slice($streams->streams,0,11);
+        //$streams = $this->twitch->getRandomStreams();
+        //return array_slice($streams->streams,0,11);
+        
+        $streams = $this->twitch->getStreams(null,12,rand(4,8000),null,true);
+        return $streams->streams;
 
         /*$streams1 = $this->twitch->getStreams(null,4,rand(1,400),null,true);
         $streams2 = $this->twitch->getStreams(null,4,rand(401,6000),null,true);
