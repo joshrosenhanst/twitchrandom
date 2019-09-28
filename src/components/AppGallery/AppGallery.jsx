@@ -87,9 +87,12 @@ class AppGallery extends Component {
       })
       .catch(error => {
         console.log(error);
+        // we failed to get a gallery, probably because the game didn't exist, so try again but without a specified game
         this.setState({
-          gallery_error: true
+          gallery_error: true,
+          game: null
         });
+        this.getRandomGalleryChannels();
       });
   }
 
@@ -119,6 +122,12 @@ class AppGallery extends Component {
     if(this.props.featured){
       this.getFeaturedGalleryChannels();
     }else{
+      this.getRandomGalleryChannels();
+    }
+  }
+
+  componentDidUpdate(prevProps) { 
+    if(this.props.game !== prevProps.game) {
       this.getRandomGalleryChannels();
     }
   }
