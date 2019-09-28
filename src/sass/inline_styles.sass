@@ -49,8 +49,19 @@ a
   text-decoration: none
   strong
     color: currentColor
-  &:hover
+  &:hover, &:focus
     color: $link-hover
+  &:focus
+    outline: 2px dotted $twitch-purple
+    outline-offset: 1px
+
+button
+  background-image: none
+  &::-moz-focus-inner
+    border-style: none
+  &:focus
+    outline: 2px dotted $twitch-purple
+    outline-offset: 1px
 
 code
   background-color: $code-background

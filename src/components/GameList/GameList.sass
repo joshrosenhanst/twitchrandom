@@ -42,6 +42,8 @@
         font-weight: bold
         display: block
         word-break: break-word
+        &:focus
+            outline-offset: -2px
 
     .game-viewers
 
@@ -73,7 +75,8 @@
     &.is-focused,
     &:active,
     &.is-active
-        outline: none
+        outline: 1px dotted $twitch-purple
+        outline-offset: 1px
         border-color: $twitch-purple
         color: $body-color
     &:focus + .react-autosuggest__input-icon

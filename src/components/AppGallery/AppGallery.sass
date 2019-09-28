@@ -62,7 +62,6 @@
     transition: 200ms linear background-color
 
   .gallery-item-meta
-    overflow: hidden
     +from($l_mobile)
       display: flex
 
@@ -70,8 +69,12 @@
     flex-basis: 45px
     flex-shrink: 0
     margin-right: 10px
+    img
+      display: block
     +until($l_mobile)
       display: none
+    &:focus
+      outline-offset: 1px
 
 
   .gallery-item-info
