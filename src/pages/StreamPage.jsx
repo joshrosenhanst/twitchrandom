@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../sass/inline_styles.sass';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import AppHeader from '../components/AppHeader/AppHeader';
 import StreamContainer from '../components/StreamContainer/StreamContainer';
 import { AppGallery, FeaturedGallery } from '../components/AppGallery/AppGallery';

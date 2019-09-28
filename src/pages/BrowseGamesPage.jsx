@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import AppHeader from '../components/AppHeader/AppHeader';
 import AppError from '../components/AppError/AppError';
 import GameList from '../components/GameList/GameList';
