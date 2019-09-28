@@ -21,7 +21,7 @@ function GalleryItem(props){
           <Link className="gallery-item-name" to={"/streams/" + props.channel.name}>{props.channel.name}</Link> 
           { (props.channel.game) && (
             <div className="gallery-item-game">
-              Playing <Link to={"/games/"+props.channel.game}>{props.channel.game}</Link>
+              <Link to={"/games/"+props.channel.game}>{props.channel.game}</Link>
             </div>
           ) }
         </div>

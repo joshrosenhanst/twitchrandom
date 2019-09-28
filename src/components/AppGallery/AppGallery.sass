@@ -41,8 +41,15 @@
     border-radius: 4px
     overflow: hidden
     margin-bottom: 5px
+    transition: 400ms linear opacity
+    opacity: 0.9
+    box-shadow: none
     img
       display: block
+    &:hover, &:focus
+      opacity: 1
+      .overlay
+        background-color: rgba($twitch-purple, 1)
 
   .overlay
     @extend %overlay
@@ -51,6 +58,8 @@
     padding: 2px 5px
     font-size: 0.75rem
     text-align: right
+    border-radius: 4px
+    transition: 200ms linear background-color
 
   .gallery-item-meta
     overflow: hidden
