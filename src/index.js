@@ -1,3 +1,5 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -11,8 +13,7 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={StreamPage} />
       <Route exact path="/random" component={StreamPage} />
-      <Route path="/games/:game+" component={StreamPage} />
-      <Route path="/streams/:stream+" component={StreamPage} />
+      <Route path={["/games/:game+","/streams/:stream+"]} component={StreamPage} />
       <Route exact path="/games" component={BrowseGamesPage} />
       <Route component={NotFoundPage} />
     </Switch>

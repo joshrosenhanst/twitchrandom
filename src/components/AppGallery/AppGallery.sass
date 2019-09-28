@@ -26,14 +26,18 @@
       +button
 
   .gallery-items
-    display: grid
-    grid-template-columns: 1fr 1fr
-    column-gap: 10px
-    row-gap: 20px
+    display: flex
+    flex-wrap: wrap
+    margin-left: -10px
+    margin-right: -10px
     +tablet
-      grid-gap: 20px
-      grid-template-columns: 1fr 1fr 1fr 1fr
     .ad
+    .gallery-item
+      width: 50%
+      padding: 10px 5px
+      +tablet
+        width: 25%
+
 
   .gallery-item-screenshot
     position: relative

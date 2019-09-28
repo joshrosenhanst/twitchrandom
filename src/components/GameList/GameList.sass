@@ -13,13 +13,13 @@
         flex-direction: column
 
 #game-list-main
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr
-    column-gap: 20px
-    row-gap: 20px
-    padding: 0 15px
-    +tablet
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    display: flex
+    flex-wrap: wrap
+    .game-display
+        width: calc(100% / 3)
+        padding: 10px
+        +tablet
+            width: 20%
 
 #load-games
     +button

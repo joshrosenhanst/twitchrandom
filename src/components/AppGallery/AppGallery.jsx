@@ -36,7 +36,7 @@ function FeaturedGallery() {
       galleryTitle="Featured Gallery"
       featured={true}
     >
-      <div className="square_ad">Ad</div>
+      <div className="gallery-item square_ad">Ad</div>
     </AppGallery>
   );
 }
