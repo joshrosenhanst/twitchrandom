@@ -31,7 +31,12 @@ function TwitchException(message, status, type) {
 }
 
 function getLocalData(key = null){
-  const localData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  let localData = {};
+  try {
+    localData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  } catch (error) {
+    console.log("Unable to get LocalStorage data.")
+  }
   if(key){
     return localData[key];
   }
@@ -42,7 +47,11 @@ function updateLocalData(key, value) {
   const localData = getLocalData();
   localData[key] = value;
 
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(localData));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(localData));
+  } catch (error) {
+    console.log("Unable to set LocalStorage data.")
+  }
 }
 
 /*
