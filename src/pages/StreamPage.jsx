@@ -69,6 +69,7 @@ class StreamPage extends Component {
         </>
       );
     }
+    let galleryTitle = this.props.match.params.game ? this.props.match.params.game + " Streams" : "Random Streams";
 
     return (
       <>
@@ -84,7 +85,7 @@ class StreamPage extends Component {
             onSetName={this.handleSetName}
           />
           <FeaturedGallery />
-          <AppGallery />
+          <AppGallery game={this.props.match.params.game} galleryTitle={galleryTitle} />
         </main>
         <footer id="app-footer">All Twitch materials are the property of Twitch.</footer>
       </>

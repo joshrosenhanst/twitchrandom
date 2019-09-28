@@ -60,11 +60,20 @@ class AppGallery extends Component {
     getRandomGalleryChannels() - fetch details for 50 live streams, requested from a random offset. shuffleAndSlice() down to 8 results.
   */
   getRandomGalleryChannels() {
-    let randomNumber = Math.floor(Math.random() * 8000);
     this.setState({
       channels: []
     });
-    fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=100&offset=" + randomNumber)
+    let randomNumber, endpoint_queries;
+    if(this.props.game) {
+      // some games may only a few live streams at a time, so we should only look at the top 100 and shuffle those results
+      endpoint_queries = `?limit=100&game=${encodeURIComponent(this.props.game)}`;
+    } else {
+      // for non game specific galleries, we can put a high random offset number - twitch on average has about 50k live streams so anything under that is good
+      randomNumber = Math.floor(Math.random() * 12000);
+      endpoint_queries = "?limit=100&offset=" + randomNumber;
+    }
+
+    fetchTwitchEndpoint(ENDPOINTS.STREAMS, endpoint_queries)
       .then(data => {
         if(data._total > 0){
           let gallery_streams = shuffleAndSlice(data.streams, 8);
