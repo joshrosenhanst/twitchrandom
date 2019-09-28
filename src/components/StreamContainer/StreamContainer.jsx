@@ -23,6 +23,7 @@ class StreamContainer extends Component {
     super(props);
     this.state = {
       stream_error: false,
+      error_message: "Stream Unavailable",
       channel_offline: false,
       channel: {},
       chat_active: getChatActive() 
@@ -54,6 +55,7 @@ class StreamContainer extends Component {
     this.setState({
       channel: null,
       stream_error: false,
+      error_message: "Stream Unavailable",
       channel_offline: false
     });
     fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=1&offset=" + randomNumber)
@@ -87,6 +89,7 @@ class StreamContainer extends Component {
     this.setState({
       channel: null,
       stream_error: false,
+      error_message: "Game Not Found",
       channel_offline: false
     });
     fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=100&game=" + encodeURIComponent(game))
@@ -115,6 +118,7 @@ class StreamContainer extends Component {
     this.setState({
       channel: null,
       channel_offline: false,
+      error_message: "Stream Unavailable",
       stream_error: false
     });
     getChannelID(stream)
@@ -181,7 +185,7 @@ class StreamContainer extends Component {
 
   render() {
     if(this.state.stream_error){
-      return <AppError>Stream Unavailable</AppError>;
+      return <AppError>{this.state.error_message}</AppError>;
     }
     
     if(this.state.channel_offline){
