@@ -1,0 +1,87 @@
+#app-header
+  border-bottom: 1px solid $twitch-purple
+  padding: 10px 0
+  background: $white
+
+#header-menu
+  +container
+  display: flex
+  +until($mobile_nav)
+    flex-direction: column
+  +from($mobile_nav)
+    justify-content: space-between
+    align-items: center
+  .nav-left,.nav-right
+    display: flex
+    +from($mobile_nav)
+      height: 54px
+    +until($mobile_nav)
+      justify-content: space-around
+      align-items: center
+  .menu-item, .menu-dropdown-trigger
+    border-radius: 6px
+    padding: 5px 10px
+    transition: background-color 500ms
+    +from($mobile_nav)
+      display: inline-block
+      padding: 15px
+    +until($mobile_nav)
+      text-align: center
+      flex-grow: 1
+      flex-shrink: 0
+      flex-basis: 50%
+    &:hover,&:focus
+      background-color: rgba($twitch-purple, 0.1)
+  .menu-dropdown-trigger
+    background-color: transparent
+    border: 0
+    color: $twitch-purple
+    cursor: pointer
+    font-size: 1rem
+    padding-right: 30px
+    &::after
+      +arrow
+      right: 10px
+      border-color: $twitch-purple
+  .menu-dropdown
+    display: inline-flex
+    position: relative
+    &.active
+      .menu-dropdown-trigger
+        background-color: $grey-lightest
+      .dropdown-list
+        display: block
+  .dropdown-list
+    display: none
+    position: absolute
+    left: 0
+    top: 100%
+    width: 300px
+    z-index: 100
+    background: $white
+    border: 1px solid $twitch-purple
+    border-radius: 0 0 6px 6px
+    overflow: hidden
+    .dropdown-list-item
+      display: block
+      padding: 8px
+      &:hover
+        background-color: $grey-lightest
+      &.list-item-footer
+        text-align: center
+        border-top: 1px solid $twitch-purple
+        padding: 8px
+
+
+#logo
+  line-height: 20px
+  display: block
+  padding: 7px 10px
+  +from($mobile_nav)
+    padding: 7px 15px
+#primary_logo
+  display: block
+  font-size: 24px
+#slogan
+  display: block
+  color: $grey

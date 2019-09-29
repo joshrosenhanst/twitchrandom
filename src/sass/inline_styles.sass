@@ -1,0 +1,132 @@
+@import './reset'
+@import './shared'
+@import './animations'
+  
+html
+  background-color: $body-background-color
+  font-size: $body-size
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  min-width: 300px
+  overflow-x: hidden
+  overflow-y: scroll
+  text-rendering: $body-rendering
+  text-size-adjust: 100%
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section
+  display: block
+
+body,
+button,
+input,
+select,
+textarea
+  font-family: $body-family
+
+code,
+pre
+  -moz-osx-font-smoothing: auto
+  -webkit-font-smoothing: auto
+  font-family: $code-family
+
+body
+  color: $body-color
+  font-size: 1rem
+  font-weight: $body-weight
+  line-height: $body-line-height
+
+// Inline
+
+a
+  color: $link
+  cursor: pointer
+  text-decoration: none
+  strong
+    color: currentColor
+  &:hover, &:focus
+    color: $link-hover
+  &:focus
+    outline: 2px dotted $twitch-purple
+    outline-offset: 1px
+
+button
+  background-image: none
+  &::-moz-focus-inner
+    border-style: none
+  &:focus
+    outline: 2px dotted $twitch-purple
+    outline-offset: 1px
+
+code
+  background-color: $code-background
+  color: $code
+  font-size: $code-size
+  font-weight: $code-weight
+  padding: $code-padding
+
+hr
+  background-color: $hr-background-color
+  border: none
+  display: block
+  height: $hr-height
+  margin: $hr-margin
+
+img
+  height: auto
+  max-width: 100%
+
+input[type="checkbox"],
+input[type="radio"]
+  vertical-align: baseline
+
+small
+  font-size: 0.875em
+
+span
+  font-style: inherit
+  font-weight: inherit
+
+strong
+  color: $strong-color
+  font-weight: $strong-weight
+
+noscript#main-noscript, #app-error
+  text-align: center
+  display: block
+  padding: 175px 0
+  background-color: $stream-background-color
+  border-bottom: 1px solid $twitch-purple
+  font-weight: bold
+  color: $white
+
+.loading
+  flex-grow: 1
+  text-align: center
+  color: $twitch-purple
+  font-weight: bold
+  padding: 200px 0
+  animation: colorChange 3s infinite
+  svg
+    margin-left: 10px
+    fill: currentColor
+    width: 50px
+    height: 50px
+    animation: logoRotate 6s infinite
+
+#app-error
+  font-size: 36px
+  h2
+    font-weight: bold
+    font-size: 36px
+
+.main-button
+  +button-with-shadow
+
+@import './header'
+@import './footer'

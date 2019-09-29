@@ -1,0 +1,114 @@
+@import "../../sass/shared"
+
+#stream-embed-section
+  background-image: none
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: auto
+  background-color: $stream-background-color
+  border-bottom: 1px solid $twitch-purple
+  padding: 10px 0
+  +tablet
+    padding-bottom: 40px
+    padding-top: 40px
+
+#stream-container
+  +container
+  box-shadow: 0 1px 5px rgba(0,0,0,0.75)
+  display: flex
+  flex-direction: column
+  background-color: rgba($body-background-color,1)
+  +tablet
+    flex-direction: row
+
+#stream-embed
+  +from($l_mobile)
+    flex-grow: 4
+    iframe
+      min-height: 520px
+  iframe
+    display: block
+
+#stream-info
+  display: flex
+  flex-direction: column
+  padding: 10px 0
+  font-size: 0.9rem
+  +desktop
+    flex-basis: 400px
+  h1.stream_name
+    font-size: 18px
+    font-weight: 700
+    line-height: 1
+  h2.stream_title
+    font-size: 16px
+    font-weight: 400
+    +until($l_mobile)
+      max-width: 550px
+      margin: 0 auto
+
+#stream-meta
+  display: flex
+  padding: 0 10px 5px 10px
+  border-bottom: 1px solid $twitch-panel-border
+  .channel_logo
+    flex: none
+    width: 45px
+    margin-right: 10px
+    img
+      display: block
+  
+  .toggle-chat
+    +transparent-button-small
+
+  .channel_info
+    flex-grow: 1
+
+  .channel_name
+    font-weight: bold
+
+  .channel_sub
+    display: flex
+    justify-content: space-between
+  
+#stream-chat-container
+  flex-grow: 1
+
+  .chat_header
+    display: none
+    padding: 0 10px 0 20px
+    border-bottom: 1px solid $twitch-panel-border
+    line-height: 50px
+    font-size: 12px
+  
+  #hidden_chat_notice
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 4px 0
+    .chat_notice_text
+      font-size: 14px
+      margin-bottom: 10px
+    button
+      +button
+      font-size: 12px
+      padding: 8px 10px
+      border: 1px solid transparent
+  
+  +tablet
+    #chat_embed
+      min-height: 380px
+    #hidden_chat_notice
+      height: 330px
+      padding: 0
+    .chat_header
+      display: block
+  
+
+
+#random-stream-button
+  padding-top: 15px
+  border-top: 1px solid $twitch-panel-border
+  margin-top: auto
+  text-align: center

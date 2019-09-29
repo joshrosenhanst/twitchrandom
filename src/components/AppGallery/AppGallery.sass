@@ -1,0 +1,100 @@
+@import "../../sass/shared"
+
+.app-gallery
+  +container
+  background-color: $white
+  margin: 15px auto
+  padding: 10px 15px
+  border-style: solid
+  border-color: $grey-lighter
+  border-width: 1px 0
+  border-radius: 2px
+  //min-height: 300px
+  +tablet
+    border-width: 1px
+    padding: 10px 20px
+
+  .gallery-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 10px
+    .gallery-title
+      font-size: 20px
+      font-weight: 400
+    .gallery-reload
+      +button
+
+  .gallery-items
+    display: flex
+    flex-wrap: wrap
+    margin-left: -10px
+    margin-right: -10px
+    +tablet
+    .ad
+    .gallery-item
+      width: 50%
+      padding: 10px 5px
+      +tablet
+        width: 25%
+
+
+  .gallery-item-screenshot
+    position: relative
+    display: block
+    border-radius: 4px
+    overflow: hidden
+    margin-bottom: 5px
+    transition: 400ms linear opacity
+    opacity: 0.9
+    box-shadow: none
+    img
+      display: block
+    &:hover, &:focus
+      opacity: 1
+      .overlay
+        background-color: rgba($twitch-purple, 1)
+
+  .overlay
+    @extend %overlay
+    background-color: rgba($stream-background-color, 0.4)
+    color: $white
+    padding: 2px 5px
+    font-size: 0.75rem
+    text-align: right
+    border-radius: 4px
+    transition: 200ms linear background-color
+
+  .gallery-item-meta
+    +from($l_mobile)
+      display: flex
+
+  .gallery-item-logo
+    flex-basis: 45px
+    flex-shrink: 0
+    margin-right: 10px
+    img
+      display: block
+    +until($l_mobile)
+      display: none
+    &:focus
+      outline-offset: 1px
+
+
+  .gallery-item-info
+    +until($l_mobile)
+      font-size: 14px
+    +tablet
+      flex-grow: 1
+
+  .gallery-item-name
+    font-weight: bold
+    display: block
+    word-break: break-all
+    
+
+  .gallery-item-game
+    font-size: 0.9rem
+
+  &.featured
+    background-color: $featured-background-color
