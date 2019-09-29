@@ -1,24 +1,33 @@
-# TwitchRandom
+# TwitchRandom React
 
-TwitchRandom is a Laravel project that finds random video games streams to watch using the Twitch.tv API.
+Recreate the [TwitchRandom](https://twitchrandom.com) website as a React App. Bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-## Libraries
+## Local Development
 
-- Laravel 5.2
-- Twitch.tv API v5
-- [TwitchTV SDK for PHP](https://github.com/jofner/Twitch-SDK)
-- jQuery 2.2.4
-- jquery.history
-- jquery.nicescroll
-- Boostrap 3.3.7
-- Sass
-
-## Dev Setup
-1. Get a Twitch.tv API key
-1. Install all Laravel requirements
-1. Clone repo
-1. Create Mysql DB "twitchrandom" and import the `twitchrandom.sql` file into it: `mysql -u root -p twitchrandom < twitchrandom.sql` (issue: database needs to exist before the artisan runs)
-1. Copy .env.default to .env and set values
-1. `composer install`
 1. `npm install`
-1. Set group permissions for Laravel folders (`storage/` and `bootstrap/cache/`) to your server (`www-data`). You may need to create internal storage folders: https://stackoverflow.com/questions/38483837/please-provide-a-valid-cache-path
+2. Get a API key from [Twitch](https://dev.twitch.tv/)
+3. Create `.env.local` file in the root directory add the following: `REACT_APP_TWITCH_API_KEY=<your OMDB API key>`
+4. `npm start`
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
