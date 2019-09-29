@@ -1,12 +1,16 @@
-# TwitchRandom React
+# TwitchRandom
 
-Recreate the [TwitchRandom](https://twitchrandom.com) website as a React App. Bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+TwitchRandom is a project that finds random video game streams to watch using the [Twitch.tv API](https://dev.twitch.tv/docs/v5/)
+
+Originally built as a [Laravel Project](https://github.com/joshrosenhanst/twitchrandom/tree/laravel) using the unmaintained [TwitchTV SDK for PHP](https://github.com/jofner/Twitch-SDK). TwitchRandom now uses React for the interface and fetching Twitch API endpoints.
+
+Bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Local Development
 
 1. `npm install`
 2. Get a API key from [Twitch](https://dev.twitch.tv/)
-3. Create `.env.local` file in the root directory add the following: `REACT_APP_TWITCH_API_KEY=<your OMDB API key>`
+3. Copy `.env.example` to `.env.local` and add a valid Twitch API Key to `REACT_APP_TWITCH_API_KEY`
 4. `npm start`
 
 ## Available Scripts
