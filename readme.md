@@ -1,6 +1,6 @@
 # TwitchRandom
 
-TwitchRandom is a project that finds random video game streams to watch using the [Twitch.tv API](https://dev.twitch.tv/docs/v5/)
+[TwitchRandom.com](https://twitchrandom.com/) is a project that finds random video game streams to watch using the [Twitch.tv API](https://dev.twitch.tv/docs/v5/)
 
 Originally built as a [Laravel Project](https://github.com/joshrosenhanst/twitchrandom/tree/laravel) using the unmaintained [TwitchTV SDK for PHP](https://github.com/jofner/Twitch-SDK). TwitchRandom now uses React for the interface and fetching Twitch API endpoints.
 
