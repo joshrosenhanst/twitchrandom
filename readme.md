@@ -3,6 +3,7 @@
 TwitchRandom was a Laravel project that finds random video games streams to watch using the Twitch.tv API.
 
 Note: The master branch is now a React based project: https://github.com/joshrosenhanst/twitchrandom
+
 The Laravel branch is outdated and shouldn't be used.
 
 ## Libraries
