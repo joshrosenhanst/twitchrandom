@@ -40,9 +40,9 @@ function FeaturedGallery() {
       {RENDER_AD && 
       <div className="gallery-item square_ad">
         <GoogleAd 
+          adStyle={{ display: "block", height: "185px" }}
           client="ca-pub-1737596577801120"
           slot="2404854645"
-          format="auto"
           responsive="true"
         />
       </div>
