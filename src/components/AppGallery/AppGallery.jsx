@@ -35,12 +35,7 @@ function FeaturedGallery() {
     <AppGallery
       galleryTitle="Featured Gallery"
       featured={true}
-    >
-      {RENDER_AD && 
-      <div className="gallery-item square_ad">
-      </div>
-      }
-    </AppGallery>
+    ></AppGallery>
   );
 }
 
