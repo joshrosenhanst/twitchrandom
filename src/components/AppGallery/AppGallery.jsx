@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './AppGallery.sass';
-import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getGalleryData, getFeaturedStreamData, shuffleAndSlice } from '../../utilities';
+import { ENDPOINTS, RENDER_AD, fetchTwitchEndpoint, TwitchRandomException, getGalleryData, getFeaturedStreamData, shuffleAndSlice } from '../../utilities';
 import { ReactComponent as Logo} from '../../icons/logo.svg'
 
 function GalleryItem(props){
@@ -36,7 +36,11 @@ function FeaturedGallery() {
       galleryTitle="Featured Gallery"
       featured={true}
     >
-      <div className="gallery-item square_ad">Ad</div>
+      {RENDER_AD && 
+      <div className="gallery-item square_ad">
+        Ad Goes here
+      </div>
+      }
     </AppGallery>
   );
 }
