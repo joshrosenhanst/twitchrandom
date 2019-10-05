@@ -9,6 +9,7 @@
     "react-autosuggest": "^9.4.3",
     "react-dom": "^16.10.1",
     "react-helmet": "^6.0.0-beta",
+    "react-loadable": "^5.5.0",
     "react-router-dom": "^5.1.1",
     "react-scripts": "3.1.2"
   },

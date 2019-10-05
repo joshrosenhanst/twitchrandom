@@ -3,10 +3,31 @@ import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import { ReactComponent as Logo } from './icons/logo.svg';
+
+// pages
 import StreamPage from './pages/StreamPage';
-import BrowseGamesPage from './pages/BrowseGamesPage';
 import NotFoundPage from './pages/NotFoundPage';
 import * as serviceWorker from './serviceWorker';
+
+const Loading = () => {
+  return (
+    <section id="stream-embed-section">
+      <div id="stream-container">
+        <div className="loading">
+          <Logo />
+          <div>Loading...</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const LoadableGamesPage = Loadable({
+  loader: () => import('./pages/BrowseGamesPage'),
+  loading: Loading
+});
 
 ReactDOM.render(
   <BrowserRouter>
@@ -14,7 +35,7 @@ ReactDOM.render(
       <Route exact path="/" component={StreamPage} />
       <Route exact path="/random" component={StreamPage} />
       <Route path={["/games/:game+","/streams/:stream+"]} component={StreamPage} />
-      <Route exact path="/games" component={BrowseGamesPage} />
+      <Route exact path="/games" component={LoadableGamesPage} />
       <Route component={NotFoundPage} />
     </Switch>
   </BrowserRouter>,
