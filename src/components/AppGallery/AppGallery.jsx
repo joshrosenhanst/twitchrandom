@@ -38,7 +38,6 @@ function FeaturedGallery() {
     >
       {RENDER_AD && 
       <div className="gallery-item square_ad">
-        Ad Goes here
       </div>
       }
     </AppGallery>
