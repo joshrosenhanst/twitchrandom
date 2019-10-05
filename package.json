@@ -1,6 +1,6 @@
 {
-  "name": "twitchrandom-react",
-  "version": "0.1.0",
+  "name": "twitchrandom",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "node-sass": "^4.12.0",

@@ -10,7 +10,7 @@ Bootstrapped with [Create React App](https://github.com/facebookincubator/create
 
 1. `npm install`
 2. Get a API key from [Twitch](https://dev.twitch.tv/)
-3. Copy `.env.example` to `.env.local` and add a valid Twitch API Key to `REACT_APP_TWITCH_API_KEY`
+3. Copy `.env.example` to `.env` and add a valid Twitch API Key to `REACT_APP_TWITCH_API_KEY`
 4. `npm start`
 
 ## Available Scripts
