@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './AppGallery.sass';
 import { ENDPOINTS, RENDER_AD, fetchTwitchEndpoint, TwitchRandomException, getGalleryData, getFeaturedStreamData, shuffleAndSlice } from '../../utilities';
 import { ReactComponent as Logo} from '../../icons/logo.svg'
+import GoogleAd from '../GoogleAd/GoogleAd';
 
 function GalleryItem(props){
   return (
@@ -38,15 +39,12 @@ function FeaturedGallery() {
     >
       {RENDER_AD && 
       <div className="gallery-item square_ad">
-        <ins className="adsbygoogle"
-            style={{display:"block"}}
-            data-ad-client="ca-pub-1737596577801120"
-            data-ad-slot="2404854645"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push(new Object());
-        </script>
+        <GoogleAd 
+          client="ca-pub-1737596577801120"
+          slot="2404854645"
+          format="auto"
+          responsive="true"
+        />
       </div>
       }
     </AppGallery>
