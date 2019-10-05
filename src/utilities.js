@@ -1,4 +1,5 @@
 import shuffle from 'lodash/shuffle';
+import sloganList from './slogans.json';
 
 const API_KEY = process.env.REACT_APP_TWITCH_API_KEY;
 const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
@@ -153,6 +154,13 @@ function shuffleAndSlice(array, limit){
   return shuffle(array).slice(0, limit);
 }
 
+/*
+  getRandomSlogan() - Return a random slogan string from the slogans.json list.
+*/
+function getRandomSlogan() {
+  return sloganList[Math.floor( Math.random() * sloganList.length )];
+};
+
 export { 
   API_KEY, 
   API_URL, 
@@ -169,5 +177,6 @@ export {
   getLocalData,
   updateLocalData,
   getChatActive,
-  fetchTwitchGameList
+  fetchTwitchGameList,
+  getRandomSlogan
 };

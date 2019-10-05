@@ -5,8 +5,7 @@ import AppHeader from '../components/AppHeader/AppHeader';
 import StreamContainer from '../components/StreamContainer/StreamContainer';
 import { AppGallery, FeaturedGallery } from '../components/AppGallery/AppGallery';
 import AppError from '../components/AppError/AppError';
-import { API_KEY } from '../utilities';
-import { getRandomSlogan } from '../slogans';
+import { API_KEY, getRandomSlogan } from '../utilities';
 
 function MetaTags(props){
   return (

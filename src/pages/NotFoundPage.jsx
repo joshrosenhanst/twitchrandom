@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AppHeader from '../components/AppHeader/AppHeader';
 import AppError from '../components/AppError/AppError';
 import { Helmet } from 'react-helmet';
-import { getRandomSlogan } from '../slogans';
+import { getRandomSlogan } from '../utilities';
 
 function NotFoundPage(props) {
   const [slogan] = useState(getRandomSlogan());
