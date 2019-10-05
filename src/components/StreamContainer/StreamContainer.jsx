@@ -4,7 +4,7 @@ import './StreamContainer.sass';
 import StreamEmbed from '../StreamEmbed/StreamEmbed';
 import ChatEmbed from '../ChatEmbed/ChatEmbed';
 import AppError from '../AppError/AppError';
-import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getStreamData, shuffleAndSlice, getChannelID, getChatActive, updateLocalData } from '../../utilities';
+import { RENDER_STREAM, RENDER_CHAT, ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getStreamData, shuffleAndSlice, getChannelID, getChatActive, updateLocalData } from '../../utilities';
 import { ReactComponent as Logo } from '../../icons/logo.svg';
 import { ReactComponent as CommentSlashIcon } from '../../icons/comment-slash.svg';
 
@@ -199,7 +199,7 @@ class StreamContainer extends Component {
       return (
         <section id="stream-embed-section" style={bannerStyle}>
           <div id="stream-container">
-            <StreamEmbed id="stream-embed" channel={this.state.channel.name}></StreamEmbed>
+            {RENDER_STREAM  && <StreamEmbed id="stream-embed" channel={this.state.channel.name}></StreamEmbed>}
             <div id="stream-info">
               <div id="stream-meta">
                 <Link to={"/streams/"+this.state.channel.name} className="channel_logo">
@@ -216,11 +216,11 @@ class StreamContainer extends Component {
                   ) }
                   <div className="channel_sub">
                     <span className="channel_viewers">{this.state.channel.viewers} Viewers</span>
-                    <ChatToggleButton active={this.state.chat_active} toggleChat={this.toggleChat} />
+                    {RENDER_CHAT && <ChatToggleButton active={this.state.chat_active} toggleChat={this.toggleChat} />}
                   </div>
                 </div>
               </div>
-              <ChatEmbed channel={this.state.channel.name} active={this.state.chat_active} toggleChat={this.toggleChat} />
+              {RENDER_CHAT && <ChatEmbed channel={this.state.channel.name} active={this.state.chat_active} toggleChat={this.toggleChat} />}
               <div id="random-stream-button">
                 <Link to="/random" className="main-button" title="Get Random Stream">
                   <Logo /> Random Stream

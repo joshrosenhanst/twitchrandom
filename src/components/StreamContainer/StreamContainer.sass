@@ -18,6 +18,8 @@
   display: flex
   flex-direction: column
   background-color: rgba($body-background-color,1)
+  +from($l_mobile)
+    min-height: 520px
   +tablet
     flex-direction: row
 
@@ -35,6 +37,7 @@
   padding: 10px 0
   font-size: 0.9rem
   +desktop
+    margin-left: auto
     flex-basis: 400px
   h1.stream_name
     font-size: 18px

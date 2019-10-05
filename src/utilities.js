@@ -3,6 +3,8 @@ import sloganList from './slogans.json';
 
 const API_KEY = process.env.REACT_APP_TWITCH_API_KEY;
 const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
+const RENDER_STREAM = (process.env.REACT_APP_RENDER_STREAM === "true");
+const RENDER_CHAT = (process.env.REACT_APP_RENDER_CHAT === "true");
 const API_URL = "https://api.twitch.tv/kraken";
 const ENDPOINTS = {
   STREAMS: "/streams/",
@@ -164,6 +166,8 @@ function getRandomSlogan() {
 export { 
   API_KEY, 
   API_URL, 
+  RENDER_STREAM,
+  RENDER_CHAT,
   ENDPOINTS, 
   AUTH_HEADERS, 
   fetchTwitchEndpoint, 
