@@ -11,9 +11,11 @@
     "react-helmet": "^6.0.0-beta",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^5.1.1",
-    "react-scripts": "3.1.2"
+    "react-scripts": "3.1.2",
+    "source-map-explorer": "^2.1.0"
   },
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.* --html analyze.html",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
