@@ -35,7 +35,21 @@ function FeaturedGallery() {
     <AppGallery
       galleryTitle="Featured Gallery"
       featured={true}
-    ></AppGallery>
+    >
+      {RENDER_AD && 
+      <div className="gallery-item square_ad">
+        <ins className="adsbygoogle"
+            style={{display:"block"}}
+            data-ad-client="ca-pub-1737596577801120"
+            data-ad-slot="2404854645"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      }
+    </AppGallery>
   );
 }
 
