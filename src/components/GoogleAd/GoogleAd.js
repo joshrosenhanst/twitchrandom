@@ -11,6 +11,7 @@ function GoogleAd(props) {
       data-ad-client={props.client}
       data-ad-slot={props.slot}
       data-ad-format={props.format}
+      data-ad-layout-key={props.layoutKey}
       data-full-width-responsive={props.responsive}></ins>
   );
 }

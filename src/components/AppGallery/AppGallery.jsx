@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './AppGallery.sass';
-import { ENDPOINTS, RENDER_AD, fetchTwitchEndpoint, TwitchRandomException, getGalleryData, getFeaturedStreamData, shuffleAndSlice } from '../../utilities';
+import { ENDPOINTS, fetchTwitchEndpoint, TwitchRandomException, getGalleryData, getFeaturedStreamData, shuffleAndSlice } from '../../utilities';
 import { ReactComponent as Logo} from '../../icons/logo.svg'
-import GoogleAd from '../GoogleAd/GoogleAd';
 
 function GalleryItem(props){
   return (
@@ -36,18 +35,7 @@ function FeaturedGallery() {
     <AppGallery
       galleryTitle="Featured Gallery"
       featured={true}
-    >
-      {RENDER_AD && 
-      <div className="gallery-item square_ad">
-        <GoogleAd 
-          adStyle={{ display: "block", height: "185px" }}
-          client="ca-pub-1737596577801120"
-          slot="2404854645"
-          responsive="true"
-        />
-      </div>
-      }
-    </AppGallery>
+    />
   );
 }
 
@@ -110,7 +98,7 @@ class AppGallery extends Component {
     getFeaturedGalleryChannels() - fetch details for the top 3 featured streams.
   */
   getFeaturedGalleryChannels() {
-    fetchTwitchEndpoint(ENDPOINTS.FEATURED_STREAMS, "?limit=3")
+    fetchTwitchEndpoint(ENDPOINTS.FEATURED_STREAMS, "?limit=4")
       .then(data => {
         if(data.featured.length > 0){
           this.setState({

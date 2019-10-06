@@ -4,7 +4,8 @@ import AppHeader from '../components/AppHeader/AppHeader';
 import StreamContainer from '../components/StreamContainer/StreamContainer';
 import { AppGallery, FeaturedGallery } from '../components/AppGallery/AppGallery';
 import AppError from '../components/AppError/AppError';
-import { API_KEY, getRandomSlogan } from '../utilities';
+import { API_KEY, RENDER_AD, getRandomSlogan } from '../utilities';
+import GoogleAd from '../components/GoogleAd/GoogleAd';
 
 function MetaTags(props){
   return (
@@ -82,6 +83,17 @@ class StreamPage extends Component {
             onGetSlogan={this.handleGetSlogan}
             onSetName={this.handleSetName}
           />
+          {
+            RENDER_AD && 
+            <section className="horizontal_ad">
+              <GoogleAd 
+                adStyle={{ display: "inline-block", width: "100%", height: "90px" }}
+                client="ca-pub-1737596577801120"
+                slot="1996115942"
+                responsive="true"
+              />
+            </section>
+          }
           <FeaturedGallery />
           <AppGallery game={this.props.match.params.game} galleryTitle={galleryTitle} />
         </main>
