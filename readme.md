@@ -1,6 +1,6 @@
 <p align="center"><a href="https://twitchrandom.com"><img src="https://twitchrandom.com/logo_slogan.png" width="400" alt="TwitchRandom Logo"></a></p>
 
-# TwitchRandom
+## About TwitchRandom
 
 [TwitchRandom.com](https://twitchrandom.com/) is a project that finds random video game streams to watch using the [Twitch.tv API](https://dev.twitch.tv/docs/v5/)
 
