@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Logo } from '../../icons/logo.svg';
 
 function AppHeader(props) {
   return (
@@ -8,8 +9,11 @@ function AppHeader(props) {
         <nav id="header-menu">
           <div className="nav-left">
             <Link to="/" id="logo" title="TwitchRandom Home Page">
-              <span id="primary_logo">TwitchRandom</span>
-              <span id="slogan">{props.slogan}</span>
+              <Logo />
+              <div id="logo_text">
+                <span id="primary_logo">TwitchRandom</span>
+                <span id="slogan">{props.slogan}</span>
+              </div>
             </Link>
           </div>
           <div className="nav-right">
