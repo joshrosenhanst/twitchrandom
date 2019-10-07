@@ -25,19 +25,28 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
     <link rel="preconnect" href="https://cvp.twitch.tv">
     <link rel="preconnect" href="https://static-cdn.jtvnw.net">
 
-    <meta property="og:image" content="%PUBLIC_URL%/logo_slogan.png">
+    <meta property="og:image" content="%PUBLIC_URL%/logo_slogan.png?v1">
     <meta property="og:description" content="TwitchRandom finds random Twitch streams for you. Find something unexpected!">
     <meta property="og:title" content="TwitchRandom | Random Twitch.tv Streams">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="%PUBLIC_URL%/icons/android-chrome-512x512.png">
+    <meta name="twitter:image" content="%PUBLIC_URL%/icons/android-chrome-512x512.png?v1">
     <meta name="twitter:description" content="TwitchRandom finds random Twitch streams for you. Find something unexpected!">
     <meta name="twitter:title" content="TwitchRandom | Random Twitch.tv Streams">
     <% if (process.env.NODE_ENV === 'production') { %>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_ANALYTICS_ID%"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '%REACT_APP_ANALYTICS_ID%');
+    </script>
     <% } %>
   </head>
   <body>
+    <h1></h1>
     <div id="app-root">
       <header id="app-header">
         <nav id="header-menu">
