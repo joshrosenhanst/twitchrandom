@@ -73,7 +73,7 @@ class AppGallery extends Component {
 
     fetchTwitchEndpoint(ENDPOINTS.STREAMS, endpoint_queries)
       .then(data => {
-        if(data._total > 0){
+        if(data.streams.length > 0){
           let gallery_streams = shuffleAndSlice(data.streams, 8);
           this.setState({
             channels: getGalleryData(gallery_streams),

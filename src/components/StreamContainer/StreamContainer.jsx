@@ -60,7 +60,7 @@ class StreamContainer extends Component {
     });
     fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=1&offset=" + randomNumber)
       .then(data => {
-        if(data._total > 0){
+        if(data.streams.length > 0){
           this.setState({
             channel: getStreamData(data.streams[0])
           }, () => {
@@ -94,7 +94,7 @@ class StreamContainer extends Component {
     });
     fetchTwitchEndpoint(ENDPOINTS.STREAMS, "?limit=100&game=" + encodeURIComponent(game))
       .then(data => {
-        if(data._total > 0){
+        if(data.streams.length > 0){
           let streams = shuffleAndSlice(data.streams, 1);
           this.setState({
             channel: getStreamData(streams[0])
