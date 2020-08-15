@@ -8,7 +8,7 @@ const ChatEmbed = (props) => {
           scrolling="no"
           id="chat_embed"
           title="Twitch Chat Embed"
-          src={`https://www.twitch.tv/embed/${props.channel}/chat`}
+          src={`https://www.twitch.tv/embed/${props.channel}/chat?parent=twitchrandom.com`}
           height="100%"
           width="100%">
         </iframe>
