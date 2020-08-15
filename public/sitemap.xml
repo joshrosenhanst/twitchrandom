@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://twitchrandom.com/</loc>
-    <lastmod>2019-10-06</lastmod>
+    <lastmod>2020-08-15</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://twitchrandom.com/games/</loc>
-    <lastmod>2019-10-06</lastmod>
+    <lastmod>2020-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
